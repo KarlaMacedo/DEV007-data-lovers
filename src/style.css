@@ -23,3 +23,73 @@ header{
     width: 20%;
     align-self: center;
 }
+
+/*FORMATO TODA LA BARRA DEL MENÚ*/
+.categoriesAudio{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: black;
+}
+
+/*FORMATO NAVEGADOR DEL MENÚ*/
+.categories{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    justify-self: center;
+}
+
+.itemCategories {
+    color: #bbb;
+    position: relative;
+    font-size: 1em;
+    font-weight: bold;
+    border: transparent;
+    padding: 0.5em;
+    border-radius: 0.2rem;
+}
+
+/* animacion de rayita debajo de los botones del menú*/
+.itemCategories::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 4px;
+    transform: scale(0, 1);
+    transform-origin: left;
+    transition: transform 0.5s;
+  }
+  .itemCategories:hover::before {
+    transform: scale(1.1);
+  }
+  .itemCategories:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+
+/*FORMATO AUDIO DEL MENÚ*/
+.audio {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+}
+
+.buttonsAudio {
+    background-color: transparent;
+    border: transparent;
+    width: 4%;
+}
+
+.buttonsAudio img {
+    width: 100%;
+}
+
+.buttonsAudio img:hover {
+    filter: drop-shadow(0 2px 5px rgb(255, 255, 255));
+}

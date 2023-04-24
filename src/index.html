@@ -10,12 +10,33 @@
     <!--ENCABEZADO-->
     <center>
     <header>
-        <img src="/src/Images/fondo.jpg" class="chair">
-        <img src="/src/Images/logo.png" class="logo">
-        <img src="/src/Images/lobo.png" class="wolf">
+        <img src="/Images/fondo.jpg" class="chair">
+        <img src="/Images/logo.png" class="logo">
+        <img src="/Images/lobo.png" class="wolf">
     </header>
     </center>
     <br>
+    <!--CONTENIDO-->
+    <main>
+    <center>
+      <!--BARRA MENÚ-->
+      <div id="categoriesAudio" class="categoriesAudio">
+        <nav class="categories">
+          <a class="itemCategories">Characteres</a> 
+          <a class="itemCategories">Houses</a> 
+          <a class="itemCategories">About</a> 
+        </nav>          
+        <div class="audio">
+            <audio src="/Images/Game of Thrones  Main Theme Extended HD_320kbps.mp3" id="player" autoplay loop preload="auto">Tu navegador no soporta el audio de esta página</audio>
+            <button class="buttonsAudio" onclick="document.getElementById('player').volume-=0.1"><img src="/Images/bajarVolumen.png"></button>
+            <button class="buttonsAudio" onclick="document.getElementById('player').play()"><img src="/Images/ponerAudio.png"></button>
+            <button class="buttonsAudio" onclick="document.getElementById('player').pause()"><img src="/Images/quitarAudio.png"></button>
+            <button class="buttonsAudio" onclick="document.getElementById('player').volume+=0.1"><img src="/Images/subirVolumen.png"></button>
+        </div>
+    </div>
+    </center>
+    <br>
+    </main>
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
