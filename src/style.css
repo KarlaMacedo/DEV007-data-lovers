@@ -1,0 +1,25 @@
+/*-----------------------FORMATOS ESPECÍFICOS--------------------------------*/
+/*FORMATO TODO EL ENCABEZADO DE LA PÁGINA*/
+header{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius: 5%;
+    width: 100%;
+    margin: 0;
+}
+
+.chair{
+    width: 20%;
+    align-self: center;
+}
+
+.logo {
+    width: 40%;
+}
+
+.wolf {
+    width: 20%;
+    align-self: center;
+}
