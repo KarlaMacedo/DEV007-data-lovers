@@ -23,3 +23,187 @@ header{
     width: 20%;
     align-self: center;
 }
+
+/*FORMATO TODA LA BARRA DEL MENÚ*/
+.categoriesAudio{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: black;
+}
+
+/*FORMATO NAVEGADOR DEL MENÚ*/
+.categories{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    justify-self: center;
+}
+
+.itemCategories {
+    color: #bbb;
+    position: relative;
+    font-size: 1em;
+    font-weight: bold;
+    border: transparent;
+    padding: 0.5em;
+    border-radius: 0.2rem;
+}
+
+/* animacion de rayita debajo de los botones del menú*/
+.itemCategories::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 4px;
+    transform: scale(0, 1);
+    transform-origin: left;
+    transition: transform 0.5s;
+  }
+  .itemCategories:hover::before {
+    transform: scale(1.1);
+  }
+  .itemCategories:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+
+/*FORMATO AUDIO DEL MENÚ*/
+.audio {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+}
+
+.buttonsAudio {
+    background-color: transparent;
+    border: transparent;
+    width: 4%;
+}
+
+.buttonsAudio img {
+    width: 100%;
+}
+
+.buttonsAudio img:hover {
+    filter: drop-shadow(0 2px 5px rgb(255, 255, 255));
+}
+
+/*FORMATO DE TODO EL SLIDER (carrusel + botones)*/
+.slider{
+    width: 100%;
+    max-width: 120em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+/*FORMATO CARRUSEL*/
+.carousel {
+    width: 85%;
+    max-width: 120em;
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+/*FORMATO LISTA DE IMAGENES DEL SLIDER*/
+.gallery {
+    width: 1170em;
+    background-color: transparent;
+    opacity: .7;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+} 
+
+.gallery img {
+    width: 15em;
+    height: 15em;
+    min-height: 10vh;
+    border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+    .gallery img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/*FORMATO BOTONES DEL SLIDER*/
+.arrows {
+    background-color: transparent;
+    border: transparent;
+    height: 15em;
+    width: 8em;
+}
+
+.arrows img {
+    width: 100%;
+    height: 100%;
+}
+
+.arrows img:hover {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+/*FORMATO BUSCADOR*/
+.searcher {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(166, 166, 166, 1);
+    width: 30%;
+    border-radius: 18px; /* Añadir esquinas curvadas */
+}
+
+.inputSearch {
+    border: transparent; /* Estilo del borde */
+    font-size: 1.5em; /*tamaño del texto del input*/
+    padding: .1em; /*ancho del recuadro*/
+    width: 17em; /*largo del recuadro*/
+    background-color: transparent;
+    text-align: center; /*Texto centrado*/;
+}
+
+.buttonSearch {
+    background-color: transparent;
+    border: transparent;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}
+
+.buttonSearch img {
+    width: 100%;
+}
+
+.buttonSearch img:hover {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
+
+/*FORMATO FOOTER*/
+.footer {
+    position:fixed; /* Se mantiene el footer en la parte inferior de la página */
+    left:0px; /*Espacio margen izquierdo*/
+    bottom:0px; /*Espacio margen inferior*/
+    background:transparent;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    color: aliceblue;
+}
+
+.socialNetworks img {
+    width: 5em;
+}
