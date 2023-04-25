@@ -1,3 +1,24 @@
+/*-----------------------FORMATOS GENERALES----------------------------------*/
+/*FORMATO PÁGINA*/
+html{
+    box-sizing: border-box;
+    background-color:rgba(30, 39, 62, 1) ;
+}
+
+/*FORMATO CUERPO DE LA PÁGINA*/
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Ubuntu", sans-serif;
+}
+
+/*FORMATO BOTONES*/
+button:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*/
+    cursor: pointer;
+}
+
 /*-----------------------FORMATOS ESPECÍFICOS--------------------------------*/
 /*FORMATO TODO EL ENCABEZADO DE LA PÁGINA*/
 header{
@@ -22,6 +43,12 @@ header{
 .wolf {
     width: 20%;
     align-self: center;
+}
+
+/*FORMATO TODO EL CONTENIDO DE LA PÁGINA*/
+main{
+    align-items: center;
+    flex-grow: 1;
 }
 
 /*FORMATO TODA LA BARRA DEL MENÚ*/
