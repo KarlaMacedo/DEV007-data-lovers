@@ -11,12 +11,13 @@ const images = document.querySelectorAll("li") //crear variable que guarda la se
 const width = 15; // ancho de las imágenes
 const count = 4; // conteo de las imágenes visibles
 let position = 0; // posición del desplazamiento del carrete
-let botonPre = document.querySelector("#arrowPrev")
-let botonNext = document.querySelector("#arrowNext")
+let botonPre = document.querySelector("#arrowPrev")  // crear variable que traiga a travez del ID la informacion del boton Previus
+let botonNext = document.querySelector("#arrowNext") // crear variable que traiga a travez del ID la informacion del boton Next
 
+
+botonPre.addEventListener("click", previus) // A la variable BotonPre se le realizara un escuchador de "click" del boton Previus
 //FUNCIÓN DEL BOTÓN PREVIO 
-botonPre.addEventListener("click", previus) 
- function previus() { //selección del elemento del html que tenga ese id
+ function previus() { //Declaracion de la funcion que hara posible ver las imagenes que estan mas a la izquierda.
   //DESPLAZAMIENTO IZQUIERDO
   position += (width * count);//a la posición al sumarle indica desplazamiento izquierdo de la galería una distancia equivalente a la cantidad de imágenes a mostrar por el tamaño del ancho de éstas
   //TOPE DEL VALOR DE LA POSICIÓN
@@ -25,9 +26,10 @@ botonPre.addEventListener("click", previus)
   gallery.style.marginLeft = position + 'em'; //al estilo css (.style) del margen izquierdo (.marginLeft) de la lista de las imagenes (gallery) se le da (=) el tamaño (px) del valor que tiene en ese momento la posición
 };
 
+
+botonNext.addEventListener("click", next) // A la variable BotonNext se le realizara un escuchador de "click" del boton Next
 //FUNCION DEL BOTON SIGUIENTE
-botonNext.addEventListener("click", next) 
-function next() { //selección del elemento del html que tenga ese id
+function next() { //Declaracion de la funcion que hara posible ver las imagenes que estan mas a la derecha.
 //DESPLAZAMIENTO DERECHO
   position -= (width * count); //a la posición al restarle indica desplazamiento derecho de la galería una distancia equivalente a la cantidad de imágenes a mostrar por el tamaño del ancho de éstas
   //TOPE DEL VALOR DE LA POSICIÓN
