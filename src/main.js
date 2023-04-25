@@ -11,10 +11,12 @@ const images = document.querySelectorAll("li") //crear variable que guarda la se
 const width = 15; // ancho de las imágenes
 const count = 4; // conteo de las imágenes visibles
 let position = 0; // posición del desplazamiento del carrete
-
+let botonPre = document.querySelector("#arrowPrev")
+let botonNext = document.querySelector("#arrowNext")
 
 //FUNCIÓN DEL BOTÓN PREVIO 
-document.querySelector('#arrowPrev').onclick = function() { //selección del elemento del html que tenga ese id
+botonPre.addEventListener("click", previus) 
+ function previus() { //selección del elemento del html que tenga ese id
   //DESPLAZAMIENTO IZQUIERDO
   position += (width * count);//a la posición al sumarle indica desplazamiento izquierdo de la galería una distancia equivalente a la cantidad de imágenes a mostrar por el tamaño del ancho de éstas
   //TOPE DEL VALOR DE LA POSICIÓN
@@ -24,7 +26,8 @@ document.querySelector('#arrowPrev').onclick = function() { //selección del ele
 };
 
 //FUNCION DEL BOTON SIGUIENTE
-document.querySelector('#arrowNext').onclick = function() { //selección del elemento del html que tenga ese id
+botonNext.addEventListener("click", next) 
+function next() { //selección del elemento del html que tenga ese id
 //DESPLAZAMIENTO DERECHO
   position -= (width * count); //a la posición al restarle indica desplazamiento derecho de la galería una distancia equivalente a la cantidad de imágenes a mostrar por el tamaño del ancho de éstas
   //TOPE DEL VALOR DE LA POSICIÓN
