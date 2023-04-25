@@ -191,3 +191,19 @@ header{
 .buttonSearch img:hover {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
+
+/*FORMATO FOOTER*/
+.footer {
+    position:fixed; /* Se mantiene el footer en la parte inferior de la página */
+    left:0px; /*Espacio margen izquierdo*/
+    bottom:0px; /*Espacio margen inferior*/
+    background:transparent;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    color: aliceblue;
+}
+
+.socialNetworks img {
+    width: 5em;
+}
