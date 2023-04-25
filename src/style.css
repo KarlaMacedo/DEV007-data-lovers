@@ -93,3 +93,66 @@ header{
 .buttonsAudio img:hover {
     filter: drop-shadow(0 2px 5px rgb(255, 255, 255));
 }
+
+/*FORMATO DE TODO EL SLIDER (carrusel + botones)*/
+.slider{
+    width: 100%;
+    max-width: 120em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+/*FORMATO CARRUSEL*/
+.carousel {
+    width: 85%;
+    max-width: 120em;
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+/*FORMATO LISTA DE IMAGENES DEL SLIDER*/
+.gallery {
+    width: 1170em;
+    background-color: transparent;
+    opacity: .7;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+} 
+
+.gallery img {
+    width: 15em;
+    height: 15em;
+    min-height: 10vh;
+    border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+    .gallery img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/*FORMATO BOTONES DEL SLIDER*/
+.arrows {
+    background-color: transparent;
+    border: transparent;
+    height: 15em;
+    width: 8em;
+}
+
+.arrows img {
+    width: 100%;
+    height: 100%;
+}
+
+.arrows img:hover {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
