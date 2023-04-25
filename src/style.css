@@ -156,3 +156,38 @@ header{
 .arrows img:hover {
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
 }
+
+/*FORMATO BUSCADOR*/
+.searcher {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(166, 166, 166, 1);
+    width: 30%;
+    border-radius: 18px; /* Añadir esquinas curvadas */
+}
+
+.inputSearch {
+    border: transparent; /* Estilo del borde */
+    font-size: 1.5em; /*tamaño del texto del input*/
+    padding: .1em; /*ancho del recuadro*/
+    width: 17em; /*largo del recuadro*/
+    background-color: transparent;
+    text-align: center; /*Texto centrado*/;
+}
+
+.buttonSearch {
+    background-color: transparent;
+    border: transparent;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}
+
+.buttonSearch img {
+    width: 100%;
+}
+
+.buttonSearch img:hover {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}
