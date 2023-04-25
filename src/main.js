@@ -9,13 +9,13 @@
 const gallery = document.querySelector("ul"); //crear variable que guarda la selección del elemento del html que contenga esa etiqueta. En este caso guarda la caja de la lista de las imágenes
 const images = document.querySelectorAll("li") //crear variable que guarda la selección de todos los elementos del html que contengan esa etiqueta. En este caso guarda todas las imágenes
 const width = 15; // ancho de las imágenes
-const count = 4; // conteo de las imágenes visibles
+const count = 1; // conteo de las imágenes visibles
 let position = 0; // posición del desplazamiento del carrete
 let botonPre = document.querySelector("#arrowPrev")  // crear variable que traiga a travez del ID la informacion del boton Previus
 let botonNext = document.querySelector("#arrowNext") // crear variable que traiga a travez del ID la informacion del boton Next
 
 
-botonPre.addEventListener("click", previus) // A la variable BotonPre se le realizara un escuchador de "click" del boton Previus
+botonPre.addEventListener("mouseover", previus) // A la variable BotonPre se le realizara un escuchador de "click" del boton Previus
 //FUNCIÓN DEL BOTÓN PREVIO 
  function previus() { //Declaracion de la funcion que hara posible ver las imagenes que estan mas a la izquierda.
   //DESPLAZAMIENTO IZQUIERDO
@@ -27,7 +27,7 @@ botonPre.addEventListener("click", previus) // A la variable BotonPre se le real
 };
 
 
-botonNext.addEventListener("click", next) // A la variable BotonNext se le realizara un escuchador de "click" del boton Next
+botonNext.addEventListener("mouseover", next) // A la variable BotonNext se le realizara un escuchador de "click" del boton Next
 //FUNCION DEL BOTON SIGUIENTE
 function next() { //Declaracion de la funcion que hara posible ver las imagenes que estan mas a la derecha.
 //DESPLAZAMIENTO DERECHO
