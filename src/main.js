@@ -11,20 +11,20 @@ const images = document.querySelectorAll("li") //crear variable que guarda la se
 const width = 15; // ancho de las imágenes
 const count = 1; // conteo de las imágenes visibles
 let position = 0; // posición del desplazamiento del carrete
-let botonPre = document.querySelector("#arrowPrev")  // crear variable que traiga a travez del ID la informacion del boton Previus
-let botonNext = document.querySelector("#arrowNext") // crear variable que traiga a travez del ID la informacion del boton Next
+const botonPre = document.querySelector("#arrowPrev")  // crear variable que traiga a travez del ID la informacion del boton Previus
+const botonNext = document.querySelector("#arrowNext") // crear variable que traiga a travez del ID la informacion del boton Next
 
 
 botonPre.addEventListener("mouseover", previus) // A la variable BotonPre se le realizara un escuchador de "click" del boton Previus
 //FUNCIÓN DEL BOTÓN PREVIO 
- function previus() { //Declaracion de la funcion que hara posible ver las imagenes que estan mas a la izquierda.
+function previus() { //Declaracion de la funcion que hara posible ver las imagenes que estan mas a la izquierda.
   //DESPLAZAMIENTO IZQUIERDO
   position += (width * count);//a la posición al sumarle indica desplazamiento izquierdo de la galería una distancia equivalente a la cantidad de imágenes a mostrar por el tamaño del ancho de éstas
   //TOPE DEL VALOR DE LA POSICIÓN
   position = Math.min(position, 0);//con Math.min() se establece como valor límite mínimo de 0 a la posición, para no podernos mover demasiado a la izquierda,porque se acaban las imágenes
   //FUNCIÓN REAL AL DARLE CLICK
   gallery.style.marginLeft = position + 'em'; //al estilo css (.style) del margen izquierdo (.marginLeft) de la lista de las imagenes (gallery) se le da (=) el tamaño (px) del valor que tiene en ese momento la posición
-};
+}
 
 
 botonNext.addEventListener("mouseover", next) // A la variable BotonNext se le realizara un escuchador de "click" del boton Next
@@ -36,4 +36,4 @@ function next() { //Declaracion de la funcion que hara posible ver las imagenes 
   position = Math.max(position, (-width) * (images.length - count));//con Math.max() se establece el valor límite máximo a la posición, que es (la longitud total de la cinta que tiene todas las imagenes menos las imagenes visibles) por el ancho de cada imágen en negativo porque se esta desplazando a la derecha
   //FUNCIÓN REAL AL DARLE CLICK
   gallery.style.marginLeft = position + 'em'; //al estilo css (.style) del margen izquierdo (.marginLeft) de la lista de las imagenes (gallery) se le da (=) el tamaño (px) del valor que tiene en ese momento la posición
-};
+}
