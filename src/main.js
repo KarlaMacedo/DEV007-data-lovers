@@ -1,12 +1,20 @@
-//-------------------------PROPORCIONADO POR LABORATORIA, SÓLO COMENTÉ TODO----------------------------------------
-//import { example } from './data.js';
-// import data from './data/lol/lol.js';
-//import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-//console.log(example, data);
+//------------------------IMPORTACION DE DATA--------------------------------------------------------------------
+import data from "./data/got/got.js"
+
+//------------------------FUNCIONALIDAD PARA PONER IMAGENES EN HTML DESDE LA DATA PARA EL SLIDER--------------------------------------------------------------------
+function pushImgSlider (){ // Crea funcion que haga...
+  const ulImages = document.querySelector(".gallery"); //Crear variable que seleccione el elemento del HTML que posteriormente va a guardar la lista de imagenes.
+  for (let i=0; i<data.got.length; i++){ // For que recorre la cantidad de elementos en la data.
+    const createLabelLi= document.createElement("li"); // Crea variable que va a almacenar la creacion de una etiqueta <li> en el Html.
+    createLabelLi.innerHTML += `<img src= "${data.got[i].imageUrl}" alt= "image-character${data.got[i].fullName}" id ="${data.got[i].id}">` // Modifica el contenido interno de cada etiqueta <li> agregando una etiqueta img con los atributos obtenidos de la informacion de la data.
+    ulImages.insertAdjacentElement("beforeend", createLabelLi); // Inserta en la etiqueta ul del Html antes de que termine (dentro) la etiqueta li creada que contiene la imagen con sus atributos.
+  }
+}
+pushImgSlider()  //llamar a la funcion 
+
 
 //------------------------FUNCIONALIDAD SLIDER--------------------------------------------------------------------
-const gallery = document.querySelector("ul"); //crear variable que guarda la selección del elemento del html que contenga esa etiqueta. En este caso guarda la caja de la lista de las imágenes
+const gallery = document.querySelector(".gallery"); //crear variable que guarda la selección del elemento del html que contenga esa etiqueta. En este caso guarda la caja de la lista de las imágenes
 const images = document.querySelectorAll("li") //crear variable que guarda la selección de todos los elementos del html que contengan esa etiqueta. En este caso guarda todas las imágenes
 const width = 15; // ancho de las imágenes
 const count = 1; // conteo de las imágenes visibles
