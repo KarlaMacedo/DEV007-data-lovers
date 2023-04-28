@@ -45,3 +45,26 @@ function next() { //Declaracion de la funcion que hara posible ver las imagenes 
   //FUNCIÓN REAL AL DARLE CLICK
   gallery.style.marginLeft = position + 'em'; //al estilo css (.style) del margen izquierdo (.marginLeft) de la lista de las imagenes (gallery) se le da (=) el tamaño (px) del valor que tiene en ese momento la posición
 }
+
+//------------------------FUNCIÓN CREAR TARJETAS DE LA SECCIÓN DE PERSONAJES--------------------------------------------------------------------
+function createCards (){
+  const dataGOT = data.got;
+  const div = document.getElementById('listCharacteres');
+  for (let i=0; i<dataGOT.length; i++){
+    const cards = document.createElement('li');
+    cards.setAttribute('class', 'cardsCharacteres');
+    cards.innerHTML +=
+      `<div class="imageCard">                             
+          <img src="${dataGOT[i].imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
+        </div>
+        <div class = 'infoCards'> 
+            <label id="nameCharcter" class="textInfoCards"><b>Name:</b> ${dataGOT[i].firstName} </label>
+            <label id="nameCharcter" class="textInfoCards"><b>Last Name:</b> ${dataGOT[i].lastName} </label>
+            <label id="tittleCharcter" class="textInfoCards"><b>Tittle:</b> ${dataGOT[i].title} </label>
+            <label id="familyCharcter" class="textInfoCards"><b>Family:</b> ${dataGOT[i].family} </label>
+            <label id="bornCharcter" class="textInfoCards"><b>Born:</b> ${dataGOT[i].born} </label>
+        </div>`
+    div.insertAdjacentElement("beforeend", cards);
+  }
+}
+createCards()
