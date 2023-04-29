@@ -12,7 +12,6 @@ function pushImgSlider (){ // Crea funcion que haga...
 }
 pushImgSlider()  //llamar a la funcion 
 
-
 //------------------------FUNCIONALIDAD SLIDER--------------------------------------------------------------------
 const gallery = document.querySelector(".gallery"); //crear variable que guarda la selección del elemento del html que contenga esa etiqueta. En este caso guarda la caja de la lista de las imágenes
 const images = document.querySelectorAll("li") //crear variable que guarda la selección de todos los elementos del html que contengan esa etiqueta. En este caso guarda todas las imágenes
@@ -21,7 +20,6 @@ const count = 1; // conteo de las imágenes visibles
 let position = 0; // posición del desplazamiento del carrete
 const botonPre = document.querySelector("#arrowPrev")  // crear variable que traiga a travez del ID la informacion del boton Previus
 const botonNext = document.querySelector("#arrowNext") // crear variable que traiga a travez del ID la informacion del boton Next
-
 
 botonPre.addEventListener("mouseover", previus) // A la variable BotonPre se le realizara un escuchador de "click" del boton Previus
 //FUNCIÓN DEL BOTÓN PREVIO 
@@ -33,7 +31,6 @@ function previus() { //Declaracion de la funcion que hara posible ver las imagen
   //FUNCIÓN REAL AL DARLE CLICK
   gallery.style.marginLeft = position + 'em'; //al estilo css (.style) del margen izquierdo (.marginLeft) de la lista de las imagenes (gallery) se le da (=) el tamaño (px) del valor que tiene en ese momento la posición
 }
-
 
 botonNext.addEventListener("mouseover", next) // A la variable BotonNext se le realizara un escuchador de "click" del boton Next
 //FUNCION DEL BOTON SIGUIENTE
@@ -47,24 +44,25 @@ function next() { //Declaracion de la funcion que hara posible ver las imagenes 
 }
 
 //------------------------FUNCIÓN CREAR TARJETAS DE LA SECCIÓN DE PERSONAJES--------------------------------------------------------------------
-function createCards (){
-  const dataGOT = data.got;
-  const div = document.getElementById('listCharacteres');
-  for (let i=0; i<dataGOT.length; i++){
-    const cards = document.createElement('li');
-    cards.setAttribute('class', 'cardsCharacteres');
-    cards.innerHTML +=
-      `<div class="imageCard">                             
-          <img src="${dataGOT[i].imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
-        </div>
-        <div class = 'infoCards'> 
-            <label id="nameCharcter" class="textInfoCards"><b>Name:</b> ${dataGOT[i].firstName} </label>
-            <label id="nameCharcter" class="textInfoCards"><b>Last Name:</b> ${dataGOT[i].lastName} </label>
-            <label id="tittleCharcter" class="textInfoCards"><b>Tittle:</b> ${dataGOT[i].title} </label>
-            <label id="familyCharcter" class="textInfoCards"><b>Family:</b> ${dataGOT[i].family} </label>
-            <label id="bornCharcter" class="textInfoCards"><b>Born:</b> ${dataGOT[i].born} </label>
-        </div>`
-    div.insertAdjacentElement("beforeend", cards);
+function createCards (){ //Declaracion de la funcion que creará las tarjetas de personajes en automático con la info de la data
+  const dataGOT = data.got; //variable que almacena la data
+  const div = document.getElementById('listCharacteres'); //variable que almacena la ul donde se pondrán la lista de tarjetas de personajes
+  for (let i=0; i<dataGOT.length; i++){// For que recorre la cantidad de elementos en la data.
+    const cards = document.createElement('li'); // Crea variable que va a almacenar la creacion de una etiqueta <li> en el Html.
+    cards.setAttribute('class', 'cardsCharacteres'); //agrega atributo class a la etiqueta li, para darle estilo con css
+    cards.innerHTML += // Modifica el contenido interno de cada etiqueta <li> agregando lo concatenado en las backthicks (contenedro de la imagen del personaje y conteneder con la info del personaje, todo se extrae de la data)
+      `<div class="containerImg">                          
+        <img src="${dataGOT[i].imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
+      </div>
+      <div class = 'cardContent'> 
+          <span class="cardTitle">${dataGOT[i].fullName}</span>
+          <p id="nameCharcter" class="cardDescription"><b>Name:</b> ${dataGOT[i].firstName} </p>
+          <p id="nameCharcter" class="cardDescription"><b>Last Name:</b> ${dataGOT[i].lastName} </p>
+          <p id="tittleCharcter" class="cardDescription"><b>Tittle:</b> ${dataGOT[i].title} </p>
+          <p id="familyCharcter" class="cardDescription"><b>Family:</b> ${dataGOT[i].family} </p>
+          <p id="bornCharcter" class="cardDescription"><b>Born:</b> ${dataGOT[i].born} </p>
+      </div>`
+    div.insertAdjacentElement("beforeend", cards); // Inserta en la etiqueta ul del Html antes de que termine (dentro) las etiquetas li creadas que contienen las tarjetas de los personajes
   }
 }
-createCards()
+createCards()//llama a la función
