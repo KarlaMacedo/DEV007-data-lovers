@@ -1,4 +1,4 @@
-/*-----------------------FORMATOS GENERALES----------------------------------*/
+/*---------------------------------------------------FORMATOS GENERALES----------------------------------------------*/
 /*FORMATO PÁGINA*/
 html{
     box-sizing: border-box;
@@ -14,13 +14,19 @@ body {
     font-family: "Ubuntu", sans-serif;
 }
 
+/*FORMATO TODO EL CONTENIDO DE LA PÁGINA*/
+main{
+    align-items: center;
+    flex-grow: 1;
+}
+
 /*FORMATO BOTONES*/
 button:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*/
     cursor: pointer;
 }
 
-/*-----------------------FORMATOS ESPECÍFICOS--------------------------------*/
-/*FORMATO TODO EL ENCABEZADO DE LA PÁGINA*/
+/*-------------------------------------------------FORMATOS ESPECÍFICOS---------------------------------------------------------*/
+/*---------FORMATO TODO EL ENCABEZADO DE LA PÁGINA------------*/
 header{
     background-color: rgba(3, 3, 3, 1);
     display: flex;
@@ -45,13 +51,7 @@ header{
     align-self: center;
 }
 
-/*FORMATO TODO EL CONTENIDO DE LA PÁGINA*/
-main{
-    align-items: center;
-    flex-grow: 1;
-}
-
-/*FORMATO TODA LA BARRA DEL MENÚ*/
+/*---------------FORMATO TODA LA BARRA DEL MENÚ--------------*/
 .categoriesAudio{
     display: flex;
     justify-content: space-around;
@@ -70,7 +70,7 @@ main{
 
 .itemCategories {
     color: #bbb;
-    position: relative;
+    position: relative; /*top y bottom es desplazamiento vertical y left y right desplazamiento horizontal*/
     font-size: 1em;
     font-weight: bold;
     border: transparent;
@@ -79,23 +79,25 @@ main{
 }
 
 /* animacion de rayita debajo de los botones del menú*/
-.itemCategories::before {
-    content: "";
-    position: absolute;
+.itemCategories::before {/*crea un "elemento" hijo del elemento seleccionado, con el nuevo estilo que se da*/
+    content: ""; /*añade contenido en línea con el texto del elemento*/
+    position: absolute; /* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
     left: 0;
     bottom: 0;
     width: 100%;
     height: 2px;
     background-color: #fff;
     border-radius: 4px;
-    transform: scale(0, 1);
-    transform-origin: left;
-    transition: transform 0.5s;
+    transform: scale(0, 1); /*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con scale se especifica una operación de escalado 2D [sx, sy]*/
+    transform-origin: left;/*modifica el origen de la transformacion del elemento*/
+    transition: transform 0.5s; /*define la transición entre el estilo anterior del elemento y el nuevo*/
   }
-  .itemCategories:hover::before {
-    transform: scale(1.1);
+
+  .itemCategories:hover::before {/* :hover que haga algo cuando te posicionas encima sin dar click*//*crea un "elemento" hijo del elemento seleccionado, con el nuevo estilo que se da*/
+    transform: scale(1.1); /*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con scale se especifica una operación de escalado 2D [sx, sy]*/
   }
-  .itemCategories:hover {
+
+  .itemCategories:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*/
     color: #fff;
     cursor: pointer;
   }
@@ -117,11 +119,11 @@ main{
     width: 100%;
 }
 
-.buttonsAudio img:hover {
-    filter: drop-shadow(0 2px 5px rgb(255, 255, 255));
+.buttonsAudio img:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*/
+    filter: drop-shadow(0 2px 5px rgb(255, 255, 255));/*sombra imagen sin fondo*/
 }
 
-/*FORMATO DE TODO EL SLIDER (carrusel + botones)*/
+/*------------FORMATO DE TODO EL SLIDER (carrusel + botones)------------*/
 .slider{
     width: 100%;
     max-width: 120em;
@@ -136,7 +138,7 @@ main{
     width: 85%;
     max-width: 120em;
     background-color: transparent;
-    overflow: hidden;
+    overflow: hidden; /*Esconde los elementos que sobre salgan de su contenedor*/
     display: flex;
     flex-direction: row;
 }
@@ -150,7 +152,7 @@ main{
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    list-style: none;
+    list-style: none; /*quita estilo de lista (viñetas)*/
 } 
 
 .gallery img {
@@ -160,21 +162,22 @@ main{
     border-radius: 50%;
 }
 
-@media (max-width: 1000px) {
+/*FORMATO SLIDER CON CAMBIOS DE TAMAÑOS DE PANTALLA PARA QUE SEA RESPONSIVO*/
+@media (max-width: 1000px) { /*aplica el estilo indicado cuando se cumple la condición*/
     .gallery img {
         width: 180px;
         height: 180px;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px) {/*aplica el estilo indicado cuando se cumple la condición*/
     .gallery img {
         width: 150px;
         height: 150px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) {/*aplica el estilo indicado cuando se cumple la condición*/
     .gallery img {
         width: 130px;
         height: 130px;
@@ -194,11 +197,11 @@ main{
     height: 100%;
 }
 
-.arrows img:hover {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+.arrows img:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*/
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));/*sombra imagen sin fondo*/
 }
 
-/*FORMATO BUSCADOR*/
+/*---------------FORMATO BUSCADOR---------------*/
 .searcher {
     display: flex;
     flex-direction: row;
@@ -229,11 +232,12 @@ main{
     width: 100%;
 }
 
-.buttonSearch img:hover {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+.buttonSearch img:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*/
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7)); /*sombra imagen sin fondo*/
 }
 
-/*FORMATO TARJETAS PERSONAJES*/
+/*---------------FORMATO TARJETAS PERSONAJES------------------*/
+/*HEADER DE LA SECCIÓN*/
 .tittleCharacteresCards {
     border: 0;
     width: 100%;
@@ -242,6 +246,7 @@ main{
     color: white;
 }
 
+/*TARJETAS PERSONAJES*/
 .seccionCharacteres {
     width: 100%;
     height: 100%;
@@ -254,54 +259,76 @@ main{
     width: 95%;
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-    gap: 4em;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /*define el tamaño de las columnas del grid. Repeat dice que se repitan las columnas con un autollenado según el tamaño de la pantalla*/
+    gap: 4em; /*espacio entre las columnas*/
 }
 
 .cardsCharacteres {
-    background-color: rgb(166, 166, 166);
-    width: 18em;
-    height: 11em;
-    display: flex;
-    padding: .5rem;
-    border-radius: 7px;
-    align-items: center;
-    justify-content: space-evenly;
+    position: relative;/*top y bottom es desplazamiento vertical y left y right desplazamiento horizontal*/
+    width: 15.5em;
+    height: 15.5em;
+    color: #2e2d31;
+    background: #131313;
+    overflow: hidden;/*Esconde los elementos que sobre salgan de su contenedor*/
+    border-radius: 20px;
 }
-
-.textInfoCards {
-    width: 100%;
-    font-size: 1rem;
-    margin: 1.5%;
-    color: black;
-}
-
-.imageCard {
-    display: flex;
-    width: 35%;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  
+.containerImg {
+    padding: 8px 12px;
 }
 
 .imageCharacter {
-    width: 6rem;
-    height: 9rem;
+    width: 14rem;
+    height: 9.5rem;
     border-radius: 10%;
 }
-
-.infoCards {
-    width: 60%;
-    height: auto;
-    display: flex;
-    justify-items: start;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
+  
+.cardTitle {
+    font-weight: bold;
+    font-size: large;
+}
+  
+.cardContent {
+    position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
+    left: 0;
+    bottom: 0;
+    width: 90%;
+    padding: 1em;
+    background: #f2f2f2;
+    border-top-left-radius: 10%; /*redondeo de la esquina superior izquierda del elemento*/
+    transform: translateY(9.5em); /*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con translateY lo translada a lo largo del eje Y*/
+    transition: transform .25s;/*define la transición entre el estilo anterior del elemento y el nuevo*/
 }
 
-/*FORMATO FOOTER*/
+.cardDescription {
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity .5s;/*define la transición entre el estilo anterior del elemento y el nuevo*/
+}
+
+/*ANIMACIÓN DE LAS TARJETAS DE PERSONAJES*/
+.cardContent::before {/*crea un "elemento" hijo del elemento seleccionado, con el nuevo estilo que se da*/
+    content: '';/*añade contenido en línea con el texto del elemento*/
+    position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
+    top: -47px;
+    right: -45px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-175deg); /*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con rotate lo rota en 2D, según la cantidad de grados (deg) que se da, en sentido de las manecillas del reloj*/
+    border-radius: 50%;
+    box-shadow: inset 48px 48px #f2f2f2; /*sombra*/
+}
+  
+.cardsCharacteres:hover .cardContent {/* :hover que haga algo cuando te posicionas encima sin dar click (aqui el estilo se aplica a cardcontent cuando se posiciona en la tarjeta)*/
+    transform: translateY(0);/*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con translateY lo translada a lo largo del eje Y*/
+}
+  
+.cardsCharacteres:hover .cardDescription {/* :hover que haga algo cuando te posicionas encima sin dar click (aqui el estilo se aplica a carddescription cuando se posiciona en la tarjeta)*/
+    opacity: 1;
+    transition-delay: .25s; /*cantidad de tiempo a esperar para que se de el cambio*/
+}  
+
+/*------------FORMATO FOOTER---------------*/
 .footer {
     position:fixed; /* Se mantiene el footer en la parte inferior de la página */
     left:0px; /*Espacio margen izquierdo*/
