@@ -6,6 +6,7 @@ function pushImgSlider (){ // Crea funcion que haga...
   const ulImages = document.querySelector(".gallery"); //Crear variable que seleccione el elemento del HTML que posteriormente va a guardar la lista de imagenes.
   for (let i=0; i<data.got.length; i++){ // For que recorre la cantidad de elementos en la data.
     const createLabelLi= document.createElement("li"); // Crea variable que va a almacenar la creacion de una etiqueta <li> en el Html.
+    createLabelLi.id= "imgs-carousel" 
     createLabelLi.innerHTML += `<img src= "${data.got[i].imageUrl}" alt= "image-character${data.got[i].fullName}" id ="${data.got[i].id}">` // Modifica el contenido interno de cada etiqueta <li> agregando una etiqueta img con los atributos obtenidos de la informacion de la data.
     ulImages.insertAdjacentElement("beforeend", createLabelLi); // Inserta en la etiqueta ul del Html antes de que termine (dentro) la etiqueta li creada que contiene la imagen con sus atributos.
   }
@@ -66,3 +67,39 @@ function createCards (){ //Declaracion de la funcion que creará las tarjetas de
   }
 }
 createCards()//llama a la función
+
+function hear(){
+  const windowsModal= document.querySelector("#modal")
+  //console.log(windowsModal);
+  const btnClose= document.querySelector("#btn-close-modal")
+  //console.log(btnClose);
+  const imgCarousel=document.querySelectorAll("#imgs-carousel")
+  //console.log(imgCarousel);
+
+  for(let i=0; i<imgCarousel.length; i++){
+ 
+    imgCarousel[i].addEventListener("click", ()=>{windowsModal.showModal()})
+    imgCarousel[i].addEventListener("click", ()=>{openModal(i)})
+    
+  }
+  function openModal(index){
+    const divModal= document.querySelector("#div-modal");
+
+    divModal.innerHTML = `<li class="cardsCharacteres"><div class="containerImg">                          
+    <img src="${data.got[index].imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
+  </div>
+  <div class = 'cardContent'> 
+      <span class="cardTitle">${data.got[index].fullName}</span>
+      <p id="nameCharcter" class="cardDescription"><b>Name:</b> ${data.got[index].firstName} </p>
+      <p id="nameCharcter" class="cardDescription"><b>Last Name:</b> ${data.got[index].lastName} </p>
+      <p id="tittleCharcter" class="cardDescription"><b>Tittle:</b> ${data.got[index].title} </p>
+      <p id="familyCharcter" class="cardDescription"><b>Family:</b> ${data.got[index].family} </p>
+      <p id="bornCharcter" class="cardDescription"><b>Born:</b> ${data.got[index].born} </p>
+  </div></li>`
+    //console.log(divModal);
+  }
+  btnClose.addEventListener("click", ()=>{windowsModal.close()})
+  
+}
+
+hear()
