@@ -7,65 +7,68 @@
   </head>
   <body>
     <br>
-    <section id="home">
-      <!--ENCABEZADO-->
-      <div id="headerHome">
+    <!--ENCABEZADO-->
+    <section id="headerHome">
+      <center>
+        <header>
+            <img src="Images/fondo.jpg" class="chair">
+            <img src="Images/logo.png" class="logo">
+            <img src="Images/lobo.png" class="wolf">
+        </header>
+      </center>
+    </section>
+    <br>
+    <!--CONTENIDO-->
+    <main>
+      <section id="menuHome">
         <center>
-          <header>
-              <img src="Images/fondo.jpg" class="chair">
-              <img src="Images/logo.png" class="logo">
-              <img src="Images/lobo.png" class="wolf">
-          </header>
-        </center>
-      </div>
-      <br>
-      <!--CONTENIDO-->
-      <main>
-        <!--BARRA MENÚ-->
-        <div id="menuHome">
-          <center>
-            <div id="categoriesAudio" class="categoriesAudio">
-              <nav class="categories">
-                <a href="#seccionCharacteresCards" class="itemCategories" style="text-decoration:none">Characteres</a>
-                <a class="itemCategories" style="text-decoration:none">Houses</a>
-                <a href="#aboutSection" class="itemCategories" style="text-decoration:none">About</a>
-                <a href="https://listen.hbo.com/GOT-podcast?c=2CiK1Eqaf-vRydktnT4N7Q&h=d463267cea325346c" target="_blank" class="itemCategories" style="text-decoration:none">Podcast</a>
-              </nav>          
-              <div class="audio">
-                <audio src="Images/Game of Thrones  Main Theme Extended HD_320kbps.mp3" id="player" autoplay loop preload="auto">Tu navegador no soporta el audio de esta página</audio>
-                <button class="buttonsAudio" onclick="document.getElementById('player').volume-=0.1"><img src="Images/bajarVolumen.png"></button>
-                <button class="buttonsAudio" onclick="document.getElementById('player').play()"><img src="Images/ponerAudio.png"></button>
-                <button class="buttonsAudio" onclick="document.getElementById('player').pause()"><img src="Images/quitarAudio.png"></button>
-                <button class="buttonsAudio" onclick="document.getElementById('player').volume+=0.1"><img src="Images/subirVolumen.png"></button>
-              </div>
+          <!--BARRA MENÚ-->
+          <div id="categoriesAudio" class="categoriesAudio">
+            <nav class="categories">
+              <a class="itemCategories">Characteres</a>
+              <a class="itemCategories">Houses</a>
+              <a class="itemCategories">About</a>
+            </nav>          
+            <div class="audio">
+              <audio src="Images/Game of Thrones  Main Theme Extended HD_320kbps.mp3" id="player" autoplay loop preload="auto">Tu navegador no soporta el audio de esta página</audio>
+              <button class="buttonsAudio" onclick="document.getElementById('player').volume-=0.1"><img src="Images/bajarVolumen.png"></button>
+              <button class="buttonsAudio" onclick="document.getElementById('player').play()"><img src="Images/ponerAudio.png"></button>
+              <button class="buttonsAudio" onclick="document.getElementById('player').pause()"><img src="Images/quitarAudio.png"></button>
+              <button class="buttonsAudio" onclick="document.getElementById('player').volume+=0.1"><img src="Images/subirVolumen.png"></button>
             </div>
-          </center>
-        </div>
-        <br>
-        <!--SLIDER-->
-        <div id="slider" class="slider">
-          <!--Boton previo-->
-          <div>
-            <button id="arrowPrev" class="arrows"><img src="Images\botonizquierda.png"></button>
-          </div>
-          <div id= "carousel" class="carousel">
-            <!--Lista de imagenes-->
-            <ul class="gallery"><!--Aqui van las imagenes del slider agregadar a travez de la funcion pushImgSlider del main.js--></ul>
-          </div>
-          <!--Boton siguiente-->
-          <div>
-            <button id="arrowNext" class="arrows"><img src="Images\botonderecha.png"></button>
-          </div>
-        </div>
-        <br>
-        <!--BUSCADOR-->
-        <center>
-          <div id="searcher" class="searcher">
-            <input type="search" placeholder="Search" list="COLOCAR EL DATA LIST DE LOS PERSONAJES" id="inputSearch" class="inputSearch" required/>
-            <button id="buttonSearch" class="buttonSearch" size="40"><img src="Images/lupa.png"></button> 
           </div>
         </center>
       </section>
+      <br>
+      <!--SLIDER-->
+      <section id="slider" class="slider">
+        <!--Boton previo-->
+        <div>
+          <button id="arrowPrev" class="arrows"><img src="Images\botonizquierda.png"></button>
+        </div>
+        <div id= "carousel" class="carousel">
+          <!--Lista de imagenes-->
+          <ul class="gallery"><!--Aqui van las imagenes del slider agregadar a travez de la funcion pushImgSlider del main.js--></ul>
+        </div>
+        <!--Boton siguiente-->
+        <div>
+          <button id="arrowNext" class="arrows"><img src="Images\botonderecha.png"></button>
+        </div>
+      </section>
+      <br>
+      <!--BUSCADOR-->
+      <center>
+        <section id="searcher" class="searcher">
+          <input type="search" placeholder="Search" list="COLOCAR EL DATA LIST DE LOS PERSONAJES" id="inputSearch" class="inputSearch" required/>
+          <button id="buttonSearch" class="buttonSearch" size="40"><img src="Images/lupa.png"></button> 
+        </section>
+      </center>
+      <!--______________________________________________________________________________________-->
+      <dialog id="modal">
+        <div id="div-modal">
+        </div>
+        <button id="btn-close-modal"><img  class="img-btn-close" src="Images/botonRegresar.png" disabled ></button>
+      </dialog>
       <!--TARJETAS PERSONAJES-->
       <section id="seccionCharacteresCards">
         <center>
