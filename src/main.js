@@ -58,11 +58,11 @@ function createCards (){ //Declaracion de la funcion que creará las tarjetas de
           <span class="cardTitle">${dataGOT[i].fullName}</span>
           <p id="nameCharcter" class="cardDescription"><b>Name:</b> ${dataGOT[i].firstName} </p>
           <p id="nameCharcter" class="cardDescription"><b>Last Name:</b> ${dataGOT[i].lastName} </p>
-          <p id="tittleCharcter" class="cardDescription"><b>Tittle:</b> ${dataGOT[i].title} </p>
+          <p id="tittleCharcter" class="cardDescription"><b>Title:</b> ${dataGOT[i].title} </p>
           <p id="familyCharcter" class="cardDescription"><b>Family:</b> ${dataGOT[i].family} </p>
           <p id="bornCharcter" class="cardDescription"><b>Born:</b> ${dataGOT[i].born} </p>
       </div>`
     div.insertAdjacentElement("beforeend", cards); // Inserta en la etiqueta ul del Html antes de que termine (dentro) las etiquetas li creadas que contienen las tarjetas de los personajes
   }
 }
-createCards()//llama a la función
+createCards()//llama a la función creada

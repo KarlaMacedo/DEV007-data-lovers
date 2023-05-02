@@ -25,6 +25,15 @@ button:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*
     cursor: pointer;
 }
 
+/*HEADER SECCIONES*/
+h2 {
+    border: 0;
+    width: 100%;
+    background-color: black;
+    font-size: 2rem;
+    color: white;
+}
+
 /*-------------------------------------------------FORMATOS ESPECÍFICOS---------------------------------------------------------*/
 /*---------FORMATO TODO EL ENCABEZADO DE LA PÁGINA------------*/
 header{
@@ -206,7 +215,7 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: rgba(166, 166, 166, 1);
+    background-color: #f2f2f2;
     width: 30%;
     border-radius: 18px; /* Añadir esquinas curvadas */
 }
@@ -237,15 +246,6 @@ header{
 }
 
 /*---------------FORMATO TARJETAS PERSONAJES------------------*/
-/*HEADER DE LA SECCIÓN*/
-.tittleCharacteresCards {
-    border: 0;
-    width: 100%;
-    background-color: black;
-    font-size: 2rem;
-    color: white;
-}
-
 /*TARJETAS PERSONAJES*/
 .seccionCharacteres {
     width: 100%;
@@ -327,6 +327,128 @@ header{
     opacity: 1;
     transition-delay: .25s; /*cantidad de tiempo a esperar para que se de el cambio*/
 }  
+
+/*------------FORMATO INFO SOBRE LA SERIE---------------*/
+.infoAbout {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background: #f2f2f2;
+    line-height: 1.2rem; /*espacio entre párrafos*/
+    padding: 2rem;
+    margin: 1%;
+}
+
+/*------------FORMATO TABLA DE DETALLES SOBRE LAS TEMPORADAS---------------*/
+.containerTableSeasonsDetails {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background: #f2f2f2;
+    line-height: 2rem;/*espacio entre párrafos*/
+    padding: 2rem;
+    margin: 1%;
+}
+
+.tableSeasonsDetails {
+    width: 95%;
+    text-align: center;
+}
+
+table {
+    border: 1px solid #000;
+    border-collapse: collapse; /*unir border de las celdas para que se hagan una línea sólida*/
+ }
+
+ th, td {
+    border: 1px solid #000;
+ }
+
+ .cellsTitle{
+    background-color: rgb(36, 36, 37);
+    color: white
+ }
+
+ .cellsSubtitle{
+    background-color: rgb(95, 97, 100);
+    color: white;
+ }
+
+ td {
+    background-color: rgba(211, 212, 212, 1);
+ }
+
+ /*------------FORMATO BOTON QUE LLEVA AL INICIO---------------*/
+.buttonHome {
+    position:fixed; /* Se mantiene el footer en la parte inferior de la página */
+    right:10px; /*Espacio margen izquierdo*/
+    bottom:30px; /*Espacio margen inferior*/
+    width: 100px;
+    height: 33px;
+    border-radius: 30px;
+    background-color: white;
+    overflow: hidden;/*Esconde los elementos que sobre salgan de su contenedor*/
+}
+ 
+  .text1 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-left:25%;
+    position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
+    top: 20%;
+    color: #000;
+  }
+  
+  .text2 {
+    position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
+    top: 25%;
+    left: -50px;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .icon {
+    position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
+    top: 0;
+    left: 0;
+    transition: transform 0.5s;/*define la transición entre el estilo anterior del elemento y el nuevo*/
+  }
+  
+  .icon::before {
+    position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
+    left: -100px;
+    top: 0;
+    content: "";/*añade contenido en línea con el texto del elemento*/
+    width: 100px;
+    height: 33px;
+    border-radius: 30px;
+    background-color: #000000;
+  }
+  
+  .icon::after {
+    position: absolute; /* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
+    left: 0.5px;
+    top: 0.5px;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: white;
+  }
+  
+  .buttonHome:hover .icon {
+    transform: translateX(97.5px);/*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con translateX lo translada a lo largo del eje X*/
+    transition: transform 0.5s;/*define la transición entre el estilo anterior del elemento y el nuevo*/
+  }
+  
+ .buttonHome:hover .text2 {
+    transform: translateX(100px); /*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con translateX lo translada a lo largo del eje X*/
+    transition: transform 0.6s;/*define la transición entre el estilo anterior del elemento y el nuevo*/
+  }
 
 /*------------FORMATO FOOTER---------------*/
 .footer {
