@@ -7,8 +7,9 @@
   </head>
   <body>
     <br>
+    <section id="home">
     <!--ENCABEZADO-->
-    <section id="headerHome">
+    <div id="headerHome">
       <center>
         <header>
             <img src="Images/fondo.jpg" class="chair">
@@ -16,18 +17,19 @@
             <img src="Images/lobo.png" class="wolf">
         </header>
       </center>
-    </section>
+    </div>
     <br>
     <!--CONTENIDO-->
     <main>
-      <section id="menuHome">
+      <div id="menuHome">
         <center>
           <!--BARRA MENÚ-->
           <div id="categoriesAudio" class="categoriesAudio">
             <nav class="categories">
-              <a class="itemCategories">Characteres</a>
-              <a class="itemCategories">Houses</a>
-              <a class="itemCategories">About</a>
+              <a href="#seccionCharacteresCards" class="itemCategories" style="text-decoration:none">Characteres</a>
+              <a class="itemCategories" style="text-decoration:none">Houses</a>
+              <a href="#aboutSection" class="itemCategories" style="text-decoration:none">About</a>
+              <a href="https://listen.hbo.com/GOT-podcast?c=2CiK1Eqaf-vRydktnT4N7Q&amp;h=d463267cea325346c" target="_blank" class="itemCategories" style="text-decoration:none">Podcast</a>
             </nav>          
             <div class="audio">
               <audio src="Images/Game of Thrones  Main Theme Extended HD_320kbps.mp3" id="player" autoplay loop preload="auto">Tu navegador no soporta el audio de esta página</audio>
@@ -38,10 +40,10 @@
             </div>
           </div>
         </center>
-      </section>
+      </div>
       <br>
       <!--SLIDER-->
-      <section id="slider" class="slider">
+      <div id="slider" class="slider">
         <!--Boton previo-->
         <div>
           <button id="arrowPrev" class="arrows"><img src="Images\botonizquierda.png"></button>
@@ -54,33 +56,141 @@
         <div>
           <button id="arrowNext" class="arrows"><img src="Images\botonderecha.png"></button>
         </div>
-      </section>
+      </div>
       <br>
       <!--BUSCADOR-->
       <center>
-        <section id="searcher" class="searcher">
+        <div id="searcher" class="searcher">
           <input type="search" placeholder="Search" list="COLOCAR EL DATA LIST DE LOS PERSONAJES" id="inputSearch" class="inputSearch" required/>
           <button id="buttonSearch" class="buttonSearch" size="40"><img src="Images/lupa.png"></button> 
-        </section>
+        </div>
       </center>
-      <!--______________________________________________________________________________________-->
-<dialog id="modal">
-  <div id="div-modal">
-
-  </div>
- 
-   <button id="btn-close-modal"><img  class="img-btn-close" src="Images/botonRegresar.png" disabled ></button>
- </dialog>
- <!--______________________________________________________________________________________-->
+      <!--DIALOGO MODAL DE TARJETAS DE PERSONAJES DEL SLIDER-->
+      <dialog id="modal">
+        <div id="divModal"><!--contenedor de las tarjetas de personajes--></div>
+        <br>
+        <br>
+        <button id="btnCloseModal"><img class="imgBtnClose" src="Images/botonRegresar.png"></button><!--Boton para cerrar ventana modal-->
+      </dialog>
+      </section>
       <!--TARJETAS PERSONAJES-->
       <section id="seccionCharacteresCards">
         <center>
-          <h2 class="tittleCharacteresCards">Game of Throns Characteres</h2> <!--Encabezado de la sección-->
+          <h2 class="titleCharacteresCards">Game of Thrones Characteres</h2> <!--Encabezado de la sección-->
         </center>
         <ul class="listCharacteres" id="listCharacteres"><!--contenedor de las tarjetas de personajes--></ul>
       </section>
       <br>
       <br>
+      <!--INFORMACIÓN SOBRE LA SERIE-->
+      <section id="aboutSection" class="aboutSection">
+        <center>
+          <h2 class="titleAboutSection">About Game of Thrones</h2>
+        </center>
+        <div class="infoAbout">
+          <article>
+            <p align="justify"> Game of Thrones is an American fantasy drama television series created by David Benioff and Daniel Brett Weiss for <a href="https://www.hbo.com/game-of-thrones" target="_blank">HBO</a>. It is an adaptation of A Song of Ice and   Fire, a series of fantasy novels by George Raymond Richard Martin, the first of which is A Game of Thrones. The show was shot in the United Kingdom, Canada, Croatia, Iceland, Malta, Morocco, and Spain. It premiered on HBO in the United States on April 17, 2011, and concluded on May 19, 2019.</p>
+            <p align="justify">  Set on the fictional continents of Westeros and Essos, Game of Thrones has a large ensemble cast and follows several story arcs throughout the course of the show. The first major arc concerns the Iron Throne of the Seven Kingdoms of Westeros through a web of political conflicts among the noble families either vying to claim the throne or fighting for independence from whoever sits on it. The second focuses on the last descendant of the realm's deposed ruling dynasty, who has been exiled to Essos and is plotting to return and reclaim the throne. The third follows the Night's Watch, a military order defending the realm against threats from beyond Westeros's northern border.</p>
+            <p align="justify">  The series received 59 Primetime Emmy Awards, the most by a drama series, including Outstanding Drama Series in 2015, 2016, 2018 and 2019. Its other awards and nominations include three Hugo Awards for Best Dramatic Presentation, a Peabody Award, and five nominations for the Golden Globe Award for Best Television Series – Drama.</p>
+            <p align="justify">A prequel series, <a href="https://www.hbo.com/house-of-the-dragon" target="_blank">House of the Dragon</a>, premiered on HBO in 2022.</p>
+            <p align="justify"><b>Genre:</b> Action, adventure, fantasy, serial drama and tragedy</p>
+            <p align="justify"><b>Country of origin:</b> United States</p>
+            <p align="justify"><b>Original lenguaje:</b> English</p>
+            <p align="justify"><b>Number of seasons:</b> 8 (<a href="#seasonsDetailsSection">details of the seasons</a>)</p>
+            <p align="justify"><b>Number of episodes:</b> 73</p>
+          </article>
+        </div>
+        <br>
+        <br>
+      </section>
+      <center>
+      <!--TABLA DETALLES DE LAS TEMPORADAS-->
+      <section id="seasonsDetailsSection" class="seasonsDetailsSection">
+        <center>
+          <h2 class="titleSeasonsDetails">Game of Thrones Seasons Details</h2>
+        </center> 
+        <div class="containerTableSeasonsDetails">
+          <table class="tableSeasonsDetails">
+            <tr class="titlesTableSeasonsDetails"><!--fila-->
+              <th class="cellsTitle" rowspan="2">Season</th><!--celda encabezado--><!--rowspan indica la cantidad de filas que se extiende la celda-->
+              <th class="cellsTitle" rowspan="2" colspan="2">Episodes</th><!--celda encabezado--><!--rowspan indica la cantidad de filas que se extiende la celda-->
+              <th class="cellsTitle" colspan="2">Originally aired</th><!--celda encabezado--><!--colspan indica la cantidad de columnas que se extiende la celda-->
+              <th class="cellsTitle" rowspan="2">AVG views in U.S.</th><!--celda encabezado--><!--colspan indica la cantidad de columnas que se extiende la celda-->
+            </tr>
+            <tr class="titlesTableSeasonsDetails"><!--fila-->
+              <th class="cellsSubtitle">First aired</th><!--celda encabezado-->
+              <th class="cellsSubtitle">Last aired</th><!--celda encabezado-->
+            </tr>
+            <tr class="rowsTableSeasonsDetails"><!--fila-->
+              <td>1</td><!--celda normal con info-->
+              <td colspan="2">10</td><!--celda normal con info--><!--colspan indica la cantidad de columnas que se extiende la celda-->
+              <td class="dateTableSeasonsDetails">April 17th, 2011</td><!--celda normal con info-->
+              <td class="date2TableSeasosnsDetails">June 19th, 2011</td><!--celda normal con info-->
+              <td>2.52 M</td><!--celda normal con info-->
+            </tr>
+            <tr class="rowsTableSeasonsDetails"><!--fila-->
+              <td>2</td><!--celda normal con info-->
+              <td colspan="2">10</td><!--celda normal con info--><!--colspan indica la cantidad de columnas que se extiende la celda-->
+              <td class="dateTableSeasonsDetails">April 1st, 2012</td><!--celda normal con info-->
+              <td class="date2TableSeasosnsDetails">June 3rd, 2012</td><!--celda normal con info-->
+              <td>3.80 M</td><!--celda normal con info-->
+            </tr>
+            <tr class="rowsTableSeasonsDetails"><!--fila-->
+              <td>3</td><!--celda normal con info-->
+              <td colspan="2">10</td><!--celda normal con info--><!--colspan indica la cantidad de columnas que se extiende la celda-->
+              <td class="dateTableSeasonsDetails">March 31st, 2013</td><!--celda normal con info-->
+              <td class="date2TableSeasosnsDetails">June 9th, 2013</td><!--celda normal con info-->
+              <td>4.97 M</td><!--celda normal con info-->
+            </tr>
+            <tr class="rowsTableSeasonsDetails"><!--fila-->
+              <td>4</td><!--celda normal con info-->
+              <td colspan="2">10</td><!--celda normal con info--><!--colspan indica la cantidad de columnas que se extiende la celda-->
+              <td class="dateTableSeasonsDetails">April 6th, 2014</td><!--celda normal con info-->
+              <td class="date2TableSeasosnsDetails">June 15th, 2014</td><!--celda normal con info-->
+              <td>6.84 M</td><!--celda normal con info-->
+            </tr>
+            <tr class="rowsTableSeasonsDetails"><!--fila-->
+              <td>5</td><!--celda normal con info-->
+              <td colspan="2">10</td><!--celda normal con info--><!--colspan indica la cantidad de columnas que se extiende la celda-->
+              <td class="dateTableSeasonsDetails">April 12th, 2015</td><!--celda normal con info-->
+              <td class="date2TableSeasosnsDetails">June 14th, 2015</td><!--celda normal con info-->
+              <td>6.88 M</td><!--celda normal con info-->
+            </tr>
+            <tr class="rowsTableSeasonsDetails"><!--fila-->
+              <td>6</td><!--celda normal con info-->
+              <td colspan="2">10</td><!--celda normal con info--><!--colspan indica la cantidad de columnas que se extiende la celda-->
+              <td class="dateTableSeasonsDetails">April 24th, 2016</td><!--celda normal con info-->
+              <td class="date2TableSeasosnsDetails">June 26th, 2016</td><!--celda normal con info-->
+              <td>7.69 M</td><!--celda normal con info-->
+            </tr>
+            <tr class="rowsTableSeasonsDetails"><!--fila-->
+              <td>7</td><!--celda normal con info-->
+              <td colspan="2">7</td><!--celda normal con info--><!--colspan indica la cantidad de columnas que se extiende la celda-->
+              <td class="dateTableSeasonsDetails">July 16th, 2017</td><!--celda normal con info-->
+              <td class="date2TableSeasosnsDetails">August 27th, 2017</td><!--celda normal con info-->
+              <td>10.26 M</td><!--celda normal con info-->
+            </tr>
+            <tr class="rowsTableSeasonsDetails"><!--fila-->
+              <td>8</td><!--celda normal con info-->
+              <td colspan="2">6</td><!--celda normal con info--><!--colspan indica la cantidad de columnas que se extiende la celda-->
+              <td class="dateTableSeasonsDetails">April 14th, 2019</td><!--celda normal con info-->
+              <td class="date2TableSeasosnsDetails">May 19th, 2019</td><!--celda normal con info-->
+              <td>11.99 M</td><!--celda normal con info-->
+            </tr>
+          </table>
+        </div>
+      </center>
+    </section>
+    <br>
+    <br>
+    <!--BOTON QUE LLEVAL AL INICIO-->
+    <section class="buttonHomeSection" id="buttonHomeSection">
+      <a href="#home" class="buttonHome" style="text-decoration:none">
+        <span class="icon"></span>
+        <span class="text1">HOME</span>
+        <span class="text2">Go!</span>
+      </a>
+    </section>
     </main>
     <!--PIE DE PÁGINA-->
     <footer class="footer">
@@ -91,7 +201,7 @@
       <div class="socialNetworks">    
         <img src="Images/redes.png"/>
       </div> 
-      <label><b>|</b></label>
+      <label><b>|</b></label> 
       <div>
         <small>Made by Karla Paola Macedo and Ana María Valdes.</small> 
       </div>  
