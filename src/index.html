@@ -7,8 +7,9 @@
   </head>
   <body>
     <br>
+    <section id="home">
     <!--ENCABEZADO-->
-    <section id="headerHome">
+    <div id="headerHome">
       <center>
         <header>
             <img src="Images/fondo.jpg" class="chair">
@@ -16,18 +17,19 @@
             <img src="Images/lobo.png" class="wolf">
         </header>
       </center>
-    </section>
+    </div>
     <br>
     <!--CONTENIDO-->
     <main>
-      <section id="menuHome">
+      <div id="menuHome">
         <center>
           <!--BARRA MENÚ-->
           <div id="categoriesAudio" class="categoriesAudio">
             <nav class="categories">
-              <a class="itemCategories">Characteres</a>
-              <a class="itemCategories">Houses</a>
-              <a class="itemCategories">About</a>
+              <a href="#seccionCharacteresCards" class="itemCategories" style="text-decoration:none">Characteres</a>
+              <a class="itemCategories" style="text-decoration:none">Houses</a>
+              <a href="#aboutSection" class="itemCategories" style="text-decoration:none">About</a>
+              <a href="https://listen.hbo.com/GOT-podcast?c=2CiK1Eqaf-vRydktnT4N7Q&amp;h=d463267cea325346c" target="_blank" class="itemCategories" style="text-decoration:none">Podcast</a>
             </nav>          
             <div class="audio">
               <audio src="Images/Game of Thrones  Main Theme Extended HD_320kbps.mp3" id="player" autoplay loop preload="auto">Tu navegador no soporta el audio de esta página</audio>
@@ -38,10 +40,10 @@
             </div>
           </div>
         </center>
-      </section>
+      </div>
       <br>
       <!--SLIDER-->
-      <section id="slider" class="slider">
+      <div id="slider" class="slider">
         <!--Boton previo-->
         <div>
           <button id="arrowPrev" class="arrows"><img src="Images\botonizquierda.png"></button>
@@ -54,21 +56,23 @@
         <div>
           <button id="arrowNext" class="arrows"><img src="Images\botonderecha.png"></button>
         </div>
-      </section>
+      </div>
       <br>
       <!--BUSCADOR-->
       <center>
-        <section id="searcher" class="searcher">
+        <div id="searcher" class="searcher">
           <input type="search" placeholder="Search" list="COLOCAR EL DATA LIST DE LOS PERSONAJES" id="inputSearch" class="inputSearch" required/>
           <button id="buttonSearch" class="buttonSearch" size="40"><img src="Images/lupa.png"></button> 
-        </section>
-      </center>
-      <!--______________________________________________________________________________________-->
-      <dialog id="modal">
-        <div id="div-modal">
         </div>
-        <button id="btn-close-modal"><img  class="img-btn-close" src="Images/botonRegresar.png" disabled ></button>
+      </center>
+      <!--DIALOGO MODAL DE TARJETAS DE PERSONAJES DEL SLIDER-->
+      <dialog id="modal">
+        <div id="divModal"><!--contenedor de las tarjetas de personajes--></div>
+        <br>
+        <br>
+        <button id="btnCloseModal"><img class="imgBtnClose" src="Images/botonRegresar.png"></button><!--Boton para cerrar ventana modal-->
       </dialog>
+      </section>
       <!--TARJETAS PERSONAJES-->
       <section id="seccionCharacteresCards">
         <center>
