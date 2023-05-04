@@ -3,6 +3,7 @@
 html{
     box-sizing: border-box;
     background-color:rgba(30, 39, 62, 1) ;
+    background-image: url(./Images/fondomapa.png);
 }
 
 /*FORMATO CUERPO DE LA PÁGINA*/
@@ -165,16 +166,19 @@ header{
 } 
 
 .gallery img {
-    width: 15em;
-    height: 15em;
+    width: 180px;
+    height: 180px;
     min-height: 10vh;
     border-radius: 50%;
+    margin: 2%;
 }
 
 
 .gallery img:hover {filter: saturate(150%);
-    -webkit-transform:scale(0.8);transform:scale(0.8);
-    overflow:hidden;}
+    -webkit-transform:scale(1.3);
+    transform:scale(1.3);
+    overflow:hidden;
+}
 
 
 /*FORMATO SLIDER CON CAMBIOS DE TAMAÑOS DE PANTALLA PARA QUE SEA RESPONSIVO*/
@@ -249,10 +253,10 @@ header{
 }
 
 /*TARJETAS PERSONAJES SECCION MODAL*/
-.cardsCharacteresModal {
+.cardsCharactersModal {
     position: relative;/*top y bottom es desplazamiento vertical y left y right desplazamiento horizontal*/
-    width: 29.5em;
-    height: 30.5em;
+    width: 100%;
+    height: 100%;
     color: #2e2d31;
     background: #131313;
     overflow: hidden;/*Esconde los elementos que sobre salgan de su contenedor*/
@@ -264,14 +268,15 @@ header{
 }
 
 .imageCharacterModal {
-    width: 28rem;
-    height: 22rem;
+    width: 20rem;
+    height: 17rem;
     border-radius: 10%;
+    margin-bottom: 8em;
 }
   
 .cardTitleModal {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
   
 .cardContentModal {
@@ -306,11 +311,11 @@ header{
     box-shadow: inset 48px 48px #f2f2f2; /*sombra*/
 }
   
-.cardsCharacteresModal:hover .cardContentModal {/* :hover que haga algo cuando te posicionas encima sin dar click (aqui el estilo se aplica a cardcontent cuando se posiciona en la tarjeta)*/
+.cardsCharactersModal:hover .cardContentModal {/* :hover que haga algo cuando te posicionas encima sin dar click (aqui el estilo se aplica a cardcontent cuando se posiciona en la tarjeta)*/
     transform: translateY(0);/*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con translateY lo translada a lo largo del eje Y*/
 }
   
-.cardsCharacteresModal:hover .cardDescriptionModal {/* :hover que haga algo cuando te posicionas encima sin dar click (aqui el estilo se aplica a carddescription cuando se posiciona en la tarjeta)*/
+.cardsCharactersModal:hover .cardDescriptionModal {/* :hover que haga algo cuando te posicionas encima sin dar click (aqui el estilo se aplica a carddescription cuando se posiciona en la tarjeta)*/
     opacity: 1;
     transition-delay: .25s; /*cantidad de tiempo a esperar para que se de el cambio*/
 }  
@@ -352,7 +357,7 @@ header{
 
 /*---------------FORMATO TARJETAS PERSONAJES------------------*/
 /*TARJETAS PERSONAJES*/
-.seccionCharacteres {
+.seccionCharacters {
     width: 100%;
     height: 100%;
     padding: 0;
@@ -360,7 +365,7 @@ header{
     margin: 0;
 }
 
-.listCharacteres {
+.listCharacters {
     width: 95%;
     display: grid;
     justify-items: center;
@@ -368,7 +373,7 @@ header{
     gap: 4em; /*espacio entre las columnas*/
 }
 
-.cardsCharacteres {
+.cardsCharacters {
     position: relative;/*top y bottom es desplazamiento vertical y left y right desplazamiento horizontal*/
     width: 15.5em;
     height: 15.5em;
@@ -424,18 +429,33 @@ header{
     box-shadow: inset 48px 48px #f2f2f2; /*sombra*/
 }
   
-.cardsCharacteres:hover .cardContent {/* :hover que haga algo cuando te posicionas encima sin dar click (aqui el estilo se aplica a cardcontent cuando se posiciona en la tarjeta)*/
+.cardsCharacters:hover .cardContent {/* :hover que haga algo cuando te posicionas encima sin dar click (aqui el estilo se aplica a cardcontent cuando se posiciona en la tarjeta)*/
     transform: translateY(0);/*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con translateY lo translada a lo largo del eje Y*/
 }
   
-.cardsCharacteres:hover .cardDescription {/* :hover que haga algo cuando te posicionas encima sin dar click (aqui el estilo se aplica a carddescription cuando se posiciona en la tarjeta)*/
+.cardsCharacters:hover .cardDescription {/* :hover que haga algo cuando te posicionas encima sin dar click (aqui el estilo se aplica a carddescription cuando se posiciona en la tarjeta)*/
     opacity: 1;
     transition-delay: .25s; /*cantidad de tiempo a esperar para que se de el cambio*/
 }  
 
+/*------------FORMATO TARJETAS CASAS---------------*/
+.houseCard {
+    position: relative;/*top y bottom es desplazamiento vertical y left y right desplazamiento horizontal*/
+    box-sizing: border-box;
+    max-width: 100%;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background: #f2f2f2;
+    line-height: 1.2rem; /*espacio entre párrafos*/
+    padding: 2rem;
+    margin: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+
 /*------------FORMATO INFO SOBRE LA SERIE---------------*/
 .infoAbout {
-    position: relative;
+    position: relative;/*top y bottom es desplazamiento vertical y left y right desplazamiento horizontal*/
     box-sizing: border-box;
     max-width: 100%;
     font-size: 1.2em;
@@ -448,7 +468,7 @@ header{
 
 /*------------FORMATO TABLA DE DETALLES SOBRE LAS TEMPORADAS---------------*/
 .containerTableSeasonsDetails {
-    position: relative;
+    position: relative;/*top y bottom es desplazamiento vertical y left y right desplazamiento horizontal*/
     box-sizing: border-box;
     max-width: 100%;
     font-size: 1.2em;
