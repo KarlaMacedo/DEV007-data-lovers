@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css" /> 
   </head>
   <body>
+    <div id="background"></div>
     <br>
     <section id="home">
     <!--ENCABEZADO-->
@@ -26,9 +27,9 @@
           <!--BARRA MENÚ-->
           <div id="categoriesAudio" class="categoriesAudio">
             <nav class="categories">
-              <a href="#seccionCharacteresCards" class="itemCategories" style="text-decoration:none">Characteres</a>
-              <a class="itemCategories" style="text-decoration:none">Houses</a>
-              <a href="#aboutSection" class="itemCategories" style="text-decoration:none">About</a>
+              <a id="buttonSeccionCharactersCards" href="#seccionCharactersCards" class="itemCategories" style="text-decoration:none">Characters</a>
+              <a id="buttonHousesSection" href="#housesSection" class="itemCategories" style="text-decoration:none">Houses</a>
+              <a id="buttonAboutSection" href="#aboutSection" class="itemCategories" style="text-decoration:none">About</a>
               <a href="https://listen.hbo.com/GOT-podcast?c=2CiK1Eqaf-vRydktnT4N7Q&amp;h=d463267cea325346c" target="_blank" class="itemCategories" style="text-decoration:none">Podcast</a>
             </nav>          
             <div class="audio">
@@ -58,13 +59,6 @@
         </div>
       </div>
       <br>
-      <!--BUSCADOR-->
-      <center>
-        <div id="searcher" class="searcher">
-          <input type="search" placeholder="Search" list="COLOCAR EL DATA LIST DE LOS PERSONAJES" id="inputSearch" class="inputSearch" required/>
-          <button id="buttonSearch" class="buttonSearch" size="40"><img src="Images/lupa.png"></button> 
-        </div>
-      </center>
       <!--DIALOGO MODAL DE TARJETAS DE PERSONAJES DEL SLIDER-->
       <dialog id="modal">
         <div id="divModal"><!--contenedor de las tarjetas de personajes--></div>
@@ -72,16 +66,151 @@
         <br>
         <button id="btnCloseModal"><img class="imgBtnClose" src="Images/botonRegresar.png"></button><!--Boton para cerrar ventana modal-->
       </dialog>
+      <!--BUSCADOR-->
+      <center>
+        <div id="searcher" class="searcher">
+          <input type="search" placeholder="Search" list="COLOCAR EL DATA LIST DE LOS PERSONAJES" id="inputSearch" class="inputSearch" required/>
+          <button id="buttonSearch" class="buttonSearch" size="40"><img src="Images/lupa.png"></button> 
+        </div>
+      </center>
       </section>
       <!--TARJETAS PERSONAJES-->
-      <section id="seccionCharacteresCards">
+      <section id="seccionCharactersCards">
         <center>
-          <h2 class="titleCharacteresCards">Game of Thrones Characteres</h2> <!--Encabezado de la sección-->
+          <h2 class="titleCharactersCards">Game of Thrones Characters</h2> <!--Encabezado de la sección-->
         </center>
-        <ul class="listCharacteres" id="listCharacteres"><!--contenedor de las tarjetas de personajes--></ul>
+        <select id="alphabeticalOrder" class="alphabeticalOrder"><!--etiqueta de menú de opciones para ordenar alfabéticamente-->
+          <option disabled selected>Sort characters by:</option> <!--etiqueta para meter las opciones del menú. Disabled no permite que se seleccione esa opción. Selected hace que esa opción quede como placeHolder del menú de opciones-->
+          <option value="default">Default</option><!--Opción para  mostrar las tarjetas de la forma original-->
+          <option value="a-z">A-Z</option> <!--Opción para  mostrar las tarjetas alfabéticamente-->
+          <option value="z-a">Z-A</option><!--Opción para  mostrar las tarjetas contrario al orden alfabético-->
+        </select>
+        <select id="familyFilter" class="familyFilterr"><!--etiqueta de menú de opciones para filtrar por familia-->
+          <option disabled selected>Filter characters by houses:</option><!--etiqueta para meter las opciones del menú. Disabled no permite que se seleccione esa opción. Selected hace que esa opción quede como placeHolder del menú de opciones-->
+          <option value="default">Default</option><!--Opción para  mostrar las tarjetas de la forma original-->
+          <option value="Baratheon">Baratheon</option><!--Opción para filtrar las tarjetas por esa familia-->
+          <option value="Greyjoy">Greyjoy</option>
+          <option value="Lannister">Lannister</option>
+          <option value="Martell">Martell</option>
+          <option value="Stark">Stark</option>
+          <option value="Targaryen">Targaryen</option>
+          <option value="Tyrell">Tyrell</option>
+        </select>
+        <ul class="listCharacters" id="listCharacters"><!--contenedor de las tarjetas de personajes--></ul>
       </section>
       <br>
       <br>
+      <!--TARJETAS CASAS O FAMILIAS-->
+      <section id="housesSection" class="housesSection">
+        <center>
+          <h2 class="titleCharactersCards">Game of Thrones Houses</h2> <!--Encabezado de la sección-->
+        </center>
+        <div id="houseStark" class="houseCard">
+          <div>
+            <h3>House Stark</h3>
+            <ul>
+              <li class="nameCharacterHouses" value="Jon Snow">Jon Snow</li>
+              <li class="nameCharacterHouses">Arya Stark</li>
+              <li class="nameCharacterHouses">Sansa Stark</li>
+              <li class="nameCharacterHouses">Brandon Stark</li>
+              <li class="nameCharacterHouses">Ned Stark</li>
+              <li class="nameCharacterHouses">Catelyn Stark</li>
+              <li class="nameCharacterHouses">Rob Stark</li>
+              <li class="nameCharacterHouses">Rickon Stark</li>
+              <li class="nameCharacterHouses">Talisa Stark</li>
+              <li class="nameCharacterHouses">Hodor</li>
+            </ul>
+          </div>
+          <div>
+            <img src="./Images/casastark.jpg" alt="Stark family tree">
+          </div>
+        </div>
+        <div id="houseBaratheon" class="houseCard">
+          <div>
+            <h3>House Baratheon</h3>
+            <ul>
+              <li class="nameCharacterHouses">Robert Baratheon</li>
+              <li class="nameCharacterHouses">Joffrey Baratheon</li>
+              <li class="nameCharacterHouses">Stannis Baratheon</li>
+              <li class="nameCharacterHouses">Tommen Baratheon</li>
+              <li class="nameCharacterHouses">Gendry Baratheon</li>
+              <li class="nameCharacterHouses">Robert Baratheon</li>
+            </ul>
+          </div>
+          <div>
+            <img src="./Images/casabaratheon.jpg" alt="Baratheon family tree"></div>
+          </div>
+        <div id="houseGreyjoy" class="houseCard">
+          <div>
+            <h3>House Greyjoy</h3>
+            <ul>
+              <li class="nameCharacterHouses">Theon Greyjoy</li>
+              <li class="nameCharacterHouses">Yara Greyjoy</li>
+              <li class="nameCharacterHouses">Euron Greyjoy</li>
+            </ul>
+          </div>
+          <div>
+            <img src="./Images/casagreyjoy.jpg" alt="Greyjoy family tree"></div>
+          </div>
+        <div id="houseLannister" class="houseCard">
+          <div>
+            <h3>House Lannister</h3>
+            <ul>
+              <li class="nameCharacterHouses">Jamie Lannister</li>
+              <li class="nameCharacterHouses">Cersei Lannister</li>
+              <li class="nameCharacterHouses">Tyrion Lannister</li>
+              <li class="nameCharacterHouses">Tywin Lannister</li>
+            </ul>
+          </div>
+          <div> 
+            <img src="./Images/casalanister.jpg" alt="Lannister family tree">
+          </div> 
+        </div>
+        <div id="houseMartell" class="houseCard">
+          <div>
+            <h3>House Martell</h3>
+            <ul>
+              <li class="nameCharacterHouses">Ellaria Sand</li>
+              <li class="nameCharacterHouses">Oberyn Martell</li>
+            </ul>
+          </div>
+          <div>
+            <img src="./Images/casamartell.jpg" alt="Martell family tree">
+          </div>
+        </div>
+        <div id="houseTargaryen" class="houseCard">
+          <div>
+            <h3>House Targaryen</h3>
+            <ul>
+              <li class="nameCharacterHouses">Daenerys Targaryen</li>
+              <li class="nameCharacterHouses">Khal Drogo</li>
+              <li class="nameCharacterHouses">Viserys Targaryn</li>
+            </ul>
+          </div>
+          <div>
+            <img src="./Images/casatargaryen.jpg" alt="Targaryen family tree">
+          </div>
+        </div>
+        <div id="houseTyrell" class="houseCard">
+          <div>
+            <h3>House Tyrell</h3>
+            <ul>
+              <li class="nameCharacterHouses">Margaery Tyrell</li>
+              <li class="nameCharacterHouses">Olenna Tyrell</li>
+            </ul>
+          </div>
+          <div>
+            <img src="./Images/casatyrell.jpg" alt="Tyrell family tree">
+          </div>
+        </div>
+        <!--DIALOGO MODAL DE TARJETAS DE PERSONAJES DEL SLIDER-->
+        <dialog id="modalHouses">
+          <div id="divModalHouses"><!--contenedor de las tarjetas de personajes--></div>
+          <br>
+          <br>
+          <button id="btnCloseModalHouses"><img class="imgBtnCloseHouses" src="Images/botonRegresar.png"></button><!--Boton para cerrar ventana modal-->
+        </dialog>
+        </section>
       <!--INFORMACIÓN SOBRE LA SERIE-->
       <section id="aboutSection" class="aboutSection">
         <center>
@@ -96,7 +225,7 @@
             <p align="justify"><b>Genre:</b> Action, adventure, fantasy, serial drama and tragedy</p>
             <p align="justify"><b>Country of origin:</b> United States</p>
             <p align="justify"><b>Original lenguaje:</b> English</p>
-            <p align="justify"><b>Number of seasons:</b> 8 (<a href="#seasonsDetailsSection">details of the seasons</a>)</p>
+            <p align="justify"><b>Number of seasons:</b> 8 (<a id="buttonSeasonsDetailsSection" href="#seasonsDetailsSection">details of the seasons</a>)</p>
             <p align="justify"><b>Number of episodes:</b> 73</p>
           </article>
         </div>
@@ -185,7 +314,7 @@
     <br>
     <!--BOTON QUE LLEVAL AL INICIO-->
     <section class="buttonHomeSection" id="buttonHomeSection">
-      <a href="#home" class="buttonHome" style="text-decoration:none">
+      <a id="buttonHome" href="#home" class="buttonHome" style="text-decoration:none">
         <span class="icon"></span>
         <span class="text1">HOME</span>
         <span class="text2">Go!</span>
