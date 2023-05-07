@@ -1,7 +1,8 @@
 //------------------------IMPORTACION DE DATA--------------------------------------------------------------------
 import data from "./data/got/got.js"
 
-
+//------------------------IMPORTACION DE FUNCIONES-------------------------------------------------------------------
+import {findMeName, findMeTitle} from './data.js';
 
 //------------------------FUNCIONALIDAD PARA PONER IMAGENES EN HTML DESDE LA DATA PARA EL SLIDER--------------------------------------------------------------------
 function pushImgSlider (){ // Crea funcion que haga...
@@ -16,7 +17,7 @@ function pushImgSlider (){ // Crea funcion que haga...
 pushImgSlider()  //llamar a la funcion 
 
 //------------------------FUNCIONALIDAD SLIDER--------------------------------------------------------------------
-/*const gallery = document.querySelector(".gallery"); //crear variable que guarda la selección del elemento del html que contenga esa etiqueta. En este caso guarda la caja de la lista de las imágenes
+const gallery = document.querySelector(".gallery"); //crear variable que guarda la selección del elemento del html que contenga esa etiqueta. En este caso guarda la caja de la lista de las imágenes
 const images = document.querySelectorAll("li") //crear variable que guarda la selección de todos los elementos del html que contengan esa etiqueta. En este caso guarda todas las imágenes
 const width = 180; // ancho de las imágenes
 const count = 1; // conteo de las imágenes visibles
@@ -44,7 +45,7 @@ function next() { //Declaracion de la funcion que hara posible ver las imagenes 
   position = Math.max(position, (-width) * (images.length - count));//con Math.max() se establece el valor límite máximo a la posición, que es (la longitud total de la cinta que tiene todas las imagenes menos las imagenes visibles) por el ancho de cada imágen en negativo porque se esta desplazando a la derecha
   //FUNCIÓN REAL AL DARLE CLICK
   gallery.style.marginLeft = position + 'px'; //al estilo css (.style) del margen izquierdo (.marginLeft) de la lista de las imagenes (gallery) se le da (=) el tamaño (px) del valor que tiene en ese momento la posición
-}*/
+}
 
 //------------------------FUNCIÓN PARA CREAR TARJETA EN DIÁLOGO MODAL--------------------------------------------
 function openModal (index, data) {
@@ -95,31 +96,11 @@ const inputSearch = document.getElementById("inputSearch")
 const buttonSearch= document.getElementById("buttonSearch")
 const windowsModal= document.querySelector("#modal") 
 const btnClose= document.querySelector("#btnCloseModal")
-buttonSearch.addEventListener("click", ()=> findMeName(inputSearch.value))
-buttonSearch.addEventListener("click", ()=> findMeTitle(inputSearch.value))
-buttonSearch.addEventListener("click", ()=> findMeFamily(inputSearch.value))
+btnClose.addEventListener("click", ()=>{windowsModal.close()})
+buttonSearch.addEventListener("click", ()=> findMeName(inputSearch.value, data, openModal))
+buttonSearch.addEventListener("click", ()=> findMeTitle(inputSearch.value, data, openModal))
 buttonSearch.addEventListener("click", ()=> {windowsModal.showModal()})
 
-function findMeName (valor){
-  const fullName =  data.got.filter(personaje=>personaje.fullName=== valor ) 
-  const idCharacter = fullName[0].id
-  openModal(idCharacter, data.got)  
-  btnClose.addEventListener("click", ()=>{windowsModal.close()})
-}
-
-function findMeTitle (valor){
-  const title =  data.got.filter(personaje=>personaje.title=== valor )
-  const idCharacterTitle = title[0].id
-  openModal(idCharacterTitle, data.got)  
-  btnClose.addEventListener("click", ()=>{windowsModal.close()})
-}
-
-function findMeFamily (valor){
-  const title =  data.got.filter(personaje=>personaje.family=== valor )
-  const idCharacterTitle = title[0].id
-  openModal(idCharacterTitle, data.got)  
-  btnClose.addEventListener("click", ()=>{windowsModal.close()})
-}
   
 //------------------------FUNCIÓN CREAR TARJETAS DE LA SECCIÓN DE PERSONAJES--------------------------------------------
 function createCards (){ //Declaracion de la funcion que creará las tarjetas de personajes en automático con la info de la data
