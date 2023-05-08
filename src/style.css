@@ -133,25 +133,32 @@ header{
     filter: drop-shadow(0 2px 5px rgb(255, 255, 255));/*sombra imagen sin fondo*/
 }
 
-/*------------FORMATO DE TODO EL SLIDER (carrusel + botones)------------*/
+/*------------FORMATO DE TODO EL SLIDER (mensaje + carrusel + scroll)------------*/
+.sliderMessage {
+    color: #bbb;
+    font-size: 2em;
+    padding: 0em;
+    background-color: #2e2d31;
+
+}
+
 .slider{
     width: 100%;
     max-width: 120em;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center
+    margin:0
 }
 
 /*FORMATO CARRUSEL*/
 .carousel {
-    width: 85%;
-    max-width: 120em;
+    width: 95%;
     background-color: transparent;
     overflow: hidden; /*Esconde los elementos que sobre salgan de su contenedor*/
     display: flex;
     flex-direction: row;
+    overflow-x: scroll;
+    margin: 30px;
 }
+
 
 /*FORMATO LISTA DE IMAGENES DEL SLIDER*/
 .gallery {
@@ -162,6 +169,8 @@ header{
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    padding: 2.5%;
+    margin: 0;
     list-style: none; /*quita estilo de lista (viñetas)*/
 } 
 
@@ -170,7 +179,7 @@ header{
     height: 180px;
     min-height: 10vh;
     border-radius: 50%;
-    margin: 2%;
+    padding: 8px;
 }
 
 
@@ -180,30 +189,7 @@ header{
     overflow:hidden;
 }
 
-
-/*FORMATO SLIDER CON CAMBIOS DE TAMAÑOS DE PANTALLA PARA QUE SEA RESPONSIVO*/
-@media (max-width: 1000px) { /*aplica el estilo indicado cuando se cumple la condición*/
-    .gallery img {
-        width: 180px;
-        height: 180px;
-    }
-}
-
-@media (max-width: 800px) {/*aplica el estilo indicado cuando se cumple la condición*/
-    .gallery img {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-@media (max-width: 600px) {/*aplica el estilo indicado cuando se cumple la condición*/
-    .gallery img {
-        width: 130px;
-        height: 130px;
-    }
-}
-
-/*FORMATO BOTONES DEL SLIDER*/
+/*FORMATO BOTONES DEL SLIDER
 .arrows {
     background-color: transparent;
     border: transparent;
@@ -216,9 +202,166 @@ header{
     height: 100%;
 }
 
-.arrows img:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*/
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));/*sombra imagen sin fondo*/
+.arrows img:hover {
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+}*/
+
+/*FORMATO SLIDER CON CAMBIOS DE TAMAÑOS DE PANTALLA PARA QUE SEA RESPONSIVO*/
+@media (max-width: 800px) {/*aplica el estilo indicado cuando se cumple la condición*/
+    .gallery img {
+        width: 200px;
+        height: 200px;
+    }
 }
+
+@media (max-width: 400px) {/*aplica el estilo indicado cuando se cumple la condición*/
+    header {
+        background-color: rgba(3, 3, 3, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 5%;
+        width: 100%;
+        height: 48em;
+        margin: 0;
+        align-items: center;
+    }
+    .chair {
+        width: 32%;
+        align-self: center;
+    }
+    .logo {
+        width: 58%;
+    }
+    .wolf {
+    width: 26%;
+    align-self: center;
+    }
+    .gallery img {
+        width: 300px;
+        height: 300px;
+    }
+    .itemCategories {
+        color: #bbb;
+        position: relative;
+        font-size: 2em;
+        font-weight: bold;
+        border: transparent;
+        padding: 0.5em;
+        border-radius: 0.2rem;
+    }
+    .buttonsAudio {
+        background-color: transparent;
+        border: transparent;
+        width: 14%;
+    }
+    .sliderMessage {
+        color: #bbb;
+        font-size: 3em;
+        padding: 0em;
+        background-color: #2e2d31;
+    }
+    .inputSearch {
+        border: transparent;
+        font-size: 2.5em;
+        padding: 0.1em;
+        width: 17em;
+        background-color: transparent;
+        text-align: center;
+    }
+    .buttonSearch img {
+        width: 100%;
+    }
+    .socialNetworks img {
+        width: 5em;
+    }
+    .footer {
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        background: transparent;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        color: aliceblue;
+        font-size: 1.5em;
+    }
+    h2 {
+        border: 0;
+        width: 100%;
+        background-color: black;
+        font-size: 3rem;
+        color: white;
+    }
+    .containerTableSeasonsDetails {
+        position: relative;
+        box-sizing: border-box;
+        max-width: 100%;
+        font-size: 2em;
+        border-radius: 10px;
+        background: #f2f2f2;
+        line-height: 4rem;
+        padding: 1rem;
+        margin: 1%;
+    }
+    .buttonHome {
+        position: fixed;
+        right: 40px;
+        bottom: 90px;
+        width: 100px;
+        height: 33px;
+        border-radius: 30px;
+        background-color: white;
+        overflow: hidden;
+    }
+}
+
+/*FORMATO SCROLL DEL SLIDER*/
+.carousel::-webkit-scrollbar {
+    height: 1.5em;
+  }
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+.carousel::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 50px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.carousel::-webkit-scrollbar-thumb:hover {
+    background: rgb(119, 118, 118);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.carousel::-webkit-scrollbar-thumb:active {
+    background-color: white;
+    border-radius: 50px;
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del track */
+.carousel::-webkit-scrollbar-track {
+    background: transparent;
+    border: solid 1px rgb(119, 118, 118); 
+    border-radius: 50px;
+}
+
+/* Cambiamos el fondo cuando esté en hover */
+.carousel::-webkit-scrollbar-track:hover {
+  background: transparent;
+    border: solid 3px #f2f2f2; 
+    border-radius: 4px;
+    border-radius: 50px;
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.carousel::-webkit-scrollbar-track:active {
+    background: transparent;
+      border: solid 1px black; 
+      border-radius: 4px;
+      border-radius: 50px;
+  }
 
 /*---------------FORMATO DIALOGO MODAL SLIDER---------------*/
 #modal{
@@ -229,6 +372,14 @@ header{
 
 #modal::backdrop{
     background-color: rgba(0, 0, 0, 0.9);
+}
+
+#divModal{
+    width: 95%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: 4em;
 }
 
 .imgBtnClose{
@@ -355,6 +506,14 @@ header{
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7)); /*sombra imagen sin fondo*/
 }
 
+.findFamily{
+    width: 95%;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /*define el tamaño de las columnas del grid. Repeat dice que se repitan las columnas con un autollenado según el tamaño de la pantalla*/
+    gap: 4em; /*espacio entre las columnas*/   
+}
+
 /*---------------FORMATO TARJETAS PERSONAJES------------------*/
 /*TARJETAS PERSONAJES*/
 .seccionCharacters {
@@ -370,7 +529,7 @@ header{
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /*define el tamaño de las columnas del grid. Repeat dice que se repitan las columnas con un autollenado según el tamaño de la pantalla*/
-    gap: 4em; /*espacio entre las columnas*/
+    gap: 4em; /*espacio entre las columnas*/   
 }
 
 .cardsCharacters {

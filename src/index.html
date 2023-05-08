@@ -45,20 +45,20 @@
       <br>
       <!--SLIDER-->
       <div id="slider" class="slider">
-        <!--Boton previo-->
+        <!--Boton previo
         <div>
           <button id="arrowPrev" class="arrows"><img src="Images\botonizquierda.png"></button>
-        </div>
+        </div>-->
         <div id= "carousel" class="carousel">
           <!--Lista de imagenes-->
           <ul class="gallery"><!--Aqui van las imagenes del slider agregadar a travez de la funcion pushImgSlider del main.js--></ul>
         </div>
-        <!--Boton siguiente-->
+        <!--Boton siguiente
         <div>
           <button id="arrowNext" class="arrows"><img src="Images\botonderecha.png"></button>
         </div>
       </div>
-      <br>
+      <br>-->
       <!--DIALOGO MODAL DE TARJETAS DE PERSONAJES DEL SLIDER-->
       <dialog id="modal">
         <div id="divModal"><!--contenedor de las tarjetas de personajes--></div>
@@ -69,23 +69,13 @@
       <!--BUSCADOR-->
       <center>
         <div id="searcher" class="searcher">
-          <input type="search" placeholder="Search" list="COLOCAR EL DATA LIST DE LOS PERSONAJES" id="inputSearch" class="inputSearch" required/>
+          <input type="search" placeholder="Search" list="datalistSearcher" id="inputSearch" class="inputSearch" required/>
           <button id="buttonSearch" class="buttonSearch" size="40"><img src="Images/lupa.png"></button> 
         </div>
       </center>
-      <!--___________________________________________________________________________________________________-->
-      <datalist id="COLOCAR EL DATA LIST DE LOS PERSONAJES">
-      </datalist>
-      </div>
+      <!--OPCIONES DEL BUSCADOR-->
+      <datalist id="datalistSearcher"></datalist>
       </section>
-      <!--___________________________________________________________________________________________________-->
-      <section>
-        <center>
-        <h2 id="titleFamilySection">Family Members</h2>
-        </center>
-        <p id="findFamily"></p>
-      </section>
-      <!--___________________________________________________________________________________________________-->
       <!--TARJETAS PERSONAJES-->
       <section id="seccionCharactersCards">
         <center>
@@ -93,7 +83,6 @@
         </center>
         <select id="alphabeticalOrder" class="alphabeticalOrder"><!--etiqueta de menú de opciones para ordenar alfabéticamente-->
           <option disabled selected>Sort characters by:</option> <!--etiqueta para meter las opciones del menú. Disabled no permite que se seleccione esa opción. Selected hace que esa opción quede como placeHolder del menú de opciones-->
-          <option value="default">Default</option><!--Opción para  mostrar las tarjetas de la forma original-->
           <option value="a-z">A-Z</option> <!--Opción para  mostrar las tarjetas alfabéticamente-->
           <option value="z-a">Z-A</option><!--Opción para  mostrar las tarjetas contrario al orden alfabético-->
         </select>
