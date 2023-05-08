@@ -1,27 +1,47 @@
-// estas funciones son de ejemplo
+//------------------------------- FUNCIÓN EJEMPLO  LABORATORIA-------------------------------------------
 
 export const example = () => {
   return 'example';
 };
 
-export const anotherExample = () => {
-  return 'OMG';
-};
-
-
-//AQUI IRAN LAS FUNCIONES DE SORTDATA (ordenar por nacimiento tipo línea del tiempo) Y FILTERDATA (filtrar por familia para las tarjetas de familia)
-
-
-// BUSCAR POR NOMBRE EN EL SEARCHER
-export const findMeName = (valor, data, functio) => {
-  const fullName =  data.got.filter(personaje=>personaje.fullName=== valor ) 
+//---------------------- BUSCAR POR NOMBRE EN EL SEARCHER
+export const findMeName = (userSearch, data, createCardsFunction) => {
+  const fullName =  data.got.filter(character=>character.fullName=== userSearch ) 
   const idCharacter = fullName[0].id
-  functio (idCharacter, data.got)
+  createCardsFunction (idCharacter, data.got)
 }
 
-// BUSCAR POR NOMBRE EN EL SEARCHER
+//---------------------- BUSCAR POR TÍTULO EN EL SEARCHER
 export const findMeTitle = (valor, data, functio) => {
   const title =  data.got.filter(personaje=>personaje.title=== valor )
   const idCharacterTitle = title[0].id
   functio (idCharacterTitle, data.got) 
+}
+
+//---------------------- BUSCAR POR FAMILIA EN EL SEARCHER
+export const findFamily = (characters, userSearch) => {
+  //lo que escriba el usuario en el html se filtra y se tranforma de mayuscula/minuscula 
+  const search = characters.filter(members =>(members.family.toLowerCase().includes(userSearch.toLowerCase()))) 
+  return search;
+}
+
+//---------------------- ORDENAR ALFABÉTICAMENTE LAS TARJETAS DE characterS CON EL SELECTOR
+export const sortCharacters = (characters) => { 
+  //con esta función sort nos ordena el array y lo devuelve ordenado 
+  const dataorder = characters.sort((a, b) => {
+    if (a.fullName < b.fullName) {
+      return -1;
+    }
+    if (a.fullName > b.fullName) {
+      return 1;
+    }
+    return 0;
+  });
+  return dataorder; 
+};
+
+//---------------------- FILTRAR POR FAMILIA LAS TARJETAS DE characterS CON EL SELECTOR
+export const houseFilterSelector = (characters, house) => { 
+  const filterResult = characters.filter(members => members.family === house); 
+  return filterResult; 
 }
