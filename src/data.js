@@ -40,8 +40,14 @@ export const sortCharacters = (characters) => {
   return dataorder; 
 };
 
-//---------------------- FILTRAR POR FAMILIA LAS TARJETAS DE characterS CON EL SELECTOR
+//---------------------- FILTRAR POR FAMILIA LAS TARJETAS DE CHARACTERS CON EL SELECTOR
 export const houseFilterSelector = (characters, house) => { 
   const filterResult = characters.filter(members => members.family === house); 
   return filterResult; 
+}
+
+//---------------------- CONTAR MIEMBROS DE LA FAMILIA
+export const familyMembersCounter = (members) => { 
+  const membersCounter = members.length; 
+  return membersCounter; 
 }

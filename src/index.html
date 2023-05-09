@@ -43,6 +43,10 @@
         </center>
       </div>
       <br>
+      <br>
+      <center>
+        <label id="sliderMessage" class="sliderMessage">For more details click on character´s picture</label>
+      </center>
       <!--SLIDER-->
       <div id="slider" class="slider">
         <!--Boton previo
@@ -81,31 +85,41 @@
         <center>
           <h2 id="titleCharactersCards">Game of Thrones Characters</h2> <!--Encabezado de la sección-->
         </center>
-        <select id="alphabeticalOrder" class="alphabeticalOrder"><!--etiqueta de menú de opciones para ordenar alfabéticamente-->
-          <option disabled selected>Sort characters by:</option> <!--etiqueta para meter las opciones del menú. Disabled no permite que se seleccione esa opción. Selected hace que esa opción quede como placeHolder del menú de opciones-->
-          <option value="a-z">A-Z</option> <!--Opción para  mostrar las tarjetas alfabéticamente-->
-          <option value="z-a">Z-A</option><!--Opción para  mostrar las tarjetas contrario al orden alfabético-->
-        </select>
-        <select id="familyFilter" class="familyFilterr"><!--etiqueta de menú de opciones para filtrar por familia-->
-          <option disabled selected>Filter characters by houses:</option><!--etiqueta para meter las opciones del menú. Disabled no permite que se seleccione esa opción. Selected hace que esa opción quede como placeHolder del menú de opciones-->
-          <option value="default">Default</option><!--Opción para  mostrar las tarjetas de la forma original-->
-          <option value="Baratheon">Baratheon</option><!--Opción para filtrar las tarjetas por esa familia-->
-          <option value="Greyjoy">Greyjoy</option>
-          <option value="Lannister">Lannister</option>
-          <option value="Martell">Martell</option>
-          <option value="Stark">Stark</option>
-          <option value="Targaryen">Targaryen</option>
-          <option value="Tyrell">Tyrell</option>
-        </select>
+        <div class="selects">
+          <div class="box">
+            <select id="alphabeticalOrder" class="alphabeticalOrder"><!--etiqueta de menú de opciones para ordenar alfabéticamente-->
+              <option disabled selected>Sort characters by:</option> <!--etiqueta para meter las opciones del menú. Disabled no permite que se seleccione esa opción. Selected hace que esa opción quede como placeHolder del menú de opciones-->
+              <option value="a-z">A-Z</option> <!--Opción para  mostrar las tarjetas alfabéticamente-->
+              <option value="z-a">Z-A</option><!--Opción para  mostrar las tarjetas contrario al orden alfabético-->
+            </select>
+          </div>
+          <div class="box">
+            <select id="familyFilter" class="familyFilterr"><!--etiqueta de menú de opciones para filtrar por familia-->
+              <option disabled selected>Filter characters by houses:</option><!--etiqueta para meter las opciones del menú. Disabled no permite que se seleccione esa opción. Selected hace que esa opción quede como placeHolder del menú de opciones-->
+              <option value="default">Default</option><!--Opción para  mostrar las tarjetas de la forma original-->
+              <option value="Baratheon">Baratheon</option><!--Opción para filtrar las tarjetas por esa familia-->
+              <option value="Greyjoy">Greyjoy</option>
+              <option value="Lannister">Lannister</option>
+              <option value="Martell">Martell</option>
+              <option value="Stark">Stark</option>
+              <option value="Targaryen">Targaryen</option>
+              <option value="Tyrell">Tyrell</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <br>
+        <center>
+          <label class="labelFamilyCounter" id="labelCharactersCards"></label>
+        </center>
         <ul class="listCharacters" id="listCharacters"><!--contenedor de las tarjetas de personajes--></ul>
       </section>
       <br>
       <br>
       <!--TARJETAS CASAS O FAMILIAS-->
+      <center>
       <section id="housesSection" class="housesSection">
-        <center>
-          <h2 id="titleCharactersCards">Game of Thrones Houses</h2> <!--Encabezado de la sección-->
-        </center>
+        <h2 id="titleCharactersCards">Game of Thrones Houses</h2> <!--Encabezado de la sección-->
         <div id="houseStark" class="houseCard">
           <div>
             <h3>House Stark</h3>
@@ -212,6 +226,7 @@
           <button id="btnCloseModalHouses"><img class="imgBtnCloseHouses" src="Images/botonRegresar.png"></button><!--Boton para cerrar ventana modal-->
         </dialog>
         </section>
+      </center>
       <!--INFORMACIÓN SOBRE LA SERIE-->
       <section id="aboutSection" class="aboutSection">
         <center>

@@ -2,7 +2,7 @@
 import data from "./data/got/got.js"
 
 //------------------------IMPORTACION DE FUNCIONES-------------------------------------------------------------------
-import {findMeName, findMeTitle, findFamily, sortCharacters, houseFilterSelector} from './data.js';
+import {findMeName, findMeTitle, findFamily, sortCharacters, houseFilterSelector, familyMembersCounter} from './data.js';
 
 //------------------------FUNCIONALIDAD PARA PONER IMAGENES EN HTML DESDE LA DATA PARA EL SLIDER--------------------------------------------------------------------
 function pushImgSlider (){ // Crea funcion que haga...
@@ -138,7 +138,6 @@ buttonSearch.addEventListener("click", () => {
   createCardsResults(arrBuscador);
 });
 
-
 //buttonSearch.addEventListener("click", ()=> findMe(inputSearch.value))
 
 /*function findMe (valor){
@@ -200,9 +199,11 @@ alphabeticalSelector.addEventListener("change", () => {
 
 //------------------------FUNCIONALIDAD SELECTOR FILTRO FAMILIA-----------------------------------------
 const housesSelector = document.getElementById("familyFilter");
+const labelSelector = document.getElementById("labelCharactersCards");
 housesSelector.addEventListener("change", () => {
   const selectedHouse = housesSelector.value;
   const houseFilterResult = houseFilterSelector(data.got, selectedHouse);
+  labelSelector.innerHTML ="This house has " + familyMembersCounter(houseFilterResult) + " members";
   containerCards.innerHTML ="";
   createCards(houseFilterResult);
   if (selectedHouse === "default") {
