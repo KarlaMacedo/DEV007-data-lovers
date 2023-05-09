@@ -66,12 +66,14 @@ function openModal (index, data) {
 
 //------------------------FUNCIÓN PARA ABRIR TARJETAS DEL DIÁLOGO MODAL AL APRETAR IMAGEN SLIDER--------------------------------------------
 function hear(){//creamos la función llamada escuhar, porque está escuchando las acciones del usuario en el slider
+  const audioCarousel = document.getElementById("sonidoCarousel")
   const windowsModal= document.querySelector("#modal") //variable que almacena la etiqueta diálogo modal (ventanita que se abre al dar click en cada imagen del slider)
   const btnClose= document.querySelector("#btnCloseModal")//variable que almacena el boton de cerrar la ventana modal
   const imgCarousel=document.querySelectorAll("#imgsCarousel")//variable que almacena todas las imagenes del carrusel para después darles función al seleccionarlas
   for(let i=0; i<imgCarousel.length; i++){//For que recorre la cantidad de imagenes del carrusel
     imgCarousel[i].addEventListener("click", ()=>{windowsModal.showModal()})//escucha si la imagen está siendo seleccionada y si sí, abre la ventana modal
     imgCarousel[i].addEventListener("click", ()=>{openModal(i, data.got)})//escuha si la imagen está siendo seleccionada y si sí, llama a la función "openModal" y le entrega como argumento el índice de la imagen seleccionada
+    imgCarousel[i].addEventListener("mouseover", ()=> audioCarousel.play())
   }
   btnClose.addEventListener("click", ()=>{windowsModal.close()})//escucha el evento de click del boton cerrar, para cerrar la ventana modal
 }
