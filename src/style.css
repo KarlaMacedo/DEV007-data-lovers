@@ -821,3 +821,5 @@ table {
 .socialNetworks img {
     width: 5em;
 }
+
+.socialNetworks:hover img {-webkit-transform:scale(2.0);transform:scale(2.0);}
