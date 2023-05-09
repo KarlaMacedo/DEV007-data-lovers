@@ -190,7 +190,7 @@ createCards(data.got)
 const alphabeticalSelector = document.getElementById("alphabeticalOrder");
 alphabeticalSelector.addEventListener("change", () => {
   const opciones = alphabeticalSelector.value; //obtenemos el valor del select
-  const newDataOrder = sortCharacters(data.got);
+  const newDataOrder = sortCharacters([...data.got]);
   containerCards.innerHTML ="";
   if (opciones === "a-z") {
     createCards(newDataOrder);
