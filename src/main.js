@@ -16,37 +16,6 @@ function pushImgSlider (){ // Crea funcion que haga...
 }
 pushImgSlider()  //llamar a la funcion 
 
-//------------------------FUNCIONALIDAD SLIDER--------------------------------------------------------------------
-/*const gallery = document.querySelector(".gallery"); //crear variable que guarda la selección del elemento del html que contenga esa etiqueta. En este caso guarda la caja de la lista de las imágenes
-const images = document.querySelectorAll("li") //crear variable que guarda la selección de todos los elementos del html que contengan esa etiqueta. En este caso guarda todas las imágenes
-const width = 180; // ancho de las imágenes
-const count = 1; // conteo de las imágenes visibles
-let position = 0; // posición del desplazamiento del carrete
-const botonPre = document.querySelector("#arrowPrev")  // crear variable que traiga a travez del ID la informacion del boton Previus
-const botonNext = document.querySelector("#arrowNext") // crear variable que traiga a travez del ID la informacion del boton Next
-
-botonPre.addEventListener("click", previus) // A la variable BotonPre se le realizara un escuchador de "click" del boton Previus
-//FUNCIÓN DEL BOTÓN PREVIO 
-function previus() { //Declaracion de la funcion que hara posible ver las imagenes que estan mas a la izquierda.
-  //DESPLAZAMIENTO IZQUIERDO
-  position += (width * count);//a la posición al sumarle indica desplazamiento izquierdo de la galería una distancia equivalente a la cantidad de imágenes a mostrar por el tamaño del ancho de éstas
-  //TOPE DEL VALOR DE LA POSICIÓN
-  position = Math.min(position, 0);//con Math.min() se establece como valor límite mínimo de 0 a la posición, para no podernos mover demasiado a la izquierda,porque se acaban las imágenes
-  //FUNCIÓN REAL AL DARLE CLICK
-  gallery.style.marginLeft = position + 'px'; //al estilo css (.style) del margen izquierdo (.marginLeft) de la lista de las imagenes (gallery) se le da (=) el tamaño (px) del valor que tiene en ese momento la posición
-}
-
-botonNext.addEventListener("click", next) // A la variable BotonNext se le realizara un escuchador de "click" del boton Next
-//FUNCION DEL BOTON SIGUIENTE
-function next() { //Declaracion de la funcion que hara posible ver las imagenes que estan mas a la derecha.
-//DESPLAZAMIENTO DERECHO
-  position -= (width * count); //a la posición al restarle indica desplazamiento derecho de la galería una distancia equivalente a la cantidad de imágenes a mostrar por el tamaño del ancho de éstas
-  //TOPE DEL VALOR DE LA POSICIÓN
-  position = Math.max(position, (-width) * (images.length - count));//con Math.max() se establece el valor límite máximo a la posición, que es (la longitud total de la cinta que tiene todas las imagenes menos las imagenes visibles) por el ancho de cada imágen en negativo porque se esta desplazando a la derecha
-  //FUNCIÓN REAL AL DARLE CLICK
-  gallery.style.marginLeft = position + 'px'; //al estilo css (.style) del margen izquierdo (.marginLeft) de la lista de las imagenes (gallery) se le da (=) el tamaño (px) del valor que tiene en ese momento la posición
-}*/
-
 //------------------------FUNCIÓN PARA CREAR TARJETA EN DIÁLOGO MODAL--------------------------------------------
 function openModal (index, data) {
   const divModal= document.querySelector("#divModal");//variable que almacena el contenedor que va a tener a la tarjeta del personaje
@@ -66,26 +35,26 @@ function openModal (index, data) {
 
 //------------------------FUNCIÓN PARA ABRIR TARJETAS DEL DIÁLOGO MODAL AL APRETAR IMAGEN SLIDER--------------------------------------------
 function hear(){//creamos la función llamada escuhar, porque está escuchando las acciones del usuario en el slider
-  const audioCarousel = document.getElementById("sonidoCarousel")
+  const audioCarousel = document.getElementById("sonidoCarousel") //crea una cosntante que almacena la etiqueta de audio del carrusel que está en el HTML
   const windowsModal= document.querySelector("#modal") //variable que almacena la etiqueta diálogo modal (ventanita que se abre al dar click en cada imagen del slider)
   const btnClose= document.querySelector("#btnCloseModal")//variable que almacena el boton de cerrar la ventana modal
   const imgCarousel=document.querySelectorAll("#imgsCarousel")//variable que almacena todas las imagenes del carrusel para después darles función al seleccionarlas
   for(let i=0; i<imgCarousel.length; i++){//For que recorre la cantidad de imagenes del carrusel
     imgCarousel[i].addEventListener("click", ()=>{windowsModal.showModal()})//escucha si la imagen está siendo seleccionada y si sí, abre la ventana modal
     imgCarousel[i].addEventListener("click", ()=>{openModal(i, data.got)})//escuha si la imagen está siendo seleccionada y si sí, llama a la función "openModal" y le entrega como argumento el índice de la imagen seleccionada
-    imgCarousel[i].addEventListener("mouseover", ()=> audioCarousel.play())
+    imgCarousel[i].addEventListener("mouseover", ()=> audioCarousel.play()) //escucha el evento que cuando se coloque encima de las imágenes del carrusel el audio se reproduzca
   }
   btnClose.addEventListener("click", ()=>{windowsModal.close()})//escucha el evento de click del boton cerrar, para cerrar la ventana modal
 }
 hear()//llamar a la función
 
 //------------------------FUNCIÓN CREAR TARJETAS DE MIEMBROS EN EL DIÁLOGO MODAL AL BUSCAR LA FAMILIA--------------------------------------------
-const containerCardsResults= document.getElementById('divModal')
-const createCardsResults = (arrayCharacters) => {
-  arrayCharacters.forEach((arrayCharacters) => {
-    const card = document.createElement('li');
-    card.setAttribute('class', 'cardsCharacters');
-    card.innerHTML +=
+const containerCardsResults= document.getElementById('divModal')//crea una constante que almacena el contenedor de las tarjetas de personajes que serán creadas con 
+const createCardsResults = (arrayCharacters) => { //constante que tiene la función de crear tarjetas, se le da el parámetro del array que contiene a los personajes con sus propiedades
+  arrayCharacters.forEach((arrayCharacters) => { //recorre cada elemento del array para...
+    const card = document.createElement('li'); //crear una variable que almacene la creación de una etiqueta li en el html
+    card.setAttribute('class', 'cardsCharacters'); //a esa etiqueta le da una clase
+    card.innerHTML += // dentro de esa etiqueta concatena su contenido
     `<div class="containerImg">                          
     <img src="${arrayCharacters.imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
   </div>
@@ -97,46 +66,45 @@ const createCardsResults = (arrayCharacters) => {
       <p class="cardDescription"><b>Family:</b> ${arrayCharacters.family} </p>
       <p class="cardDescription"><b>Born:</b> ${arrayCharacters.born} </p>
   </div>`
-    containerCardsResults.insertAdjacentElement("beforeend", card);
+    containerCardsResults.insertAdjacentElement("beforeend", card); // inserta cada creación de tarjeta después de la otra dentro del contenedor de las tarjetas
   });
 }
 
 //------------------------FUNCIONALIDAD BUSCADOR DE TARJETAS PERSONAJES AL BUSCAR EL NOMBRE, TÍTULO O FAMILIA--------------------------------------------
-function dataListSearch() {
-  const labelDataList = document.querySelector("datalist");
-  const dataList = []
-  for (let j = 0; j < data.got.length; j++) {
-    if (dataList.indexOf(`${data.got[j].family}`) >= 0) {
-      dataList.push(data.got[j].fullName);
-      dataList.push(data.got[j].title)
-    } else {
-      dataList.push(data.got[j].fullName);
-      dataList.push(data.got[j].title)
-      dataList.push(data.got[j].family)
+function dataListSearch() { //crear función que creará la datalist del buscador (opciones del buscador)
+  const labelDataList = document.querySelector("datalist"); //variable que almacena la etiqueta datalist
+  const dataList = [] // crea un array vacio que luego contendra la lista de las opciones creadas desde la data
+  for (let j = 0; j < data.got.length; j++) { //for que recorre la data ....
+    if (dataList.indexOf(`${data.got[j].family}`) >= 0) { // if que revisa que no se repita el mismo nombre de familia y si se repite no lo crea
+      dataList.push(data.got[j].fullName); // pone en el arreglo dataList cada nombre completo de personaje
+      dataList.push(data.got[j].title) // pone en el arreglo dataList cadatitulo de personaje
+    } else {  // sino existe aun el nombre de familia, lo crea
+      dataList.push(data.got[j].fullName);  // pone en el arreglo dataList cada nombre completo de personaje
+      dataList.push(data.got[j].title) // pone en el arreglo dataList cadatitulo de personaje
+      dataList.push(data.got[j].family) // pone en el array dataList el nombre de la familia
     }
   }
-  for (let k = 0; k < dataList.length; k++) {
-    labelDataList.innerHTML += `<option value="${dataList[k]}"></option> `
+  for (let k = 0; k < dataList.length; k++) {   // recorre el array dataList creado y .....
+    labelDataList.innerHTML += `<option value="${dataList[k]}"></option> ` /// le añade la etiqueta opcion por cada elemento del array dataList
   }
 }
 dataListSearch()
 
-const inputSearch = document.getElementById("inputSearch")
-const buttonSearch= document.getElementById("buttonSearch")
-const windowsModal= document.querySelector("#modal") 
-const btnClose= document.querySelector("#btnCloseModal")
+const inputSearch = document.getElementById("inputSearch") //variable que almacena el input del buscador
+const buttonSearch= document.getElementById("buttonSearch") // variable que almacena el boton que le da funcionalidad al boton (lupa)
+const windowsModal= document.querySelector("#modal") // variable que almacena el contenedor modal donde se crearan las tarjeta del resultado de busqueda.
+const btnClose= document.querySelector("#btnCloseModal") // cariable que almacena el boton para cerrar el modal
 
-buttonSearch.addEventListener("click", ()=> {
-  windowsModal.showModal()
+buttonSearch.addEventListener("click", ()=> { // escucha el evento de click del boton de buscar para que ....
+  windowsModal.showModal() // se abra el modal
 })
-btnClose.addEventListener("click", ()=>{windowsModal.close()})
+btnClose.addEventListener("click", ()=>{windowsModal.close()}) //escucha el evento de click al boton de cerrar el modal y lo cierra si es clickeado
 
-buttonSearch.addEventListener("click", ()=> findMeName(inputSearch.value, data, openModal))
-buttonSearch.addEventListener("click", ()=> findMeTitle(inputSearch.value, data, openModal))
+buttonSearch.addEventListener("click", ()=> findMeName(inputSearch.value, data, openModal)) //escucha el evento de click del boton buscar y manda a llamar la funcion de encontrar el nombre que ingresamos en el input buscador y crea la tarjeta de ese personaje
+buttonSearch.addEventListener("click", ()=> findMeTitle(inputSearch.value, data, openModal))//escucha el evento de click del boton buscar y manda a llamar la funcion de encontrar el titulo que ingresamos en el input buscador y crea la tarjeta del personaje que tenga ese titulo
 
-buttonSearch.addEventListener("click", () => {
-  const arrBuscador = findFamily(data.got, inputSearch.value);
-  containerCardsResults.innerHTML = "";
+buttonSearch.addEventListener("click", () => { //escucha el evento de click del boton buscar y manda a llamar la funcion de encontrar la familia que ingresamos en el input buscador y crea las tarjetas de los miembros
+  const arrBuscador = findFamily(data.got, inputSearch.value); //varable que almacena el array que contiene el resultado de los miembros enontrados con esa familia
   createCardsResults(arrBuscador);
 });
 

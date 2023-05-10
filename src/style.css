@@ -134,17 +134,64 @@ header{
 }
 
 /*------------FORMATO DE TODO EL SLIDER (mensaje + carrusel + scroll)------------*/
-.sliderMessage {
-    color: #bbb;
-    font-size: 2em;
-    padding: 0em;
-    background-color: #2e2d31;
-}
-
 .slider{
     width: 100%;
     max-width: 120em;
     margin:0
+}
+
+/* ANIMACIÓN MENSAJE DEL SLIDER */
+h3{
+    color: white;
+    font-size: 2em;
+    padding: 0em;
+    background-color: #2e2d31bd;
+}
+
+.sliderMessage span{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    line-height: 1.2;
+}
+
+.sliderMessage span::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(-101%);
+}
+
+.sliderMessage span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(0);
+}
+
+.sliderMessage span::before,
+.sliderMessage span::after{
+    animation-delay: .5s;
+}
+
+@keyframes a-ltr-after{
+    0% {transform: translateX(-100%)}
+    100% {transform: translateX(101%)}
+}
+
+@keyframes a-ltr-before{
+    0% {transform: translateX(0)}
+    100% {transform: translateX(200%)}
 }
 
 /*FORMATO CARRUSEL*/
@@ -259,17 +306,6 @@ header{
         font-size: 3em;
         padding: 0em;
         background-color: #2e2d31;
-    }
-    .inputSearch {
-        border: transparent;
-        font-size: 2.5em;
-        padding: 0.1em;
-        width: 17em;
-        background-color: transparent;
-        text-align: center;
-    }
-    .buttonSearch img {
-        width: 100%;
     }
     .socialNetworks img {
         width: 5em;
@@ -452,7 +488,7 @@ header{
 /*TARJETAS PERSONAJES SECCION MODAL*/
 .cardsCharactersModal {
     position: relative;/*top y bottom es desplazamiento vertical y left y right desplazamiento horizontal*/
-    width: 100%;
+    width: 105%;
     height: 100%;
     color: #2e2d31;
     background: #131313;
@@ -517,20 +553,13 @@ header{
     transition-delay: .25s; /*cantidad de tiempo a esperar para que se de el cambio*/
 }  
 
-/*---------------ETIQUETAS CONTAR MIEMBROS DE LAS CASAS---------------*/
-.labelFamilyCounter{
-    color: white;
-    font-size: 2em;
-    background-color: #2e2d31;
-}
-
 /*---------------FORMATO BUSCADOR---------------*/
 .searcher {
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: #f2f2f2;
-    width: 30%;
+    width: max-content;
     border-radius: 18px; /* Añadir esquinas curvadas */
 }
 
@@ -538,7 +567,7 @@ header{
     border: transparent; /* Estilo del borde */
     font-size: 1.5em; /*tamaño del texto del input*/
     padding: .1em; /*ancho del recuadro*/
-    width: 17em; /*largo del recuadro*/
+    width: 13em; /*largo del recuadro*/
     background-color: transparent;
     text-align: center; /*Texto centrado*/;
 }
@@ -546,25 +575,17 @@ header{
 .buttonSearch {
     background-color: transparent;
     border: transparent;
-    width: 3em;
-    height: 3em;
+    width: 56px;
     border-radius: 50%;
 }
 
 .buttonSearch img {
-    width: 100%;
+    width: 40px;
 }
 
 .buttonSearch img:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*/
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7)); /*sombra imagen sin fondo*/
-}
-
-.findFamily{
-    width: 95%;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /*define el tamaño de las columnas del grid. Repeat dice que se repitan las columnas con un autollenado según el tamaño de la pantalla*/
-    gap: 4em; /*espacio entre las columnas*/   
+    -webkit-transform:scale(2.0);transform:scale(2.0);
 }
 
 /*---------------FORMATO TARJETAS PERSONAJES------------------*/

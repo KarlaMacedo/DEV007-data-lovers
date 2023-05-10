@@ -45,11 +45,13 @@
       <br>
       <br>
       <center>
-        <label id="sliderMessage" class="sliderMessage">For more details click on character´s picture</label>
+      <div class="divSliderMessage">
+          <h3 class="sliderMessage"><span> For more details click on character´s picture </span></h3>
+      </div>  
       </center>
       <!--SLIDER-->
       <div id="slider" class="slider">
-        <audio src="Images/soundCarousel.mp3" id="sonidoCarousel" ></audio>
+        <audio src="Images/soundCarousel.mp3" id="sonidoCarousel" ></audio><!--audio botones slider-->
         <!--Boton previo
         <div>
           <button id="arrowPrev" class="arrows"><img src="Images\botonizquierda.png"></button>
@@ -111,7 +113,9 @@
         <br>
         <br>
         <center>
-          <label class="labelFamilyCounter" id="labelCharactersCards"></label>
+          <div class="divSliderMessage">
+              <h3 class="sliderMessage" ><span id="labelCharactersCards"> </span></h3>
+          </div>  
         </center>
         <ul class="listCharacters" id="listCharacters"><!--contenedor de las tarjetas de personajes--></ul>
       </section>
