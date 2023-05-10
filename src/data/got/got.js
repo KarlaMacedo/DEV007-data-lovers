@@ -76,10 +76,11 @@ export default{
       "firstName": "Robert",
       "lastName": "Baratheon",
       "fullName": "Robert Baratheon",
-      "title": "Lord of the Seven Kingdoms",
+      "title": "King of the Andals and the First Men, Lord Paramount of the Stormlands",
       "family": "Baratheon",
       "imageUrl": "https://thronesapi.com/assets/images/robert-baratheon.jpeg",
-      "born": "262 DC"
+      "born": "262 DC",
+      "death": "298 DC"
     },
     {
       "id": 8,
@@ -355,17 +356,6 @@ export default{
     },
     {
       "id": 34,
-      "firstName": "Robert",
-      "lastName": "Baratheon",
-      "fullName": "Robert Baratheon",
-      "title": "King of the Andals and the First Men, Lord Paramount of the Stormlands",
-      "family": "Baratheon",
-      "imageUrl": "https://thronesapi.com/assets/images/king-robert.jpg",
-      "born": "262 DC",
-      "death": "298 DC"
-    },
-    {
-      "id": 35,
       "firstName": "Ramsey",
       "lastName": "Bolton",
       "fullName": "Ramsey Bolton",
@@ -375,7 +365,7 @@ export default{
       "born": "277 DC"
     },
     {
-      "id": 36,
+      "id": 35,
       "firstName": "Talisa",
       "lastName": "Stark",
       "fullName": "Talisa Stark",
@@ -386,7 +376,7 @@ export default{
       "death": "300 DC"
     },
     {
-      "id": 37,
+      "id": 36,
       "firstName": "Jeor",
       "lastName": "Mormont",
       "fullName": "Jeor Mormont",
@@ -397,7 +387,7 @@ export default{
       "death": "299 DC"
     },
     {
-      "id": 38,
+      "id": 37,
       "firstName": "The High",
       "lastName": "Sparrow",
       "fullName": "The High Sparrow",
@@ -407,7 +397,7 @@ export default{
       "born": "Unknown"
     },
     {
-      "id": 39,
+      "id": 38,
       "firstName": "Oberyn",
       "lastName": "Martell",
       "fullName": "Oberyn Martell",
@@ -418,7 +408,7 @@ export default{
       "death": "300 DC"
     },
     {
-      "id": 40,
+      "id": 39,
       "firstName": "Melisandre",
       "lastName": "The Red Woman",
       "fullName": "Melisandre",
@@ -429,7 +419,7 @@ export default{
       "death": "300 AC"
     },
     {
-      "id": 41,
+      "id": 40,
       "firstName": "Jaqen",
       "lastName": "H'ghar",
       "fullName": "Jaqen H'ghar",
@@ -439,7 +429,7 @@ export default{
       "born": "In Lorath"
     },
     {
-      "id": 42,
+      "id": 41,
       "firstName": "Tywin",
       "lastName": "Lannister",
       "fullName": "Tywin Lannister",
@@ -450,7 +440,7 @@ export default{
       "death": "301 DC"
     },
     {
-      "id": 43,
+      "id": 42,
       "firstName": "Ellaria",
       "lastName": "Sand",
       "fullName": "Ellaria Sand",
@@ -460,7 +450,7 @@ export default{
       "born": "At Hellholt"
     },
     {
-      "id": 44,
+      "id": 43,
       "firstName": "Tormund",
       "lastName": "Giantsbane",
       "fullName": "Tormund Giantsbane",
@@ -470,7 +460,7 @@ export default{
       "born": "Beyond the Wall"
     },
     {
-      "id": 45,
+      "id": 44,
       "firstName": "Yara",
       "lastName": "Greyjoy",
       "fullName": "Yara Greyjoy",
@@ -480,7 +470,7 @@ export default{
       "born": "276 DC"
     },
     {
-      "id": 46,
+      "id": 45,
       "firstName": "Euron",
       "lastName": "Greyjoy",
       "fullName": "Euron Greyjoy",
@@ -490,7 +480,7 @@ export default{
       "born": "256-268 AC"
     },
     {
-      "id": 47,
+      "id": 46,
       "firstName": "Wylis",
       "lastName": "Hodor",
       "fullName": "Hodor",
@@ -500,7 +490,7 @@ export default{
       "born": "At Winterfell"
     },
     {
-      "id": 48,
+      "id": 47,
       "firstName": "",
       "lastName": "Pycelle",
       "fullName": "Pycelle",
@@ -511,7 +501,7 @@ export default{
       "death": "300 DC"
     },
     {
-      "id": 49,
+      "id": 48,
       "firstName": "Grey",
       "lastName": "Worm",
       "fullName": "Grey Worm",
@@ -521,7 +511,7 @@ export default{
       "born": "In the Summer Islands"
     },
     {
-      "id": 50,
+      "id": 49,
       "firstName": "Olenna",
       "lastName": "Tyrell",
       "fullName": "Olenna Tyrell",
@@ -531,7 +521,7 @@ export default{
       "born": "228 DC"
     },
     {
-      "id": 51,
+      "id": 50,
       "firstName": "Grand Maester",
       "lastName": "Qyburn",
       "fullName": "Grand Maester Qyburn",
@@ -541,7 +531,7 @@ export default{
       "born": "217 AC"
     },
     {
-      "id": 52,
+      "id": 51,
       "firstName": "Lord",
       "lastName": "Bronn",
       "fullName": "Lord Bronn",
