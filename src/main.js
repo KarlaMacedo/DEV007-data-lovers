@@ -15,7 +15,7 @@ function pushImgSlider (){ // Crea funcion que haga...
     ulImages.insertAdjacentElement("beforeend", createLabelLi); // Inserta en la etiqueta ul del Html antes de que termine (dentro) la etiqueta li creada que contiene la imagen con sus atributos.
   }
 }
-pushImgSlider()  //llamar a la funcion 
+pushImgSlider() 
 
 //------------------------FUNCIÓN PARA CREAR TARJETA EN DIÁLOGO MODAL--------------------------------------------
 function openModal (index, data) {
