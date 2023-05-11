@@ -1,4 +1,4 @@
-//------------------------------- FUNCIÓN EJEMPLO  LABORATORIA-------------------------------------------
+
 
 export const example = () => {
   return 'example';
