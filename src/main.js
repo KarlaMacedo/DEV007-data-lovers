@@ -2,7 +2,7 @@
 import data from "./data/got/got.js"
 
 //------------------------IMPORTACION DE FUNCIONES-------------------------------------------------------------------
-import { findMeName, findMeTitle, findFamily, sortCharacters, houseFilterSelector, familyMembersCounter, findByValue } from './data.js';
+import { sortCharacters, houseFilterSelector, familyMembersCounter, findByValue } from './data.js';
 
 //------------------------FUNCIONALIDAD PARA PONER IMAGENES EN HTML DESDE LA DATA PARA EL SLIDER--------------------------------------------------------------------
 function pushImgSlider() { // Crea funcion que haga...

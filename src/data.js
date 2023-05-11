@@ -28,11 +28,11 @@ export const findFamily = (characters, userSearch) => { //fucnión que hace que 
 }
 
 //_---------------------------------------------------------------------------------------
-export const findByValue = (valor, data) => {
-  if (!valor) return "";
-  const name =  data.filter(personaje=>personaje.fullName === valor);
-  const title =  data.filter(personaje=>personaje.title=== valor);
-  const family =  data.filter(members =>(members.family.toLowerCase().includes(valor.toLowerCase())));
+export const findByValue = (userSearch, data) => {
+  if (!userSearch) return "";
+  const name =  data.filter(personaje=>personaje.fullName === userSearch);
+  const title =  data.filter(personaje=>personaje.title=== userSearch);
+  const family =  data.filter(members =>(members.family.toLowerCase().includes(userSearch.toLowerCase())));
   
   if (name.length) {
     return name[0].id;
