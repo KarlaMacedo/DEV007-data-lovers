@@ -4,7 +4,6 @@ export const example = () => {
   return 'example';
 };
 
-
 //_---------------------------------------------------------------------------------------
 export const findByValue = (userSearch, data) => {
   if (!userSearch) return "";
