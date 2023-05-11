@@ -4,35 +4,13 @@ export const example = () => {
   return 'example';
 };
 
-//---------------------- BUSCAR POR NOMBRE EN EL SEARCHER
-export const findMeName = (userSearch, data, createCardsFunction) => { // funcion que busca las concidencias del nombre ingresado en el input para crear la tarjeta con la informacion del personaje por id
-  const fullName =  data.got.filter(character=>character.fullName=== userSearch ) //variable que contiene el resultado del filtro que se hace al buscar las coincidencias
-  if (fullName.length){
-    const idCharacter = fullName[0].id // variable que almacena el id del personaje encontrado como coincidencia
-    createCardsFunction (idCharacter, data.got) // llama a la funcion de crear tarjeta dandole como parametro el id y la data
-  }
-
-}
-
-//---------------------- BUSCAR POR TÍTULO EN EL SEARCHER
-export const findMeTitle = (valor, data, functio) => {// funcion que busca las concidencias del titulo ingresado en el input para crear la tarjeta con la informacion del personaje por id
-  const title =  data.got.filter(personaje=>personaje.title=== valor )//variable que contiene el resultado del filtro que se hace al buscar las coincidencias
-  const idCharacterTitle = title[0].id// variable que almacena el id del personaje encontrado como coincidencia
-  functio (idCharacterTitle, data.got) // llama a la funcion de crear tarjeta dandole como parametro el id y la data
-}
-
-//---------------------- BUSCAR POR FAMILIA EN EL SEARCHER
-export const findFamily = (characters, userSearch) => { //fucnión que hace que lo que escriba el usuario en el html se filtre y se tranforma de mayuscula/minuscula 
-  const search = characters.filter(members =>(members.family.toLowerCase().includes(userSearch.toLowerCase()))) 
-  return search;
-}
 
 //_---------------------------------------------------------------------------------------
-export const findByValue = (valor, data) => {
-  if (!valor) return "";
-  const name =  data.filter(personaje=>personaje.fullName === valor);
-  const title =  data.filter(personaje=>personaje.title=== valor);
-  const family =  data.filter(members =>(members.family.toLowerCase().includes(valor.toLowerCase())));
+export const findByValue = (userSearch, data) => {
+  if (!userSearch) return "";
+  const name =  data.filter(personaje=>personaje.fullName === userSearch);
+  const title =  data.filter(personaje=>personaje.title=== userSearch);
+  const family =  data.filter(members =>(members.family.toLowerCase().includes(userSearch.toLowerCase())));
   
   if (name.length) {
     return name[0].id;
