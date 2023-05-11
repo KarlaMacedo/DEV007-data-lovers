@@ -11,7 +11,7 @@ function pushImgSlider (){ // Crea funcion que haga...
   for (let i=0; i<data.got.length; i++){ // For que recorre la cantidad de elementos en la data.
     const createLabelLi= document.createElement("li"); // Crea variable que va a almacenar la creacion de una etiqueta <li> en el Html.
     createLabelLi.id= "imgsCarousel" 
-    createLabelLi.innerHTML += `<img src= "${data.got[i].imageUrl}" alt= "image-character${data.got[i].fullName}" id ="${data.got[i].id}">` // Modifica el contenido interno de cada etiqueta <li> agregando una etiqueta img con los atributos obtenidos de la informacion de la data.
+    createLabelLi.innerHTML += `<img src= "${data.got[i].imageUrl}" title= "Open card about ${data.got[i].fullName} with more details" alt=  "image-character${data.got[i].fullName} id ="${data.got[i].id}">` // Modifica el contenido interno de cada etiqueta <li> agregando una etiqueta img con los atributos obtenidos de la informacion de la data.
     ulImages.insertAdjacentElement("beforeend", createLabelLi); // Inserta en la etiqueta ul del Html antes de que termine (dentro) la etiqueta li creada que contiene la imagen con sus atributos.
   }
 }
@@ -28,7 +28,7 @@ function openModal (index, data) {
     <span class="cardTitleModal">${data[index].fullName}</span>
     <p class="cardDescriptionModal"><b>Name:</b> ${data[index].firstName} </p>
     <p class="cardDescriptionModal"><b>Last Name:</b> ${data[index].lastName} </p>
-    <p class="cardDescriptionModal"><b>Tittle:</b> ${data[index].title} </p>
+    <p class="cardDescriptionModal"><b>Title:</b> ${data[index].title} </p>
     <p class="cardDescriptionModal"><b>Family:</b> ${data[index].family} </p>
     <p class="cardDescriptionModal"><b>Born:</b> ${data[index].born} </p>
 </div></li>`
@@ -125,7 +125,7 @@ buttonSearch.addEventListener("click", () => { //escucha el evento de click del 
           <span class="cardTitle">${family[i].fullName}</span>
           <p id="nameCharcter" class="cardDescription"><b>Name:</b> ${family[i].firstName} </p>
           <p id="nameCharcter" class="cardDescription"><b>Last Name:</b> ${family[i].lastName} </p>
-          <p id="tittleCharcter" class="cardDescription"><b>Title:</b> ${family[i].title} </p>
+          <p id="titleCharcter" class="cardDescription"><b>Title:</b> ${family[i].title} </p>
           <p id="familyCharcter" class="cardDescription"><b>Family:</b> ${family[i].family} </p>
           <p id="bornCharcter" class="cardDescription"><b>Born:</b> ${family[i].born} </p>
       </div>`
@@ -147,7 +147,7 @@ const createCards = (arrayCharacters) => {
       <span class="cardTitle">${arrayCharacters.fullName}</span>
       <p id="nameCharcter" class="cardDescription"><b>Name:</b> ${arrayCharacters.firstName} </p>
       <p id="nameCharcter" class="cardDescription"><b>Last Name:</b> ${arrayCharacters.lastName} </p>
-      <p id="tittleCharcter" class="cardDescription"><b>Title:</b> ${arrayCharacters.title} </p>
+      <p id="titleCharcter" class="cardDescription"><b>Title:</b> ${arrayCharacters.title} </p>
       <p id="familyCharcter" class="cardDescription"><b>Family:</b> ${arrayCharacters.family} </p>
       <p id="bornCharcter" class="cardDescription"><b>Born:</b> ${arrayCharacters.born} </p>
   </div>`

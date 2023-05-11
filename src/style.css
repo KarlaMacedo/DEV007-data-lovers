@@ -136,12 +136,11 @@ header{
 /*------------FORMATO DE TODO EL SLIDER (mensaje + carrusel + scroll)------------*/
 .slider{
     width: 100%;
-    max-width: 120em;
     margin:0
 }
 
 /* ANIMACIÓN MENSAJE DEL SLIDER */
-h3{
+h4{
     color: white;
     font-size: 2em;
     padding: 0em;
@@ -253,14 +252,9 @@ h3{
 }*/
 
 /*FORMATO SLIDER CON CAMBIOS DE TAMAÑOS DE PANTALLA PARA QUE SEA RESPONSIVO*/
-@media (max-width: 800px) {/*aplica el estilo indicado cuando se cumple la condición*/
-    .gallery img {
-        width: 200px;
-        height: 200px;
-    }
-}
 
-@media (max-width: 400px) {/*aplica el estilo indicado cuando se cumple la condición*/
+
+@media screen and (max-width: 1000px) {/*aplica el estilo indicado cuando se cumple la condición*/
     header {
         background-color: rgba(3, 3, 3, 1);
         display: flex;
