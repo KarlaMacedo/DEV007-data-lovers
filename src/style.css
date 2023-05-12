@@ -232,6 +232,7 @@ h4{
     -webkit-transform:scale(1.3);
     transform:scale(1.3);
     overflow:hidden;
+    cursor: pointer;
 }
 
 /*FORMATO BOTONES DEL SLIDER
@@ -254,94 +255,223 @@ h4{
 /*FORMATO SLIDER CON CAMBIOS DE TAMAÑOS DE PANTALLA PARA QUE SEA RESPONSIVO*/
 
 
-@media screen and (max-width: 1000px) {/*aplica el estilo indicado cuando se cumple la condición*/
+@media screen and (max-width: 800px) {/*aplica el estilo indicado cuando se cumple la condición*/
     header {
-        background-color: rgba(3, 3, 3, 1);
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         border-radius: 5%;
         width: 100%;
-        height: 48em;
+        height: 27em;
+        margin: 0;
+        align-items: center;
+    }
+    .logo{
+        width: 60%;
+    }
+    .itemCategories {
+        font-size: 1.3em;
+    }
+    .buttonsAudio {
+        width: 13%;
+    }
+    .gallery{
+        margin: 0;
+        padding: 4%;
+    }
+    .gallery img {
+        width: 200px;
+        height: 200px;
+        padding: 4px;
+    }
+    .footer {
+        font-size: 19px;
+        text-align: center;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    .selects {
+        font-size: 20px;
+    }
+    .sliderMessage{
+        font-size: 2.5em;
+    }
+    .listCharacters {
+        padding: 0;
+    }
+    .houseCard{
+        max-width: 100% !important;
+        padding: 0.7rem !important;
+    }
+    .imgHouseCard{
+        width: 70%;
+    }
+    .houseCard img {
+        width: 100%;
+    }
+    .tableSeasonsDetails{
+        width: 100%;
+    }
+    .containerTableSeasonsDetails { 
+        font-size: 1.5rem !important;
+        line-height: 2.3rem !important;
+        padding: 13px !important;
+        margin: 1%;
+    }
+    .buttonHome{
+        right: 20px !important;
+        bottom: 60px !important;
+    }
+}
+
+@media screen and (min-height: 1500px) {/*aplica el estilo indicado cuando se cumple la condición*/
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 5%;
+        width: 100%;
+        height: 40em;
+        margin: 0;
+        align-items: center;
+    }
+    .logo{
+        width: 70%;
+    }
+    .chair{
+        width: 30%;
+    }
+    .wolf{
+        width: 27%
+    }
+    .itemCategories {
+        font-size: 1.5em;
+    }
+    .buttonsAudio {
+        width: 15%;
+    }
+    .gallery{
+        margin: 0;
+        padding: 8%;
+    }
+    .gallery img {
+        width: 300px;
+        height: 300px;
+        padding: 4px;
+    }
+    .footer {
+        font-size: 19px;
+        text-align: center;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    .selects {
+        font-size: 20px;
+    }
+    .sliderMessage{
+        font-size: 2.5em;
+    }
+    .listCharacters {
+        padding: 10px;
+    }
+    .houseCard{
+        max-width: 100% !important;
+        padding: 0.7rem !important;
+    }
+    .imgHouseCard{
+        width: 70%;
+    }
+    .houseCard img {
+        width: 100%;
+    }
+    .tableSeasonsDetails{
+        width: 100%;
+    }
+    .containerTableSeasonsDetails { 
+        font-size: 1.5rem !important;
+        line-height: 2.3rem !important;
+        padding: 13px !important;
+        margin: 1%;
+    }
+    .buttonHome{
+        right: 20px !important;
+        bottom: 60px !important;
+    }
+}
+
+
+@media screen and (max-width: 400px) {/*aplica el estilo indicado cuando se cumple la condición*/
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 5%;
+        width: 100%;
+        height: 20em;
         margin: 0;
         align-items: center;
     }
     .chair {
         width: 32%;
-        align-self: center;
     }
     .logo {
-        width: 58%;
+        width: 80%;
     }
     .wolf {
-    width: 26%;
-    align-self: center;
-    }
-    .gallery img {
-        width: 300px;
-        height: 300px;
+    width: 30%;
     }
     .itemCategories {
-        color: #bbb;
-        position: relative;
-        font-size: 2em;
-        font-weight: bold;
-        border: transparent;
-        padding: 0.5em;
-        border-radius: 0.2rem;
+        font-size: .9em;
+        padding: 0.3em;
     }
     .buttonsAudio {
-        background-color: transparent;
-        border: transparent;
-        width: 14%;
+        width: 22%;
     }
-    .sliderMessage {
-        color: #bbb;
-        font-size: 3em;
-        padding: 0em;
-        background-color: #2e2d31;
+    .carousel{
+        margin: 1px;
+        margin-bottom: 15%;
     }
-    .socialNetworks img {
-        width: 5em;
+    .gallery{
+        margin: 0;
+        padding: 5%;
+    }
+    .gallery img {
+        width: 150px;
+        height: 150px;
+        padding: 4px;
+    }
+    .inputSearch{
+        width: 11em !important;
     }
     .footer {
-        position: fixed;
-        left: 0px;
-        bottom: 0px;
-        background: transparent;
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        color: aliceblue;
-        font-size: 1.5em;
+        font-size: 10.5px;
+        text-align: center;
     }
     h2 {
-        border: 0;
-        width: 100%;
-        background-color: black;
-        font-size: 3rem;
-        color: white;
+        font-size: 2rem;
     }
-    .containerTableSeasonsDetails {
-        position: relative;
-        box-sizing: border-box;
-        max-width: 100%;
-        font-size: 2em;
-        border-radius: 10px;
-        background: #f2f2f2;
-        line-height: 4rem;
-        padding: 1rem;
+    .selects {
+        font-size: 10px;
+    }
+    .sliderMessage{
+        font-size: 1.7em;
+    }
+    .listCharacters {
+        padding: 0;
+    }
+    .houseCard{
+        flex-direction: column;
+    }
+    .houseCard img {
+        width: 107%;
+    }
+    .containerTableSeasonsDetails { 
+        font-size: 1rem !important;
+        line-height: 1.2rem !important;
+        padding: 10px !important;
         margin: 1%;
-    }
-    .buttonHome {
-        position: fixed;
-        right: 40px;
-        bottom: 90px;
-        width: 100px;
-        height: 33px;
-        border-radius: 30px;
-        background-color: white;
-        overflow: hidden;
     }
 }
 
@@ -424,6 +554,7 @@ h4{
     border-radius: 100%;
     user-select: none;
     padding: 0;
+    outline:none; /*--Borde externo fuera del modelo de cajas--*/
 }
 
 #btnCloseModal:hover .imgBtnClose {
