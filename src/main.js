@@ -10,7 +10,7 @@ function pushImgSlider() { // Crea funcion que haga...
   for (let i = 0; i < data.got.length; i++) { // For que recorre la cantidad de elementos en la data.
     const createLabelLi = document.createElement("li"); // Crea variable que va a almacenar la creacion de una etiqueta <li> en el Html.
     createLabelLi.id = "imgsCarousel"
-    createLabelLi.innerHTML += `<img src= "${data.got[i].imageUrl}" alt= "image-character${data.got[i].fullName}" id ="${data.got[i].id}">` // Modifica el contenido interno de cada etiqueta <li> agregando una etiqueta img con los atributos obtenidos de la informacion de la data.
+    createLabelLi.innerHTML += `<img src= "${data.got[i].imageUrl}" title="Open for more details about ${data.got[i].fullName}"  alt= "image-character${data.got[i].fullName}" id ="${data.got[i].id}">` // Modifica el contenido interno de cada etiqueta <li> agregando una etiqueta img con los atributos obtenidos de la informacion de la data.
     ulImages.insertAdjacentElement("beforeend", createLabelLi); // Inserta en la etiqueta ul del Html antes de que termine (dentro) la etiqueta li creada que contiene la imagen con sus atributos.
   }
 }
