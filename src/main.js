@@ -2,19 +2,19 @@
 import data from "./data/got/got.js"
 
 //------------------------IMPORTACION DE FUNCIONES-------------------------------------------------------------------
-import { sortCharacters, houseFilterSelector, familyMembersCounter, findByValue } from './data.js';
+import { sortCharacters, houseFilterSelector, familyMembersCounter, findByValue } from "./data.js";
 
 //------------------------FUNCIONALIDAD PARA PONER IMAGENES EN HTML DESDE LA DATA PARA EL SLIDER--------------------------------------------------------------------
 function pushImgSlider() { // Crea funcion que haga...
   const ulImages = document.querySelector(".gallery"); //Crear variable que seleccione el elemento del HTML que posteriormente va a guardar la lista de imagenes.
   for (let i = 0; i < data.got.length; i++) { // For que recorre la cantidad de elementos en la data.
     const createLabelLi = document.createElement("li"); // Crea variable que va a almacenar la creacion de una etiqueta <li> en el Html.
-    createLabelLi.id = "imgsCarousel"
-    createLabelLi.innerHTML += `<img src= "${data.got[i].imageUrl}" title="Open for more details about ${data.got[i].fullName}"  alt= "image-character${data.got[i].fullName}" id ="${data.got[i].id}">` // Modifica el contenido interno de cada etiqueta <li> agregando una etiqueta img con los atributos obtenidos de la informacion de la data.
+    createLabelLi.setAttribute("class", "imgsCarousel"); //se les da una class
+    createLabelLi.innerHTML += `<img src= "${data.got[i].imageUrl}" title="Click here for more details about ${data.got[i].fullName}"  alt= "image-character${data.got[i].fullName}" id ="${data.got[i].id}">` // Modifica el contenido interno de cada etiqueta <li> agregando una etiqueta img con los atributos obtenidos de la informacion de la data.
     ulImages.insertAdjacentElement("beforeend", createLabelLi); // Inserta en la etiqueta ul del Html antes de que termine (dentro) la etiqueta li creada que contiene la imagen con sus atributos.
   }
 }
-pushImgSlider() 
+pushImgSlider() //se llama a la función
 
 //------------------------FUNCIÓN PARA CREAR TARJETA EN DIÁLOGO MODAL--------------------------------------------
 function openModal(index, data) {
@@ -23,7 +23,7 @@ function openModal(index, data) {
     `<li class="cardsCharactersModal"><div class="containerImgModal">                        
   <img src="${data[index].imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacterModal">
 </div>
-<div class = 'cardContentModal'> 
+<div class = "cardContentModal"> 
     <span class="cardTitleModal">${data[index].fullName}</span>
     <p class="cardDescriptionModal"><b>Name:</b> ${data[index].firstName} </p>
     <p class="cardDescriptionModal"><b>Last Name:</b> ${data[index].lastName} </p>
@@ -38,7 +38,7 @@ function hear() {//creamos la función llamada escuhar, porque está escuchando 
   const audioCarousel = document.getElementById("sonidoCarousel") //crea una cosntante que almacena la etiqueta de audio del carrusel que está en el HTML
   const windowsModal = document.querySelector("#modal") //variable que almacena la etiqueta diálogo modal (ventanita que se abre al dar click en cada imagen del slider)
   const btnClose = document.querySelector("#btnCloseModal")//variable que almacena el boton de cerrar la ventana modal
-  const imgCarousel = document.querySelectorAll("#imgsCarousel")//variable que almacena todas las imagenes del carrusel para después darles función al seleccionarlas
+  const imgCarousel = document.querySelectorAll(".imgsCarousel")//variable que almacena todas las imagenes del carrusel para después darles función al seleccionarlas
   for (let i = 0; i < imgCarousel.length; i++) {//For que recorre la cantidad de imagenes del carrusel
     imgCarousel[i].addEventListener("click", () => { windowsModal.showModal() })//escucha si la imagen está siendo seleccionada y si sí, abre la ventana modal
     imgCarousel[i].addEventListener("click", () => { openModal(i, data.got) })//escuha si la imagen está siendo seleccionada y si sí, llama a la función "openModal" y le entrega como argumento el índice de la imagen seleccionada
@@ -49,17 +49,17 @@ function hear() {//creamos la función llamada escuhar, porque está escuchando 
 hear()//llamar a la función
 
 //------------------------FUNCIÓN CREAR TARJETAS DE MIEMBROS EN EL DIÁLOGO MODAL AL BUSCAR LA FAMILIA--------------------------------------------
-const containerCardsResults = document.getElementById('divModal')//crea una constante que almacena el contenedor de las tarjetas de personajes que serán creadas con 
+const containerCardsResults = document.getElementById("divModal")//crea una constante que almacena el contenedor de las tarjetas de personajes que serán creadas con 
 const createCardsResults = (arrayCharacters) => { //constante que tiene la función de crear tarjetas, se le da el parámetro del array que contiene a los personajes con sus propiedades
-  containerCardsResults.innerHTML = "";
+  containerCardsResults.innerHTML = ""; //se limpia el contenido del contenedor para almacenar el nuevo resultado
   arrayCharacters.forEach((arrayCharacters) => { //recorre cada elemento del array para...
-    const card = document.createElement('li'); //crear una variable que almacene la creación de una etiqueta li en el html
-    card.setAttribute('class', 'cardsCharacters'); //a esa etiqueta le da una clase
+    const card = document.createElement("li"); //crear una variable que almacene la creación de una etiqueta li en el html
+    card.setAttribute("class", "cardsCharacters"); //a esa etiqueta le da una clase
     card.innerHTML += // dentro de esa etiqueta concatena su contenido
       `<div class="containerImg">                          
     <img src="${arrayCharacters.imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
   </div>
-  <div class = 'cardContent'> 
+  <div class = "cardContent"> 
       <span class="cardTitle">${arrayCharacters.fullName}</span>
       <p class="cardDescription"><b>Name:</b> ${arrayCharacters.firstName} </p>
       <p class="cardDescription"><b>Last Name:</b> ${arrayCharacters.lastName} </p>
@@ -96,74 +96,36 @@ const buttonSearch = document.getElementById("buttonSearch") // variable que alm
 const windowsModal = document.querySelector("#modal") // variable que almacena el contenedor modal donde se crearan las tarjeta del resultado de busqueda.
 const btnClose = document.querySelector("#btnCloseModal") // cariable que almacena el boton para cerrar el modal
 
-/*
-buttonSearch.addEventListener("click", ()=> { // escucha el evento de click del boton de buscar para que ....
-  windowsModal.showModal() // se abra el modal
-})
-*/
 btnClose.addEventListener("click", () => { windowsModal.close() }) //escucha el evento de click al boton de cerrar el modal y lo cierra si es clickeado
 
-/*
-buttonSearch.addEventListener("click", ()=> findMeName(inputSearch.value, data)) //escucha el evento de click del boton buscar y manda a llamar la funcion de encontrar el nombre que ingresamos en el input buscador y crea la tarjeta de ese personaje
-buttonSearch.addEventListener("click", ()=> findMeTitle(inputSearch.value, data))//escucha el evento de click del boton buscar y manda a llamar la funcion de encontrar el titulo que ingresamos en el input buscador y crea la tarjeta del personaje que tenga ese titulo
-
-buttonSearch.addEventListener("click", () => { //escucha el evento de click del boton buscar y manda a llamar la funcion de encontrar la familia que ingresamos en el input buscador y crea las tarjetas de los miembros
-  const arrBuscador = findFamily(data.got, inputSearch.value); //varable que almacena el array que contiene el resultado de los miembros enontrados con esa familia
-  createCardsResults(arrBuscador);
-});
-*/
-
-buttonSearch.addEventListener("click", () => {
-  const resultado = findByValue(inputSearch.value, data.got);
-
-  if (resultado === "") {
-    alert("Debe ingresar un criterio de busqueda")
-  } else {
-    if (resultado.length) {
-      createCardsResults(resultado)
-    } else {
-      openModal(resultado, data.got)
+buttonSearch.addEventListener("click", () => { //escucha el evento click del botón del buscador para hacer la función...
+  const result = findByValue(inputSearch.value, data.got); //crear una variable que almacene el resultado de llamar a la función encontrar valor mediante los parametros del valor de la busqueda del usuario y la data
+  const labelModal = document.getElementById("labelCharactersCardsModal"); //variable que almacena la etiqueta que tendrá el mensaje de la contabilidad de miembros de cada familia
+  if (result === "" || result === false)  { //Si el resultado es vacio o es falso entonces...
+    alert("Enter valid criteria search") // manda un alert diciendo que debe ingresar algo válido
+  } else { //si no...
+    if (result.length > 1) { //si el resultado tiene un array de más de un elemento...
+      labelModal.innerHTML = "This house has " + familyMembersCounter(result) + " members"; //agrega la contabilidad de los miembros de cada familia buscada
+      createCardsResults(result) //manda a llamar a la función de crear las tarjetas en el diálogo modal del array de los miembros de familia
+    } else { //si no y tiene una longitud de uno...
+      labelModal.innerHTML = ""; //limpia el contenedor de las tarjetas de personajes para ingresar el nuevo resultado
+      openModal(result, data.got) //manda a llamar a la función de crear tarjeta del personaje en el diálogo modal
     }
-    windowsModal.showModal(); // se abra el modal
+    windowsModal.showModal(); // abre el modal
   }
 })
 
-
-//buttonSearch.addEventListener("click", ()=> findMe(inputSearch.value))
-
-/*function findMe (valor){
-  const family =  data.got.filter(personaje=>personaje.family === valor )
-  const divSearcher= document.getElementById("findFamily")
-  for (let i = 0; i < family.length; i++) {
-    const cardsRelatives = document.createElement('li');
-    cardsRelatives.setAttribute('class', 'cardsCharacters');
-    cardsRelatives.innerHTML +=
-      `<div class="containerImg">
-        <img src="${family[i].imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
-      </div>
-      <div class = 'cardContent'>
-          <span class="cardTitle">${family[i].fullName}</span>
-          <p id="nameCharcter" class="cardDescription"><b>Name:</b> ${family[i].firstName} </p>
-          <p id="nameCharcter" class="cardDescription"><b>Last Name:</b> ${family[i].lastName} </p>
-          <p id="tittleCharcter" class="cardDescription"><b>Title:</b> ${family[i].title} </p>
-          <p id="familyCharcter" class="cardDescription"><b>Family:</b> ${family[i].family} </p>
-          <p id="bornCharcter" class="cardDescription"><b>Born:</b> ${family[i].born} </p>
-      </div>`
-    divSearcher.insertAdjacentElement("beforeend", cardsRelatives);
-  }
-}*/
-
 //------------------------FUNCIÓN CREAR TARJETAS DE LA SECCIÓN DE PERSONAJES--------------------------------------------
-const containerCards = document.getElementById('listCharacters')
-const createCards = (arrayCharacters) => {
-  arrayCharacters.forEach((arrayCharacters) => {
-    const card = document.createElement('li');
-    card.setAttribute('class', 'cardsCharacters');
-    card.innerHTML +=
+const containerCards = document.getElementById("listCharacters")//variable que almacena el contenedor de laa lista de las tarjetas (ul)
+const createCards = (arrayCharacters) => { //variable que almacena el resultado de la iteración de la data para la creación de las tarjetas de personajes
+  arrayCharacters.forEach((arrayCharacters) => { //ciclo que hace que una vez por cada elemento de la data haga...
+    const card = document.createElement("li"); //una variable que almacena la creación de una etiqueta li en el html
+    card.setAttribute("class", "cardsCharacters"); //se le agrega el atributo class a la etiqueta li creada
+    card.innerHTML += //dentro de la etiqueta li se ingresa toda la información obtenida de la data para la creación de las tarjetas
       `<div class="containerImg">                          
     <img src="${arrayCharacters.imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
   </div>
-  <div class = 'cardContent'> 
+  <div class = "cardContent"> 
       <span class="cardTitle">${arrayCharacters.fullName}</span>
       <p id="nameCharcter" class="cardDescription"><b>Name:</b> ${arrayCharacters.firstName} </p>
       <p id="nameCharcter" class="cardDescription"><b>Last Name:</b> ${arrayCharacters.lastName} </p>
@@ -171,34 +133,34 @@ const createCards = (arrayCharacters) => {
       <p id="familyCharcter" class="cardDescription"><b>Family:</b> ${arrayCharacters.family} </p>
       <p id="bornCharcter" class="cardDescription"><b>Born:</b> ${arrayCharacters.born} </p>
   </div>`
-    containerCards.insertAdjacentElement("beforeend", card);
+    containerCards.insertAdjacentElement("beforeend", card); //se insertan las tarjetas dentro del ul
   });
 }
-createCards(data.got)
+createCards(data.got) //se llama a la función
 //------------------------FUNCIONALIDAD SELECTOR ORDEN ALFABÉTICO-----------------------------------------
-const alphabeticalSelector = document.getElementById("alphabeticalOrder");
-alphabeticalSelector.addEventListener("change", () => {
-  const opciones = alphabeticalSelector.value; //obtenemos el valor del select
-  const newDataOrder = sortCharacters([...data.got]);
-  containerCards.innerHTML = "";
-  if (opciones === "a-z") {
-    createCards(newDataOrder);
-  } else if (opciones === "z-a") {
-    createCards(newDataOrder.reverse());
+const alphabeticalSelector = document.getElementById("alphabeticalOrder"); //variable que almacena  el selector de orden alfabético
+alphabeticalSelector.addEventListener("change", () => { //función que escucha el evento del cambio en el selector
+  const opciones = alphabeticalSelector.value; //variable que almacena el valor escogido por el usuario en el select
+  const newDataOrder = sortCharacters([...data.got]); //variable que almacena el resultado de el orden alfabético de la data  [...array] crea una copia del array de la data para no alterar la data original
+  containerCards.innerHTML = ""; //se limpia el contenedor de las tarjetas para colocar el nuevo resultado
+  if (opciones === "a-z") { //si el usuario elige la opción igual a-z
+    createCards(newDataOrder); //crea las tarjetas con el array de la data ordenada alfabéticamente
+  } else if (opciones === "z-a") { //si no, si el usuario elige la opción de la z-a
+    createCards(newDataOrder.reverse()); //crea las tarjetas con el array de la data ordenada alfabéticamente al reverso
   }
 });
 
 //------------------------FUNCIONALIDAD SELECTOR FILTRO FAMILIA-----------------------------------------
-const housesSelector = document.getElementById("familyFilter");
-const labelSelector = document.getElementById("labelCharactersCards");
-housesSelector.addEventListener("change", () => {
-  const selectedHouse = housesSelector.value;
-  const houseFilterResult = houseFilterSelector(data.got, selectedHouse);
-  labelSelector.innerHTML = "This house has " + familyMembersCounter(houseFilterResult) + " members";
-  containerCards.innerHTML = "";
-  createCards(houseFilterResult);
-  if (selectedHouse === "default") {
-    createCards(data.got);
+const housesSelector = document.getElementById("familyFilter"); //variable que almacena  el selector de filtro por familia
+const labelSelector = document.getElementById("labelCharactersCards"); //variable que almacena la etiqueta que tendrá el mensaje de la contabilidad de miembros de cada familia
+housesSelector.addEventListener("change", () => { //función que escucha el evento del cambio en el selector
+  const selectedHouse = housesSelector.value;//variable que almacena el valor escogido por el usuario en el select
+  const houseFilterResult = houseFilterSelector(data.got, selectedHouse); //variable que almacena el array obtenido del filtro de la data por la familia seleccionada
+  labelSelector.innerHTML = "This house has " + familyMembersCounter(houseFilterResult) + " members"; //se ingresa en la etiqueta la contabilidad de los miembros de la familia seleccionada
+  containerCards.innerHTML = ""; //se limpia el contenedor de las tarjetas para ingresar el nuevo resultado
+  createCards(houseFilterResult); //se manda a llamar la función de crear las tarjetas para el nuevo array obtenido del filtro de la familia seleccionada
+  if (selectedHouse === "default") { //si el usuario elige la opción de default...
+    createCards(data.got); //se crean las tarjetas de todos los personajes que hay en la data
   }
 });
 
@@ -215,7 +177,7 @@ function initialPage() {
 initialPage()//llamar a la función
 
 //-----------FUNCIÓN PARA CARGAR SÓLO LA SECCIÓN DE TARJETAS DE PERSONAJES Y EL BOTON DE HOME CUANDO SELECCIONES ESE BOTON DEL MENÚ INICIAL-----------------------------------------
-document.getElementById("buttonSeccionCharactersCards").addEventListener('click', function () {
+document.getElementById("buttonSeccionCharactersCards").addEventListener("click", function () {
   document.getElementById("home").style.display = "none";//display none oculta el elemento seleccionado por el id
   document.getElementById("seccionCharactersCards").style.display = "block";//display block muestra el elemento seleccionado por el id
   document.getElementById("housesSection").style.display = "none";//display none oculta el elemento seleccionado por el id
@@ -225,7 +187,7 @@ document.getElementById("buttonSeccionCharactersCards").addEventListener('click'
 });
 
 //-----------FUNCIÓN PARA CARGAR SÓLO LA SECCIÓN DE TARJETAS DE CASAS Y EL BOTON DE HOME CUANDO SELECCIONES ESE BOTON DEL MENÚ INICIAL-----------------------------------------
-document.getElementById("buttonHousesSection").addEventListener('click', function () {
+document.getElementById("buttonHousesSection").addEventListener("click", function () {
   document.getElementById("home").style.display = "none";//display none oculta el elemento seleccionado por el id
   document.getElementById("seccionCharactersCards").style.display = "none";//display none oculta el elemento seleccionado por el id
   document.getElementById("housesSection").style.display = "block";//display block muestra el elemento seleccionado por el id
@@ -235,7 +197,7 @@ document.getElementById("buttonHousesSection").addEventListener('click', functio
 });
 
 //-----------FUNCIÓN PARA CARGAR SÓLO LA SECCIÓN DE ACERCA DE Y EL BOTON DE HOME CUANDO SELECCIONES ESE BOTON DEL MENÚ INICIAL-----------------------------------------
-document.getElementById("buttonAboutSection").addEventListener('click', function () {
+document.getElementById("buttonAboutSection").addEventListener("click", function () {
   document.getElementById("home").style.display = "none";//display none oculta el elemento seleccionado por el id
   document.getElementById("seccionCharactersCards").style.display = "none";//display none oculta el elemento seleccionado por el id
   document.getElementById("housesSection").style.display = "none";//display none oculta el elemento seleccionado por el id
@@ -245,7 +207,7 @@ document.getElementById("buttonAboutSection").addEventListener('click', function
 });
 
 //-----------FUNCIÓN PARA CARGAR SÓLO LA SECCIÓN DE DETALLES SOBRE LAS TEMPORADAS Y EL BOTON DE HOME CUANDO SELECCIONES EL LINK DE ABOUT-----------------------------------------
-document.getElementById("buttonSeasonsDetailsSection").addEventListener('click', function () {
+document.getElementById("buttonSeasonsDetailsSection").addEventListener("click", function () {
   document.getElementById("home").style.display = "none";//display none oculta el elemento seleccionado por el id
   document.getElementById("seccionCharactersCards").style.display = "none";//display none oculta el elemento seleccionado por el id
   document.getElementById("housesSection").style.display = "none";//display none oculta el elemento seleccionado por el id
@@ -255,7 +217,7 @@ document.getElementById("buttonSeasonsDetailsSection").addEventListener('click',
 });
 
 //-----------FUNCIÓN PARA REGRESAR A HOME CUANDO SELECCIONES EL BOTON DE HOME-----------------------------------------
-document.getElementById("buttonHome").addEventListener('click', function () {
+document.getElementById("buttonHome").addEventListener("click", function () {
   document.getElementById("home").style.display = "block";//display block muestra el elemento seleccionado por el id
   document.getElementById("seccionCharactersCards").style.display = "none";//display none oculta el elemento seleccionado por el id
   document.getElementById("housesSection").style.display = "none";//display none oculta el elemento seleccionado por el id
