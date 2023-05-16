@@ -38,57 +38,57 @@ h2 {
 /*FORMATO PÁGINA CON CAMBIOS DE TAMAÑOS DE PANTALLA PARA QUE SEA RESPONSIVO*/
 @media screen and (max-width: 800px) {/*aplica el estilo indicado cuando se cumple la condición*/
     header {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        border-radius: 5%;
-        width: 100%;
-        height: max-content;
-        margin: 0;
-        align-items: center;
+        display: flex !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        flex-direction: column !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        justify-content: space-evenly !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        border-radius: 5% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        width: 100% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        height: max-content !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        margin: 0 !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        align-items: center !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .logo{
-        width: 60%;
+        width: 60% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .itemCategories {
-        font-size: 1.3em;
+        font-size: 1.3em !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .buttonsAudio {
-        width: 13%;
+        width: 13% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .gallery{
-        margin: 0;
-        padding: 4%;
+        margin: 0 !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        padding: 4% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .gallery img {
-        width: 200px;
-        height: 200px;
-        padding: 4px;
+        width: 200px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        height: 200px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        padding: 4px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     h2 {
-        font-size: 3rem;
+        font-size: 3rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .selects {
-        font-size: 20px;
+        font-size: 20px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .sliderMessage{
-        font-size: 2.5em;
+        font-size: 2.5em !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .listCharacters {
-        padding: 0;
+        padding: 0 !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .houseCard{
         max-width: 100% !important; /*Important es para que se de prevalencia a ese estilo sobre lo demás*/
         padding: 0.7rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .imgHouseCard{
-        width: 70%;
+        width: 70% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .houseCard img {
-        width: 100%;
+        width: 100% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .tableSeasonsDetails{
-        width: 100%;
+        width: 100% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .containerTableSeasonsDetails { 
         font-size: 1.5rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
@@ -104,69 +104,69 @@ h2 {
 
 @media screen and (min-height: 1500px) {/*aplica el estilo indicado cuando se cumple la condición*/
     header {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        border-radius: 5%;
-        width: 100%;
-        height: max-content;
-        margin: 0;
-        align-items: center;
+        display: flex !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        flex-direction: column !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        justify-content: space-evenly !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        border-radius: 5% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        width: 100% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        height: max-content !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        margin: 0 !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        align-items: center !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .logo{
-        width: 70%;
+        width: 70% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .chair{
-        width: 30%;
+        width: 30% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .wolf{
         width: 27%
     }
     .itemCategories {
-        font-size: 1.5em;
+        font-size: 1.5em !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .buttonsAudio {
-        width: 15%;
+        width: 15% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .gallery{
-        margin: 0;
-        padding: 8%;
+        margin: 0 !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        padding: 8% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .gallery img {
-        width: 300px;
-        height: 300px;
-        padding: 4px;
+        width: 300px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        height: 300px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        padding: 4px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     h2 {
-        font-size: 3rem;
+        font-size: 3rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .selects {
-        font-size: 20px;
+        font-size: 20px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .sliderMessage{
-        font-size: 2.5em;
+        font-size: 2.5em !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .listCharacters {
-        padding: 10px;
+        padding: 10px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .houseCard{
         max-width: 100% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
         padding: 0.7rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .imgHouseCard{
-        width: 70%;
+        width: 70% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .houseCard img {
-        width: 100%;
+        width: 100% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .tableSeasonsDetails{
-        width: 100%;
+        width: 100% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .containerTableSeasonsDetails { 
         font-size: 1.5rem !important;
         line-height: 2.3rem !important;
         padding: 13px !important;
-        margin: 1%;
+        margin: 1% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .buttonHome{
         right: 20px !important;
@@ -176,75 +176,75 @@ h2 {
 
 @media screen and (max-width: 450px) {/*aplica el estilo indicado cuando se cumple la condición*/
     header {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        border-radius: 5%;
-        width: 100%;
-        height: max-content;
-        margin: 0;
-        align-items: center;
+        display: flex !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        flex-direction: column !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        justify-content: space-evenly !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        border-radius: 5% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        width: 100% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        height: max-content !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        margin: 0 !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        align-items: center !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .chair {
-        width: 32%;
+        width: 32% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .logo {
-        width: 80%;
+        width: 80% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .wolf {
-    width: 30%;
+    width: 30% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .itemCategories {
-        font-size: .9em;
-        padding: 0.3em;
+        font-size: .9em !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        padding: 0.3em !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .buttonsAudio {
-        width: 22%;
+        width: 22% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .carousel{
-        margin: 1px;
-        margin-bottom: 15%;
+        margin: 1px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        margin-bottom: 5% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .gallery{
-        margin: 0;
-        padding: 5%;
+        margin: 0 !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        padding: 5% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .gallery img {
-        width: 150px;
-        height: 150px;
-        padding: 4px;
+        width: 150px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        height: 150px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        padding: 4px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .inputSearch{
         width: 11em !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .footer {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
+        text-align: center !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        display: flex !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        flex-direction: column !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     h2 {
-        font-size: 2rem;
+        font-size: 2rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .selects {
-        font-size: 10px;
+        font-size: 10px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .sliderMessage{
-        font-size: 1.7em;
+        font-size: 1.7em !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .listCharacters {
         padding-bottom: 85px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .houseCard{
-        flex-direction: column;
+        flex-direction: column !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .houseCard img {
-        width: 107%;
+        width: 107% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .containerTableSeasonsDetails { 
         font-size: 1rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
         line-height: 1.2rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
         padding: 10px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
-        margin: 1%;
+        margin: 1% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
     }
     .buttonHome{
         right: 17px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
@@ -630,6 +630,7 @@ h4{
     border: transparent;
     width: 56px;
     border-radius: 50%;
+    outline: none;
 }
 
 .buttonSearch img {

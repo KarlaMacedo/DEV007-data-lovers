@@ -1,11 +1,28 @@
 //------------------------IMPORTACION DE DATA--------------------------------------------------------------------
-import data from "./data/got/got.js"
+//import data from "./data/got/got.js"
+
+let data = [] //variable que almacenará la data
+window.addEventListener('DOMContentLoaded', () => { //escucha el evento de cargar la pagina y haga...
+  fetch("./data/got/got.json") //el fetch (traer la data.json)
+    .then(response => response.json())//convierte la data.json a un objeto .js
+    .then(response => { //guarda el objeto .js
+      data = response //le da el objeto .js a la variable creada inicialmente
+      pushImgSlider(response); //llaman funciones que utilizan la data para la funcionalidad de la página
+      hear(data);//llaman funciones que utilizan la data para la funcionalidad de la página
+      dataListSearch(data);//llaman funciones que utilizan la data para la funcionalidad de la página
+      createCards(data.got);//llaman funciones que utilizan la data para la funcionalidad de la página
+    })
+    .catch(error => { //guarda los errores que se pudieran presentar en la lectura del .json
+      // Manejo de errores
+      console.error('Error al cargar el archivo JSON:', error); //muestra los errores presentados en consola
+    });
+})
 
 //------------------------IMPORTACION DE FUNCIONES-------------------------------------------------------------------
 import { sortCharacters, houseFilterSelector, familyMembersCounter, findByValue } from "./data.js";
 
 //------------------------FUNCIONALIDAD PARA PONER IMAGENES EN HTML DESDE LA DATA PARA EL SLIDER--------------------------------------------------------------------
-function pushImgSlider() { // Crea funcion que haga...
+function pushImgSlider(data) { // Crea funcion que haga...
   const ulImages = document.querySelector(".gallery"); //Crear variable que seleccione el elemento del HTML que posteriormente va a guardar la lista de imagenes.
   for (let i = 0; i < data.got.length; i++) { // For que recorre la cantidad de elementos en la data.
     const createLabelLi = document.createElement("li"); // Crea variable que va a almacenar la creacion de una etiqueta <li> en el Html.
@@ -14,11 +31,14 @@ function pushImgSlider() { // Crea funcion que haga...
     ulImages.insertAdjacentElement("beforeend", createLabelLi); // Inserta en la etiqueta ul del Html antes de que termine (dentro) la etiqueta li creada que contiene la imagen con sus atributos.
   }
 }
-pushImgSlider() //se llama a la función
+//pushImgSlider() //se llama a la función
 
 //------------------------FUNCIÓN PARA CREAR TARJETA EN DIÁLOGO MODAL--------------------------------------------
 function openModal(index, data) {
   const divModal = document.querySelector("#divModal");//variable que almacena el contenedor que va a tener a la tarjeta del personaje
+  const labelModal = document.getElementById("labelCharactersCardsModal"); //variable que almacena la etiqueta que tendrá el mensaje de la contabilidad de miembros de cada familia
+  divModal.innerHTML = "";
+  labelModal.innerHTML = "";
   divModal.innerHTML = //ingresa al contenedor la tarjeta concatenada abajo, hecha con la info de la data y el estilo de las tarjetas de los personajes
     `<li class="cardsCharactersModal"><div class="containerImgModal">                        
   <img src="${data[index].imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacterModal">
@@ -34,7 +54,7 @@ function openModal(index, data) {
 }
 
 //------------------------FUNCIÓN PARA ABRIR TARJETAS DEL DIÁLOGO MODAL AL APRETAR IMAGEN SLIDER--------------------------------------------
-function hear() {//creamos la función llamada escuhar, porque está escuchando las acciones del usuario en el slider
+function hear(data) {//creamos la función llamada escuhar, porque está escuchando las acciones del usuario en el slider
   const audioCarousel = document.getElementById("sonidoCarousel") //crea una cosntante que almacena la etiqueta de audio del carrusel que está en el HTML
   const windowsModal = document.querySelector("#modal") //variable que almacena la etiqueta diálogo modal (ventanita que se abre al dar click en cada imagen del slider)
   const btnClose = document.querySelector("#btnCloseModal")//variable que almacena el boton de cerrar la ventana modal
@@ -46,7 +66,7 @@ function hear() {//creamos la función llamada escuhar, porque está escuchando 
   }
   btnClose.addEventListener("click", () => { windowsModal.close() })//escucha el evento de click del boton cerrar, para cerrar la ventana modal
 }
-hear()//llamar a la función
+//hear()//llamar a la función
 
 //------------------------FUNCIÓN CREAR TARJETAS DE MIEMBROS EN EL DIÁLOGO MODAL AL BUSCAR LA FAMILIA--------------------------------------------
 const containerCardsResults = document.getElementById("divModal")//crea una constante que almacena el contenedor de las tarjetas de personajes que serán creadas con 
@@ -72,7 +92,7 @@ const createCardsResults = (arrayCharacters) => { //constante que tiene la funci
 }
 
 //------------------------FUNCIONALIDAD BUSCADOR DE TARJETAS PERSONAJES AL BUSCAR EL NOMBRE, TÍTULO O FAMILIA--------------------------------------------
-function dataListSearch() { //crear función que creará la datalist del buscador (opciones del buscador)
+function dataListSearch(data) { //crear función que creará la datalist del buscador (opciones del buscador)
   const labelDataList = document.querySelector("datalist"); //variable que almacena la etiqueta datalist
   const dataList = [] // crea un array vacio que luego contendra la lista de las opciones creadas desde la data
   for (let j = 0; j < data.got.length; j++) { //for que recorre la data ....
@@ -89,7 +109,7 @@ function dataListSearch() { //crear función que creará la datalist del buscado
     labelDataList.innerHTML += `<option value="${dataList[k]}"></option> ` /// le añade la etiqueta opcion por cada elemento del array dataList
   }
 }
-dataListSearch()
+//dataListSearch()
 
 const inputSearch = document.getElementById("inputSearch") //variable que almacena el input del buscador
 const buttonSearch = document.getElementById("buttonSearch") // variable que almacena el boton que le da funcionalidad al boton (lupa)
@@ -101,10 +121,10 @@ btnClose.addEventListener("click", () => { windowsModal.close() }) //escucha el 
 buttonSearch.addEventListener("click", () => { //escucha el evento click del botón del buscador para hacer la función...
   const result = findByValue(inputSearch.value, data.got); //crear una variable que almacene el resultado de llamar a la función encontrar valor mediante los parametros del valor de la busqueda del usuario y la data
   const labelModal = document.getElementById("labelCharactersCardsModal"); //variable que almacena la etiqueta que tendrá el mensaje de la contabilidad de miembros de cada familia
-  if (result === "" || result === false)  { //Si el resultado es vacio o es falso entonces...
+  if (result === "" || result === false) { //Si el resultado es vacio o es falso entonces...
     alert("Enter valid criteria search") // manda un alert diciendo que debe ingresar algo válido
   } else { //si no...
-    if (result.length > 1) { //si el resultado tiene un array de más de un elemento...
+    if (result.length) { //si el resultado tiene un array de más de un elemento...
       labelModal.innerHTML = "This house has " + familyMembersCounter(result) + " members"; //agrega la contabilidad de los miembros de cada familia buscada
       createCardsResults(result) //manda a llamar a la función de crear las tarjetas en el diálogo modal del array de los miembros de familia
     } else { //si no y tiene una longitud de uno...
@@ -136,7 +156,7 @@ const createCards = (arrayCharacters) => { //variable que almacena el resultado 
     containerCards.insertAdjacentElement("beforeend", card); //se insertan las tarjetas dentro del ul
   });
 }
-createCards(data.got) //se llama a la función
+//createCards(data.got) //se llama a la función
 //------------------------FUNCIONALIDAD SELECTOR ORDEN ALFABÉTICO-----------------------------------------
 const alphabeticalSelector = document.getElementById("alphabeticalOrder"); //variable que almacena  el selector de orden alfabético
 alphabeticalSelector.addEventListener("change", () => { //función que escucha el evento del cambio en el selector
