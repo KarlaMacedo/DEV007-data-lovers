@@ -35,6 +35,223 @@ h2 {
     color: white;
 }
 
+/*FORMATO PÁGINA CON CAMBIOS DE TAMAÑOS DE PANTALLA PARA QUE SEA RESPONSIVO*/
+@media screen and (max-width: 800px) {/*aplica el estilo indicado cuando se cumple la condición*/
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 5%;
+        width: 100%;
+        height: max-content;
+        margin: 0;
+        align-items: center;
+    }
+    .logo{
+        width: 60%;
+    }
+    .itemCategories {
+        font-size: 1.3em;
+    }
+    .buttonsAudio {
+        width: 13%;
+    }
+    .gallery{
+        margin: 0;
+        padding: 4%;
+    }
+    .gallery img {
+        width: 200px;
+        height: 200px;
+        padding: 4px;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    .selects {
+        font-size: 20px;
+    }
+    .sliderMessage{
+        font-size: 2.5em;
+    }
+    .listCharacters {
+        padding: 0;
+    }
+    .houseCard{
+        max-width: 100% !important; /*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        padding: 0.7rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+    }
+    .imgHouseCard{
+        width: 70%;
+    }
+    .houseCard img {
+        width: 100%;
+    }
+    .tableSeasonsDetails{
+        width: 100%;
+    }
+    .containerTableSeasonsDetails { 
+        font-size: 1.5rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        line-height: 2.3rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        padding: 13px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        margin: 1%;
+    }
+    .buttonHome{
+        right: 20px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        bottom: 60px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+    }
+}
+
+@media screen and (min-height: 1500px) {/*aplica el estilo indicado cuando se cumple la condición*/
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 5%;
+        width: 100%;
+        height: max-content;
+        margin: 0;
+        align-items: center;
+    }
+    .logo{
+        width: 70%;
+    }
+    .chair{
+        width: 30%;
+    }
+    .wolf{
+        width: 27%
+    }
+    .itemCategories {
+        font-size: 1.5em;
+    }
+    .buttonsAudio {
+        width: 15%;
+    }
+    .gallery{
+        margin: 0;
+        padding: 8%;
+    }
+    .gallery img {
+        width: 300px;
+        height: 300px;
+        padding: 4px;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    .selects {
+        font-size: 20px;
+    }
+    .sliderMessage{
+        font-size: 2.5em;
+    }
+    .listCharacters {
+        padding: 10px;
+    }
+    .houseCard{
+        max-width: 100% !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        padding: 0.7rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+    }
+    .imgHouseCard{
+        width: 70%;
+    }
+    .houseCard img {
+        width: 100%;
+    }
+    .tableSeasonsDetails{
+        width: 100%;
+    }
+    .containerTableSeasonsDetails { 
+        font-size: 1.5rem !important;
+        line-height: 2.3rem !important;
+        padding: 13px !important;
+        margin: 1%;
+    }
+    .buttonHome{
+        right: 20px !important;
+        bottom: 60px !important;
+    }
+}
+
+@media screen and (max-width: 450px) {/*aplica el estilo indicado cuando se cumple la condición*/
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 5%;
+        width: 100%;
+        height: max-content;
+        margin: 0;
+        align-items: center;
+    }
+    .chair {
+        width: 32%;
+    }
+    .logo {
+        width: 80%;
+    }
+    .wolf {
+    width: 30%;
+    }
+    .itemCategories {
+        font-size: .9em;
+        padding: 0.3em;
+    }
+    .buttonsAudio {
+        width: 22%;
+    }
+    .carousel{
+        margin: 1px;
+        margin-bottom: 15%;
+    }
+    .gallery{
+        margin: 0;
+        padding: 5%;
+    }
+    .gallery img {
+        width: 150px;
+        height: 150px;
+        padding: 4px;
+    }
+    .inputSearch{
+        width: 11em !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+    }
+    .footer {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .selects {
+        font-size: 10px;
+    }
+    .sliderMessage{
+        font-size: 1.7em;
+    }
+    .listCharacters {
+        padding-bottom: 85px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+    }
+    .houseCard{
+        flex-direction: column;
+    }
+    .houseCard img {
+        width: 107%;
+    }
+    .containerTableSeasonsDetails { 
+        font-size: 1rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        line-height: 1.2rem !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        padding: 10px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        margin: 1%;
+    }
+    .buttonHome{
+        right: 17px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+        bottom: 125px !important;/*Important es para que se de prevalencia a ese estilo sobre lo demás*/
+    }
+}
+
 /*----------------------------------------------FORMATOS ESPECÍFICOS---------------------------------------------------------*/
 /*---------FORMATO TODO EL ENCABEZADO DE LA PÁGINA------------*/
 header{
@@ -45,6 +262,7 @@ header{
     border-radius: 5%;
     width: 100%;
     margin: 0;
+    height: max-content;
 }
 
 .chair{
@@ -101,16 +319,16 @@ header{
     transform: scale(0, 1); /*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con scale se especifica una operación de escalado 2D [sx, sy]*/
     transform-origin: left;/*modifica el origen de la transformacion del elemento*/
     transition: transform 0.5s; /*define la transición entre el estilo anterior del elemento y el nuevo*/
-  }
+}
 
-  .itemCategories:hover::before {/* :hover que haga algo cuando te posicionas encima sin dar click*//*crea un "elemento" hijo del elemento seleccionado, con el nuevo estilo que se da*/
+.itemCategories:hover::before {/* :hover que haga algo cuando te posicionas encima sin dar click*//*crea un "elemento" hijo del elemento seleccionado, con el nuevo estilo que se da*/
     transform: scale(1.1); /*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con scale se especifica una operación de escalado 2D [sx, sy]*/
-  }
+}
 
-  .itemCategories:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*/
+.itemCategories:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*/
     color: #fff;
     cursor: pointer;
-  }
+}
 
 /*FORMATO AUDIO DEL MENÚ*/
 .audio {
@@ -139,60 +357,6 @@ header{
     margin:0
 }
 
-/* ANIMACIÓN MENSAJE DEL SLIDER */
-h4{
-    color: white;
-    font-size: 2em;
-    padding: 0em;
-    background-color: #2e2d31bd;
-}
-
-.sliderMessage span{
-    position: relative;
-    overflow: hidden;
-    display: block;
-    line-height: 1.2;
-}
-
-.sliderMessage span::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
-    transform: translateX(-101%);
-}
-
-.sliderMessage span::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--bg-color);
-    animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
-    transform: translateX(0);
-}
-
-.sliderMessage span::before,
-.sliderMessage span::after{
-    animation-delay: .5s;
-}
-
-@keyframes a-ltr-after{
-    0% {transform: translateX(-100%)}
-    100% {transform: translateX(101%)}
-}
-
-@keyframes a-ltr-before{
-    0% {transform: translateX(0)}
-    100% {transform: translateX(200%)}
-}
-
 /*FORMATO CARRUSEL*/
 .carousel {
     width: 95%;
@@ -200,10 +364,9 @@ h4{
     overflow: hidden; /*Esconde los elementos que sobre salgan de su contenedor*/
     display: flex;
     flex-direction: row;
-    overflow-x: scroll;
+    overflow-x: scroll;/*Scroll sólo en la parte de abajo*/
     margin: 30px;
 }
-
 
 /*FORMATO LISTA DE IMAGENES DEL SLIDER*/
 .gallery {
@@ -227,256 +390,15 @@ h4{
     padding: 8px;
 }
 
-
-.gallery img:hover {filter: saturate(150%);
-    -webkit-transform:scale(1.3);
-    transform:scale(1.3);
-    overflow:hidden;
+.gallery img:hover {
+    filter: saturate(150%); /*satura las imagenes*/
+    transform: scale(1.3); /*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con scale se especifica una operación de escalado 2D [sx, sy], en este caso se aumenta la imagen*/
+    overflow: hidden; /*esconde lo que sobresalga*/
     cursor: pointer;
 }
 
-/*FORMATO BOTONES DEL SLIDER
-.arrows {
-    background-color: transparent;
-    border: transparent;
-    height: 15em;
-    width: 8em;
-}
-
-.arrows img {
-    width: 100%;
-    height: 100%;
-}
-
-.arrows img:hover {
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-}*/
-
-/*FORMATO SLIDER CON CAMBIOS DE TAMAÑOS DE PANTALLA PARA QUE SEA RESPONSIVO*/
-
-
-@media screen and (max-width: 800px) {/*aplica el estilo indicado cuando se cumple la condición*/
-    header {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        border-radius: 5%;
-        width: 100%;
-        height: 27em;
-        margin: 0;
-        align-items: center;
-    }
-    .logo{
-        width: 60%;
-    }
-    .itemCategories {
-        font-size: 1.3em;
-    }
-    .buttonsAudio {
-        width: 13%;
-    }
-    .gallery{
-        margin: 0;
-        padding: 4%;
-    }
-    .gallery img {
-        width: 200px;
-        height: 200px;
-        padding: 4px;
-    }
-    .footer {
-        font-size: 19px;
-        text-align: center;
-    }
-    h2 {
-        font-size: 3rem;
-    }
-    .selects {
-        font-size: 20px;
-    }
-    .sliderMessage{
-        font-size: 2.5em;
-    }
-    .listCharacters {
-        padding: 0;
-    }
-    .houseCard{
-        max-width: 100% !important;
-        padding: 0.7rem !important;
-    }
-    .imgHouseCard{
-        width: 70%;
-    }
-    .houseCard img {
-        width: 100%;
-    }
-    .tableSeasonsDetails{
-        width: 100%;
-    }
-    .containerTableSeasonsDetails { 
-        font-size: 1.5rem !important;
-        line-height: 2.3rem !important;
-        padding: 13px !important;
-        margin: 1%;
-    }
-    .buttonHome{
-        right: 20px !important;
-        bottom: 60px !important;
-    }
-}
-
-@media screen and (min-height: 1500px) {/*aplica el estilo indicado cuando se cumple la condición*/
-    header {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        border-radius: 5%;
-        width: 100%;
-        height: 40em;
-        margin: 0;
-        align-items: center;
-    }
-    .logo{
-        width: 70%;
-    }
-    .chair{
-        width: 30%;
-    }
-    .wolf{
-        width: 27%
-    }
-    .itemCategories {
-        font-size: 1.5em;
-    }
-    .buttonsAudio {
-        width: 15%;
-    }
-    .gallery{
-        margin: 0;
-        padding: 8%;
-    }
-    .gallery img {
-        width: 300px;
-        height: 300px;
-        padding: 4px;
-    }
-    .footer {
-        font-size: 19px;
-        text-align: center;
-    }
-    h2 {
-        font-size: 3rem;
-    }
-    .selects {
-        font-size: 20px;
-    }
-    .sliderMessage{
-        font-size: 2.5em;
-    }
-    .listCharacters {
-        padding: 10px;
-    }
-    .houseCard{
-        max-width: 100% !important;
-        padding: 0.7rem !important;
-    }
-    .imgHouseCard{
-        width: 70%;
-    }
-    .houseCard img {
-        width: 100%;
-    }
-    .tableSeasonsDetails{
-        width: 100%;
-    }
-    .containerTableSeasonsDetails { 
-        font-size: 1.5rem !important;
-        line-height: 2.3rem !important;
-        padding: 13px !important;
-        margin: 1%;
-    }
-    .buttonHome{
-        right: 20px !important;
-        bottom: 60px !important;
-    }
-}
-
-
-@media screen and (max-width: 400px) {/*aplica el estilo indicado cuando se cumple la condición*/
-    header {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        border-radius: 5%;
-        width: 100%;
-        height: 20em;
-        margin: 0;
-        align-items: center;
-    }
-    .chair {
-        width: 32%;
-    }
-    .logo {
-        width: 80%;
-    }
-    .wolf {
-    width: 30%;
-    }
-    .itemCategories {
-        font-size: .9em;
-        padding: 0.3em;
-    }
-    .buttonsAudio {
-        width: 22%;
-    }
-    .carousel{
-        margin: 1px;
-        margin-bottom: 15%;
-    }
-    .gallery{
-        margin: 0;
-        padding: 5%;
-    }
-    .gallery img {
-        width: 150px;
-        height: 150px;
-        padding: 4px;
-    }
-    .inputSearch{
-        width: 11em !important;
-    }
-    .footer {
-        font-size: 10.5px;
-        text-align: center;
-    }
-    h2 {
-        font-size: 2rem;
-    }
-    .selects {
-        font-size: 10px;
-    }
-    .sliderMessage{
-        font-size: 1.7em;
-    }
-    .listCharacters {
-        padding: 0;
-    }
-    .houseCard{
-        flex-direction: column;
-    }
-    .houseCard img {
-        width: 107%;
-    }
-    .containerTableSeasonsDetails { 
-        font-size: 1rem !important;
-        line-height: 1.2rem !important;
-        padding: 10px !important;
-        margin: 1%;
-    }
-}
-
 /*FORMATO SCROLL DEL SLIDER*/
-.carousel::-webkit-scrollbar {
+.carousel::-webkit-scrollbar { /*formato scroll en general*/
     height: 1.5em;
   }
 
@@ -510,7 +432,6 @@ h4{
 .carousel::-webkit-scrollbar-track:hover {
   background: transparent;
     border: solid 3px #f2f2f2; 
-    border-radius: 4px;
     border-radius: 50px;
 }
 
@@ -518,7 +439,6 @@ h4{
 .carousel::-webkit-scrollbar-track:active {
     background: transparent;
       border: solid 1px black; 
-      border-radius: 4px;
       border-radius: 50px;
   }
 
@@ -527,6 +447,7 @@ h4{
     background-color:rgba(30, 39, 62, 1);
     border-radius: 10%;
     border-color:  #fff;
+    padding: 40px;
 }
 
 #modal::backdrop{
@@ -535,10 +456,11 @@ h4{
 
 #divModal{
     width: 100%;
-    height: 300px;
+    height: 520px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    gap: 24px;
 }
 
 .imgBtnClose{
@@ -553,18 +475,17 @@ h4{
     border: 0 solid transparent;
     margin: 0;
     border-radius: 100%;
-    user-select: none;
+    user-select: none;/*El texto y sus sub elementos no son seleccionables*/
     padding: 0;
-    outline:none; /*--Borde externo fuera del modelo de cajas--*/
+    outline: none; /*Borde externo fuera del modelo de cajas*/
 }
 
 #btnCloseModal:hover .imgBtnClose {
-    -webkit-transform:scale(1.3);
-    transform:scale(1.3);
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    transform:scale(1.3);/*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con scale se especifica una operación de escalado 2D [sx, sy]. en este caso aumenta de tamaño la imagen del boton*/
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));/*sombra imagen sin fondo*/
 }
 
-/*FORMATO SCROLL DEL SLIDER*/
+/*FORMATO SCROLL DEL MODAL*/
 #modal::-webkit-scrollbar {
     width: 1em;
   }
@@ -599,7 +520,6 @@ h4{
 #modal::-webkit-scrollbar-track:hover {
   background: transparent;
     border: solid 3px #f2f2f2; 
-    border-radius: 4px;
     border-radius: 50px;
 }
 
@@ -607,7 +527,6 @@ h4{
 #modal::-webkit-scrollbar-track:active {
     background: transparent;
       border: solid 1px black; 
-      border-radius: 4px;
       border-radius: 50px;
   }
 
@@ -628,7 +547,7 @@ h4{
 
 .imageCharacterModal {
     width: 20rem;
-    height: 17rem;
+    height: 22rem;
     border-radius: 10%;
     margin-bottom: 8em;
 }
@@ -659,7 +578,7 @@ h4{
 
 /*ANIMACIÓN DE LAS TARJETAS DE PERSONAJES MODALES*/
 .cardContentModal::before {/*crea un "elemento" hijo del elemento seleccionado, con el nuevo estilo que se da*/
-    content: '';/*añade contenido en línea con el texto del elemento*/
+    content: "";/*añade contenido en línea con el texto del elemento*/
     position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
     top: -47px;
     right: -45px;
@@ -678,6 +597,14 @@ h4{
     opacity: 1;
     transition-delay: .25s; /*cantidad de tiempo a esperar para que se de el cambio*/
 }  
+
+/* MENSAJE CONTADOR DE MIEMBROS DE FAMILIA */
+h4{
+    color: white;
+    font-size: 2em;
+    padding: 0em;
+    background-color: #2e2d31bd;
+}
 
 /*---------------FORMATO BUSCADOR---------------*/
 .searcher {
@@ -711,7 +638,7 @@ h4{
 
 .buttonSearch img:hover {/* :hover que haga algo cuando te posicionas encima sin dar click*/
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7)); /*sombra imagen sin fondo*/
-    -webkit-transform:scale(2.0);transform:scale(2.0);
+    transform:scale(2.0);/*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con scale se especifica una operación de escalado 2D [sx, sy]. En este caso hace que la imagen de la lupa aumente*/
 }
 
 /*---------------FORMATO TARJETAS PERSONAJES------------------*/
@@ -777,10 +704,10 @@ h4{
 
 /*ANIMACIÓN DE LAS TARJETAS DE PERSONAJES*/
 .cardContent::before {/*crea un "elemento" hijo del elemento seleccionado, con el nuevo estilo que se da*/
-    content: '';/*añade contenido en línea con el texto del elemento*/
+    content: "";/*añade contenido en línea con el texto del elemento*/
     position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
     top: -47px;
-    right: -45px;
+    right: -52px;
     width: 100px;
     height: 100px;
     transform: rotate(-175deg); /*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con rotate lo rota en 2D, según la cantidad de grados (deg) que se da, en sentido de las manecillas del reloj*/
@@ -804,18 +731,17 @@ h4{
     padding: 2%;
     font-size: 1.2em;
     box-shadow: 0 5px 25px rgba(255, 255, 255, 0.4);
-  }
+}
 
-  .selects {
+.selects {
     display: flex;
     justify-content: space-around
-  }
-
+}
 
 /*------------FORMATO TARJETAS CASAS---------------*/
 .houseCard {
     position: relative;/*top y bottom es desplazamiento vertical y left y right desplazamiento horizontal*/
-    box-sizing: border-box;
+    box-sizing: border-box; /*toma en cuenta cualquier valor que se especifique de borde o de relleno para el ancho o alto del elemento. Es decir, si se define un elemento con un ancho de 100 pixeles. Esos 100 pixeles incluíran cualquier borde o relleno que se añadan, y la caja de contenido se encogerá para absorber ese ancho extra.*/
     max-width: 80%;
     font-size: 1.2em;
     border-radius: 10px;
@@ -888,70 +814,60 @@ table {
  /*------------FORMATO BOTON QUE LLEVA AL INICIO---------------*/
 .buttonHome {
     position:fixed; /* Se mantiene el footer en la parte inferior de la página */
-    right:10px; /*Espacio margen izquierdo*/
-    bottom:30px; /*Espacio margen inferior*/
+    right:20px; /*Espacio margen izquierdo*/
+    bottom:50px; /*Espacio margen inferior*/
     width: 100px;
-    height: 33px;
+    height: 40px;
     border-radius: 30px;
     background-color: white;
     overflow: hidden;/*Esconde los elementos que sobre salgan de su contenedor*/
 }
  
-  .text1 {
-    font-size: 17px;
+.text1 {
+    font-size: 20px;
     font-weight: 700;
-    margin-left:25%;
+    margin-left:20%;
+    position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
+    top: 24%;
+    color: #000;
+}
+  
+.text2 {
     position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
     top: 20%;
-    color: #000;
-  }
-  
-  .text2 {
-    position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
-    top: 25%;
-    left: -50px;
+    left: -65px;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 20px;
     color: white;
-  }
+}
   
-  .icon {
+.icon {
     position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
     top: 0;
     left: 0;
     transition: transform 0.5s;/*define la transición entre el estilo anterior del elemento y el nuevo*/
-  }
+}
   
-  .icon::before {
+.icon::before {
     position: absolute;/* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
     left: -100px;
     top: 0;
     content: "";/*añade contenido en línea con el texto del elemento*/
     width: 100px;
-    height: 33px;
+    height: 40px;
     border-radius: 30px;
     background-color: #000000;
-  }
+}
   
-  .icon::after {
-    position: absolute; /* top, right, bottom, y left son el desplazamiento desde bordes del contenedor del elemento. Si hay márgenes, se agregan al desplazamiento*/
-    left: 0.5px;
-    top: 0.5px;
-    width: 32px;
-    height: 32px;
-    border-radius: 100%;
-    background-color: white;
-  }
-  
-  .buttonHome:hover .icon {
-    transform: translateX(97.5px);/*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con translateX lo translada a lo largo del eje X*/
+.buttonHome:hover .icon {
+    transform: translateX(100px);/*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con translateX lo translada a lo largo del eje X*/
     transition: transform 0.5s;/*define la transición entre el estilo anterior del elemento y el nuevo*/
-  }
+}
   
- .buttonHome:hover .text2 {
+.buttonHome:hover .text2 {
     transform: translateX(100px); /*modifica las coordenadas del elemento, puediendo trasladarlo, rotarlo, escalarlo, etc. Con translateX lo translada a lo largo del eje X*/
     transition: transform 0.6s;/*define la transición entre el estilo anterior del elemento y el nuevo*/
-  }
+}
 
 /*------------FORMATO FOOTER---------------*/
 .footer {
@@ -969,4 +885,6 @@ table {
     width: 5em;
 }
 
-.socialNetworks:hover img {-webkit-transform:scale(2.0);transform:scale(2.0);}
+.socialNetworks:hover img {
+    transform:scale(2.0);
+}
