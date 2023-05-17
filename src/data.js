@@ -16,7 +16,7 @@ export const findByValue = (userSearch, data) => {//declaración de la función 
   }
 }
 
-//---------------------- ORDENAR ALFABÉTICAMENTE LAS TARJETAS DE characterS CON EL SELECTOR
+//---------------------- ORDENAR ALFABÉTICAMENTE LAS TARJETAS DE PERSONAJES CON EL SELECTOR
 export const sortCharacters = (characters) => { //declaración de la función y sus parámetros, 
   const dataorder = characters.sort((a, b) => {// variable que almacena la función sort que nos ordena el array y lo devuelve ordenado 
     if (a.fullName < b.fullName) { //compara los parámetros a y b, si a es mayor 

@@ -46,18 +46,10 @@
       <!--SLIDER-->
       <div id="slider" class="slider">
         <audio src="Images/soundCarousel.mp3" id="sonidoCarousel" ></audio><!--audio botones slider-->
-        <!--Boton previo
-        <div>
-          <button id="arrowPrev" class="arrows"><img src="Images\botonizquierda.png"></button>
-        </div>-->
         <div id= "carousel" class="carousel">
           <!--Lista de imagenes-->
-          <ul class="gallery"><!--Aqui van las imagenes del slider agregadar a travez de la funcion pushImgSlider del main.js--></ul>
+          <ul class="gallery"><!--Aqui van las imagenes del slider agregadas a travez de la funcion pushImgSlider del main.js--></ul>
         </div>
-        <!--Boton siguiente
-        <div>
-          <button id="arrowNext" class="arrows"><img src="Images\botonderecha.png"></button>
-        </div>-->
       </div>
       <br>
       <!--DIALOGO MODAL DE TARJETAS DE PERSONAJES DEL SLIDER-->
@@ -73,12 +65,12 @@
       <!--BUSCADOR-->
       <center>
         <div id="searcher" class="searcher">
-          <input type="search" placeholder="Search" list="datalistSearcher" id="inputSearch" class="inputSearch" required/>
+          <input type="search" placeholder="Search" list="datalistSearcher" id="inputSearch" class="inputSearch"/>
           <button id="buttonSearch" class="buttonSearch" size="40"><img src="Images/lupa.png"></button> 
         </div>
       </center>
       <!--OPCIONES DEL BUSCADOR-->
-      <datalist id="datalistSearcher"></datalist>
+      <datalist id="datalistSearcher"><!--aquí van las opciones del buscador--></datalist>
       </section>
       <!--TARJETAS PERSONAJES-->
       <section id="seccionCharactersCards">
@@ -126,7 +118,7 @@
           <div>
             <h3>House Stark</h3>
             <ul>
-              <li class="nameCharacterHouses" value="Jon Snow">Jon Snow</li>
+              <li class="nameCharacterHouses">Jon Snow</li>
               <li class="nameCharacterHouses">Arya Stark</li>
               <li class="nameCharacterHouses">Sansa Stark</li>
               <li class="nameCharacterHouses">Brandon Stark</li>
@@ -220,13 +212,6 @@
             <img src="./Images/casatyrell.jpg" alt="Tyrell family tree">
           </div>
         </div>
-        <!--DIALOGO MODAL DE TARJETAS DE PERSONAJES DEL SLIDER-->
-        <dialog id="modalHouses">
-          <div id="divModalHouses"><!--contenedor de las tarjetas de personajes--></div>
-          <br>
-          <br>
-          <button id="btnCloseModalHouses"><img class="imgBtnCloseHouses" src="Images/botonRegresar.png"></button><!--Boton para cerrar ventana modal-->
-        </dialog>
         </section>
       </center>
       <!--INFORMACIÓN SOBRE LA SERIE-->
