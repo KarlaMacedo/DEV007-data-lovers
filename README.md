@@ -71,7 +71,7 @@ Como herramienta de organización utilizamos [Trello](https://trello.com/b/drAK4
 en donde hicimos toda la planeación de trabajo de 
 cada sprint que duró este proyecto (4): 
 
-![Trello](/src/Images/trello.pNG)
+![Trello](/src/Images/trello.png)
 
 ## 6. Historias de usuario
 

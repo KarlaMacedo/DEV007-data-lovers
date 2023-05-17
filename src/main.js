@@ -4,10 +4,10 @@
 let data = [] //variable que almacenará la data
 window.addEventListener('DOMContentLoaded', () => { //escucha el evento de cargar la pagina y haga...
   fetch("./data/got/got.json") //el fetch (traer la data.json)
-    .then(response => response.json())//convierte la data.json a un objeto .js
+    .then(response => response.json())//response convierte la data.json a un objeto .js
     .then(response => { //guarda el objeto .js
       data = response //le da el objeto .js a la variable creada inicialmente
-      pushImgSlider(response); //llaman funciones que utilizan la data para la funcionalidad de la página
+      pushImgSlider(data); //llaman funciones que utilizan la data para la funcionalidad de la página
       hear(data);//llaman funciones que utilizan la data para la funcionalidad de la página
       dataListSearch(data);//llaman funciones que utilizan la data para la funcionalidad de la página
       createCards(data.got);//llaman funciones que utilizan la data para la funcionalidad de la página
@@ -37,20 +37,22 @@ function pushImgSlider(data) { // Crea funcion que haga...
 function openModal(index, data) {
   const divModal = document.querySelector("#divModal");//variable que almacena el contenedor que va a tener a la tarjeta del personaje
   const labelModal = document.getElementById("labelCharactersCardsModal"); //variable que almacena la etiqueta que tendrá el mensaje de la contabilidad de miembros de cada familia
-  divModal.innerHTML = "";
-  labelModal.innerHTML = "";
+  divModal.innerHTML = ""; //limpia contenedor modal para colocar el nuevo resultado
+  labelModal.innerHTML = ""; //limpia la etiqueta, para que no se quede pegada la contabilidad de miembros de familia que se genera en el buscador
   divModal.innerHTML = //ingresa al contenedor la tarjeta concatenada abajo, hecha con la info de la data y el estilo de las tarjetas de los personajes
-    `<li class="cardsCharactersModal"><div class="containerImgModal">                        
-  <img src="${data[index].imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacterModal">
-</div>
-<div class = "cardContentModal"> 
-    <span class="cardTitleModal">${data[index].fullName}</span>
-    <p class="cardDescriptionModal"><b>Name:</b> ${data[index].firstName} </p>
-    <p class="cardDescriptionModal"><b>Last Name:</b> ${data[index].lastName} </p>
-    <p class="cardDescriptionModal"><b>Tittle:</b> ${data[index].title} </p>
-    <p class="cardDescriptionModal"><b>Family:</b> ${data[index].family} </p>
-    <p class="cardDescriptionModal"><b>Born:</b> ${data[index].born} </p>
-</div></li>`
+    `<li class="cardsCharactersModal">
+      <div class="containerImgModal">                        
+        <img src="${data[index].imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacterModal">
+      </div>
+      <div class = "cardContentModal"> 
+        <span class="cardTitleModal">${data[index].fullName}</span>
+        <p class="cardDescriptionModal"><b>Name:</b> ${data[index].firstName} </p>
+        <p class="cardDescriptionModal"><b>Last Name:</b> ${data[index].lastName} </p>
+        <p class="cardDescriptionModal"><b>Title:</b> ${data[index].title} </p>
+        <p class="cardDescriptionModal"><b>Family:</b> ${data[index].family} </p>
+        <p class="cardDescriptionModal"><b>Born:</b> ${data[index].born} </p>
+      </div>
+    </li>`
 }
 
 //------------------------FUNCIÓN PARA ABRIR TARJETAS DEL DIÁLOGO MODAL AL APRETAR IMAGEN SLIDER--------------------------------------------
@@ -77,24 +79,24 @@ const createCardsResults = (arrayCharacters) => { //constante que tiene la funci
     card.setAttribute("class", "cardsCharacters"); //a esa etiqueta le da una clase
     card.innerHTML += // dentro de esa etiqueta concatena su contenido
       `<div class="containerImg">                          
-    <img src="${arrayCharacters.imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
-  </div>
-  <div class = "cardContent"> 
-      <span class="cardTitle">${arrayCharacters.fullName}</span>
-      <p class="cardDescription"><b>Name:</b> ${arrayCharacters.firstName} </p>
-      <p class="cardDescription"><b>Last Name:</b> ${arrayCharacters.lastName} </p>
-      <p class="cardDescription"><b>Title:</b> ${arrayCharacters.title} </p>
-      <p class="cardDescription"><b>Family:</b> ${arrayCharacters.family} </p>
-      <p class="cardDescription"><b>Born:</b> ${arrayCharacters.born} </p>
-  </div>`
+        <img src="${arrayCharacters.imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
+      </div>
+      <div class = "cardContent"> 
+        <span class="cardTitle">${arrayCharacters.fullName}</span>
+        <p class="cardDescription"><b>Name:</b> ${arrayCharacters.firstName} </p>
+        <p class="cardDescription"><b>Last Name:</b> ${arrayCharacters.lastName} </p>
+        <p class="cardDescription"><b>Title:</b> ${arrayCharacters.title} </p>
+        <p class="cardDescription"><b>Family:</b> ${arrayCharacters.family} </p>
+        <p class="cardDescription"><b>Born:</b> ${arrayCharacters.born} </p>
+      </div>`;
     containerCardsResults.insertAdjacentElement("beforeend", card); // inserta cada creación de tarjeta después de la otra dentro del contenedor de las tarjetas
   });
 }
 
-//------------------------FUNCIONALIDAD BUSCADOR DE TARJETAS PERSONAJES AL BUSCAR EL NOMBRE, TÍTULO O FAMILIA--------------------------------------------
+//------------------------FUNCIONALIDAD CREAR DATALIST DE OPCIONES PARA EL BUSCADOR--------------------------------------------
 function dataListSearch(data) { //crear función que creará la datalist del buscador (opciones del buscador)
-  const labelDataList = document.querySelector("datalist"); //variable que almacena la etiqueta datalist
-  const dataList = [] // crea un array vacio que luego contendra la lista de las opciones creadas desde la data
+  const labelDataList = document.querySelector("datalist"); //variable que almacena la etiqueta datalist del html
+  const dataList = []; // crea un array vacio que luego contendra la lista de las opciones creadas desde la data
   for (let j = 0; j < data.got.length; j++) { //for que recorre la data ....
     if (dataList.indexOf(`${data.got[j].family}`) >= 0) { // if que revisa que no se repita el mismo nombre de familia y si se repite no lo crea
       dataList.push(data.got[j].fullName); // pone en el arreglo dataList cada nombre completo de personaje
@@ -106,11 +108,12 @@ function dataListSearch(data) { //crear función que creará la datalist del bus
     }
   }
   for (let k = 0; k < dataList.length; k++) {   // recorre el array dataList creado y .....
-    labelDataList.innerHTML += `<option value="${dataList[k]}"></option> ` /// le añade la etiqueta opcion por cada elemento del array dataList
+    labelDataList.innerHTML += `<option value="${dataList[k]}"></option> ` /// añade cada elemento como una etiqueta de opción dentro de la etiqueta datalist del html
   }
 }
 //dataListSearch()
 
+//------------------------FUNCIONALIDAD BUSCADOR DE TARJETAS PERSONAJES AL BUSCAR EL NOMBRE, TÍTULO O FAMILIA--------------------------------------------
 const inputSearch = document.getElementById("inputSearch") //variable que almacena el input del buscador
 const buttonSearch = document.getElementById("buttonSearch") // variable que almacena el boton que le da funcionalidad al boton (lupa)
 const windowsModal = document.querySelector("#modal") // variable que almacena el contenedor modal donde se crearan las tarjeta del resultado de busqueda.
@@ -124,10 +127,10 @@ buttonSearch.addEventListener("click", () => { //escucha el evento click del bot
   if (result === "" || result === false) { //Si el resultado es vacio o es falso entonces...
     alert("Enter valid criteria search") // manda un alert diciendo que debe ingresar algo válido
   } else { //si no...
-    if (result.length) { //si el resultado tiene un array de más de un elemento...
+    if (result.length) { //si el resultado tiene un array con elementos...
       labelModal.innerHTML = "This house has " + familyMembersCounter(result) + " members"; //agrega la contabilidad de los miembros de cada familia buscada
       createCardsResults(result) //manda a llamar a la función de crear las tarjetas en el diálogo modal del array de los miembros de familia
-    } else { //si no y tiene una longitud de uno...
+    } else { //si no...
       labelModal.innerHTML = ""; //limpia el contenedor de las tarjetas de personajes para ingresar el nuevo resultado
       openModal(result, data.got) //manda a llamar a la función de crear tarjeta del personaje en el diálogo modal
     }
@@ -137,26 +140,27 @@ buttonSearch.addEventListener("click", () => { //escucha el evento click del bot
 
 //------------------------FUNCIÓN CREAR TARJETAS DE LA SECCIÓN DE PERSONAJES--------------------------------------------
 const containerCards = document.getElementById("listCharacters")//variable que almacena el contenedor de laa lista de las tarjetas (ul)
-const createCards = (arrayCharacters) => { //variable que almacena el resultado de la iteración de la data para la creación de las tarjetas de personajes
+const createCards = (arrayCharacters) => { //variable que almacena la función de la iteración de la data para la creación de las tarjetas de personajes
   arrayCharacters.forEach((arrayCharacters) => { //ciclo que hace que una vez por cada elemento de la data haga...
     const card = document.createElement("li"); //una variable que almacena la creación de una etiqueta li en el html
     card.setAttribute("class", "cardsCharacters"); //se le agrega el atributo class a la etiqueta li creada
     card.innerHTML += //dentro de la etiqueta li se ingresa toda la información obtenida de la data para la creación de las tarjetas
       `<div class="containerImg">                          
-    <img src="${arrayCharacters.imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
-  </div>
-  <div class = "cardContent"> 
-      <span class="cardTitle">${arrayCharacters.fullName}</span>
-      <p id="nameCharcter" class="cardDescription"><b>Name:</b> ${arrayCharacters.firstName} </p>
-      <p id="nameCharcter" class="cardDescription"><b>Last Name:</b> ${arrayCharacters.lastName} </p>
-      <p id="tittleCharcter" class="cardDescription"><b>Title:</b> ${arrayCharacters.title} </p>
-      <p id="familyCharcter" class="cardDescription"><b>Family:</b> ${arrayCharacters.family} </p>
-      <p id="bornCharcter" class="cardDescription"><b>Born:</b> ${arrayCharacters.born} </p>
-  </div>`
+        <img src="${arrayCharacters.imageUrl}" alt="imageCharacter" id="imageCharacter" class="imageCharacter">
+        </div>
+        <div class = "cardContent"> 
+            <span class="cardTitle">${arrayCharacters.fullName}</span>
+            <p class="cardDescription"><b>Name:</b> ${arrayCharacters.firstName} </p>
+            <p class="cardDescription"><b>Last Name:</b> ${arrayCharacters.lastName} </p>
+            <p class="cardDescription"><b>Title:</b> ${arrayCharacters.title} </p>
+            <p class="cardDescription"><b>Family:</b> ${arrayCharacters.family} </p>
+            <p class="cardDescription"><b>Born:</b> ${arrayCharacters.born} </p>
+        </div>`
     containerCards.insertAdjacentElement("beforeend", card); //se insertan las tarjetas dentro del ul
   });
 }
 //createCards(data.got) //se llama a la función
+
 //------------------------FUNCIONALIDAD SELECTOR ORDEN ALFABÉTICO-----------------------------------------
 const alphabeticalSelector = document.getElementById("alphabeticalOrder"); //variable que almacena  el selector de orden alfabético
 alphabeticalSelector.addEventListener("change", () => { //función que escucha el evento del cambio en el selector
